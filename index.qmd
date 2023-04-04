@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Preface {.unnumbered}
 
 This document includes an overview and preliminary results of the asssessment of risk of collapse of the Tropical Glacier Ecosystems of the world and one example of the assessment of a regional unit (Tropical Glacier Ecosystem of the Cordillera de Mérida in Venezuela).

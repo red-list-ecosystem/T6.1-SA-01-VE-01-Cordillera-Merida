@@ -9,9 +9,16 @@ quarto create-project T6.1-SA-01-VE-01-Cordillera-Merida --type book
 quarto render T6.1-SA-01-VE-01-Cordillera-Merida
 
 quarto preview T6.1-SA-01-VE-01-Cordillera-Merida
+
+##quarto render T6.1-SA-01-VE-01-Cordillera-Merida --to pdf
 ```
 
+Trying to render the book with a pdf output option throws an error:
 
+```sh
+Error: path for html_dependency not found: /var/folders/14/vyrp_30975d7y17lqxjblf2c0000gn/T//RtmpTv7Ea9
+```
+This seems to be related to the use of leaflet in the code. Should I create a branch for the pdf output without the interactive map?
 
 
 Edit the qmd and yml files:
