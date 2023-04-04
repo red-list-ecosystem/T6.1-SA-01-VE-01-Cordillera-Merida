@@ -1,0 +1,108 @@
+# Data sources
+
+This is a list of the data sources used for the global assessment of Tropical Glacier Ecosystems.
+
+## Overview
+
+* Glacier inventories
+  * Randolph Glacier Inventory, version 6.0
+  * GLIMS database 2019
+* Mountain regions and ecoregions
+  * GMBA mountain inventory V1.2
+  * Terrestrial ecoregions of the world, 2017 version
+* Vulcanism
+  * Holocene Volcano List
+* Species distribution
+* Climate variables
+  * Climate stations
+  * Chelsa climate projections
+* Remote sensing products
+  * Modis Land Surface Temperatures
+
+
+## Glacier inventories
+
+The [Randolph Glacier Inventory](https://www.glims.org/RGI/), version 6.0 has global coverage [@RGI_2017_glacier_inventory].
+The data was downloaded from http://www.glims.org/RGI/rgi60_dl.html, our use here follows the [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf).
+
+We also used the Global Land Ice Measurements from Space ([GLIMS](http://www.glims.org/)) glacier database
+
+> Raup, B.H.; A. Racoviteanu; S.J.S. Khalsa; C. Helm; R. Armstrong; Y. Arnaud (2007).  "The GLIMS Geospatial Glacier Database: a New Tool for Studying Glacier Change".  Global and Planetary Change 56:101--110. (doi:10.1016/j.gloplacha.2006.07.018)
+
+> GLIMS and NSIDC (2005, updated 2019): Global Land Ice Measurements from Space glacier database.  Compiled and made available by the international GLIMS community and the National Snow and Ice Data Center, Boulder CO, U.S.A.  DOI:10.7265/N5V98602
+
+### Inventario Nacional de Glaciares - Argentina
+
+https://www.glaciaresargentinos.gob.ar/
+
+> Zalazar, L., Ferri, L., Castro, M., Gargantini, H., Gimenez, M., Pitte, P., . . . Villalba, R. (2020). Spatial distribution and characteristics of Andean ice masses in Argentina: Results from the first National Glacier Inventory. Journal of Glaciology, 66(260), 938-949. doi:10.1017/jog.2020.55
+
+>  IANIGLA-Inventario Nacional de Glaciares. 2018. Resumen ejecutivo de los resultados del Inventario Nacional de Glaciares. IANIGLA-CONICET, Ministerio de Ambiente y Desarrollo Sustentable de la Nación. Pp. 27.
+
+### GMBA mountain inventory V1.2
+
+GMBA mountain inventory_V1.2 data is available at: https://ilias.unibe.ch/goto_ilias3_unibe_cat_1000515.html
+
+#### Citation
+> Körner C, Jetz W, Paulsen J, Payne D, Rudmann-Maurer K, Spehn EM (2017) A global inventory of mountains for bio-geographical applications. Alpine Botany 127(1): 1-15, DOI: 10.1007/s00035-016-0182-6 and the dataset DOI: 10.7892/boris.106896
+> Körner C, Paulsen J, Spehn E (2011) A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data. Alpine Botany 121(2): 73-78 and the dataset DOI: 10.7892/boris.83486.
+
+
+
+### Terrestrial ecoregions of the world, 2017 version
+
+RESOLVE (2017) ecoregions available at https://ecoregions2017.appspot.com, see also the [documentation](https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017). @Dinerstein_2017_TEOW
+
+### Holocene Volcano List
+
+Download data from
+https://volcano.si.edu/list_volcano_holocene.cfm
+
+#### Citation
+
+@Venzke_2013_Volcano_List
+
+### Species distribution data from GBIF
+
+For the Glacier Finch (White-winged Diuca-Finch), Idiopsar speculifer (d'Orbigny & Lafresnaye, 1837):
+GBIF.org (05 January 2022) GBIF Occurrence Download  https://doi.org/10.15468/dl.w3dzkt
+GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.r2jgb5
+
+For the White-fronted Ground-Tyrant, Muscisaxicola albifrons (Tschudi, 1844):
+GBIF.org (05 January 2022) GBIF Occurrence Download  https://doi.org/10.15468/dl.9q4pgm
+GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.psn2w3
+
+Aves in custom polygon:
+GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.g3s43q
+
+### Glacier thickness database
+
+#### Citation
+
+> GlaThiDa Consortium (2020): Glacier Thickness Database 3.1.0. World Glacier Monitoring Service, Zurich, Switzerland. DOI: 10.5904/wgms-glathida-2020-10
+
+> Welty, E., Zemp, M., Navarro, F., Huss, M., Fürst, J.J., Gärtner-Roer, I., Landmann, J., Machguth, H., Naegeli, K., Andreassen, L.M., Farinotti, D., Li, H., and GlaThiDa Contributors (2020): Worldwide version-controlled database of glacier thickness observations. Earth System Science Data, DOI: 10.5194/essd-2020-87
+
+
+### Chelsa
+
+https://chelsa-climate.org/exchelsa-extended-bioclim/
+
+Brun, P., Zimmermann, N.E., Hari, C., Pellissier, L., Karger, D.N. (preprint): Global climate-related predictors at kilometre resolution for the past and future. Earth Syst. Sci. Data Discuss. https://doi.org/10.5194/essd-2022-212
+
+### Global 1-km Topography - EarthEnv
+
+http://www.earthenv.org//topography
+
+Amatulli, G., Domisch, S., Tuanmu, M.-N., Parmentier, B., Ranipeta, A., Malczyk, J., and Jetz, W. (2018) A suite of global, cross-scale topographic variables for environmental and biodiversity modeling. Scientific Data volume 5, Article number: 180040. DOI: doi:10.1038/sdata.2018.40.
+
+Amatulli, Giuseppe; Domisch, Sami; Tuanmu, Mao-Ning; Parmentier, Benoit; Ranipeta, Ajay; Malczyk, Jeremy; Jetz, Walter (2018): A suite of global, cross-scale topographic variables for environmental and biodiversity modeling, links to files in GeoTIFF format. PANGAEA, https://doi.org/10.1594/PANGAEA.867115
+
+### Copernicus Global Land Service: Land Cover 100m
+
+Links to:
+/ [Map visualization](https://lcviewer.vito.be/)
+/ [Webpage](https://land.copernicus.eu/global/documents/lc100/v2/pum)
+/ [More info](https://blog.vito.be/remotesensing/towards-mapping-annual-land-cover-changes)
+
+ Buchhorn, M. ; Smets, B. ; Bertels, L. ; Lesiv, M. ; Tsendbazar, N. - E. ; Herold, M. ; Fritz, S. Copernicus Global Land Service: Land Cover 100m: epoch 2015: Globe. Dataset of the global component of the Copernicus Land Monitoring Service 2019. DOI 10.5281/zenodo.3243509
