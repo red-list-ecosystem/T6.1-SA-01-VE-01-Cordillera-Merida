@@ -1,0 +1,104 @@
+digraph G {
+    label = "Conceptual Ecosystem Model for Tropical Glacier Ecosystems"
+    compound=true; #nodesep=1.0;
+    #rankdir="LR"
+    #layout=fdp
+    #layout=neato
+    #concentrate=True;
+    rankdir=TB;
+    #layout=twopi;
+    { node [ shape=parallelogram fontsize=8 fixedsize=true fillcolor=lightgrey style=filled]
+        IN1 [label="Bioclimatic\nvariables"]
+        IN2 [label="Snowline\nand other\nindicators"]
+        IN3 [label="Mass balance"]
+        IN4 [label="Species\ndistribution"]
+        IN5 [label="Species\nabundance\nand diversity"]
+    }
+  {
+    node [margin=0 fillcolor= lightblue3 fontcolor=black fontsize=12 width=0.5 shape= hexagon style=filled fixedsize=false]
+    AE1 [label="Snow fall"]
+    AE2 [label="Temperature"]
+    AE3 [label="Radiation"]
+    AE4 [label="Light absorbing\nparticles"]
+    AE5 [label="wind"]
+    #AE5 [label="Ice substrate"]
+    #AE6 [label="Meltwater"]
+  }
+  {
+    node [ shape=ellipse fillcolor=lightblue fontsize=12 style=filled]
+    AP1 [label="Ice accumulation"]
+    AP2 [label="Ice ablation"]
+  }
+  {
+    node [shape=rectangle fillcolor=pink style=filled ]
+    TR1 [label="Air Pollution"]
+    TR2 [label="Vulcanism"]
+    TR3 [label="Climate change"]
+  }
+  {
+    node [ shape=ellipse fillcolor=green fontsize=12 style=filled]
+    BP1 [label="Propagules"]
+    BP2 [label="Windfall "] # (nutrients and propagules)
+  }
+  {
+    node [margin=0 fillcolor="green" fontcolor=black fontsize=12 width=0.5 shape=hexagon style=filled fixedsize=false]
+    CB1 [label="Supraglacial biota"]
+    CB2 [label="Endoglacial biota"]
+    CB3 [label="Subglacial biota"]
+    CB4 [label="Proglacial water"]
+    CB5 [label="Forefield biota"]
+  }
+  subgraph clusterBio {
+      label=""
+      style="invis"
+      rank="same";
+
+    subgraph clusterIce {
+          label = "Ice" style = "dashed" pos="topright"
+        #subgraph {
+            CB1 -> CB2 -> CB3
+        #}
+    }
+    subgraph clusterMelt {
+      label = "Meltwater" style = "dashed"
+      CB4
+    }
+    subgraph {
+        CB5 IN5
+    }
+    }
+
+  subgraph clusterMB {
+      rank="same";
+      label=""
+      style="invis"
+      {AP1 AP2 IN3}
+  }
+  CB1->IN4 [ arrowhead=none ]
+
+   AP2 -> CB1 [arrowhead=dot lhead=clusterIce]
+   AP1 -> CB1 [lhead=clusterIce]
+   AP2 -> CB4 [lhead=clusterMelt]
+   IN2->IN3 [ arrowhead=none ]
+
+    BP2 -> CB1
+    CB3 -> {CB4 CB5}
+    #BP1 -> {CB2 CB3}
+    #CB1 -> BP1
+    AE5 -> {AE4 BP2 BP1}
+    BP1 -> CB5
+  TR1 -> AE4
+  TR2 -> AE2 [ style=dashed ]
+  TR2 -> AE4
+  TR2 -> AE3 [arrowhead=dot style=dashed]
+  TR3 -> {AE2 AE3} [ style=dashed ]
+  TR3 -> AE1 [arrowhead=dot style=dashed]
+  AE1 -> AP1
+  AE2 -> AP2
+  AE3 -> AP2
+  AE4 -> AP2
+
+  {AE1 AE2}->IN1->TR3 [ arrowhead=none ]
+  AP1->IN3->AP2 [arrowhead=none]
+  CB4->IN5->CB5 [arrowhead=none]
+}

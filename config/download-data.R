@@ -10,4 +10,8 @@ osf_project <- osf_retrieve_node(sprintf("https://osf.io/%s",osfid))
 project_files <- osf_ls_files(osf_project)
 osf_download(project_files, path=here::here(target.dir))
 
+unzip (here::here(target.dir,"GIS-data-VEN.zip"),
+       exdir=here::here(target.dir))
+
+
 # Done !

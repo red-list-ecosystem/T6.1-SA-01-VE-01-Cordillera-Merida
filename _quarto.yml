@@ -10,7 +10,13 @@ book:
     - index.qmd
     - part: "IUCN RLE assessment"
       chapters:
-        - assessments/Venezuela.qmd
+        - assessment/intro.qmd
+        - assessment/distribution.qmd
+        - assessment/biota.qmd
+        - assessment/abiotic.qmd
+        - assessment/processes.qmd
+        - assessment/collapse.qmd
+        - assessment/risk-assessment.qmd
     - references.qmd
   appendices:
     - sources/summary.qmd
@@ -35,3 +41,7 @@ format:
     number-depth: 2
   pdf:
     documentclass: scrreprt
+
+prefer-html: true
+  
+  

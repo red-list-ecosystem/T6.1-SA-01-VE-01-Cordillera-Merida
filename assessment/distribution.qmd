@@ -1,0 +1,168 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Spatial distribution
+
+```{r}
+#| warning: false
+#| message: false
+require(units)
+require(sf)
+require(leaflet)
+library(tmap)
+library(tmaptools)
+#library(rnaturalearth)
+library(OpenStreetMap)
+library(grid)
+library(dplyr)
+
+here::i_am("assessment/distribution.qmd")
+target.dir <- "sandbox"
+load(here::here(target.dir,"assessment-data-Cordillera-de-Merida.rda"))
+```
+
+The Tropical Glacier Ecosystem of the Cordillera de Mérida included at least five occurrences of glaciers or ice patches in the Sierra Nevada de Mérida and one in the Sierra de Santo Domingo, but is currently represented by a single ice mass in the former range.
+
+```{r}
+#| warning: false
+#| message: false
+adm0 <- read_sf(here::here(target.dir,"WB-VEN.gpkg")) %>% 
+  st_make_valid 
+slc.parks <- c("Sierra Nevada","Dr. Antonio José Uzcátegui Burguera (Sierra de la Culata)",  "Tapo - Caparo" )
+
+WDPA <- read_sf(here::here(target.dir,"PNs-Merida-WDPA.gpkg")) %>% 
+  filter(NAME %in% slc.parks) %>%
+  mutate(label=if_else(WDPAID %in% 30033,
+                       "Sierra de la Culata\nNational Park",
+                       sprintf("%s\nNational Park",NAME)))
+SNNP <- WDPA %>% filter(WDPAID %in% 321)
+
+rivers <- read_sf(here::here(target.dir,"DIVA-VEN-rivers.gpkg")) %>% 
+  filter(HYC_DESCRI %in% "Perennial/Permanent") %>% mutate(label=if_else(NAM %in% "UNK",as.character(NA),NAM))
+
+hsraster <- here::here(target.dir,"hillshade-rast.tif")
+if (!file.exists(hsraster)) {
+  msurl <- "https://services.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}"
+  osm_SNNP <- read_osm(SNNP, type= msurl,ext=1.3)
+  stars::write_stars(osm_SNNP,
+                   dsn=hsraster)
+} else {
+  osm_SNNP <- stars::read_stars(hsraster)
+}
+
+
+vzla <- {adm0 %>% filter(ISO_A2=="VE") %>%  st_cast("POLYGON") %>% slice(1) %>% st_buffer(dist=100000)}
+
+WDPA.crop <- st_crop(WDPA, bb(osm_SNNP, projection = 4326))
+
+ROI <- st_bbox(WDPA.crop %>% st_buffer(dist=4e5)) %>% st_as_sfc
+adm0 <- adm0 %>% st_crop(ROI)
+
+AOO.cell <- st_make_grid(venezuela_rgi6,
+                         cellsize=0.09044,
+                         n=c(1,1),
+                         offset=c(-71.072, 8.5)) 
+
+# AOO.cell %>% st_area %>% set_units('km2')
+
+# annotations in the map:
+adm0_xy <- {adm0 %>% st_centroid() %>% slice(1:4)}
+adm0_xy$labelsize=c(2,2,.1,.1)
+
+wbd <- data.frame(name=c("Maracaibo\nLake","Caribbean\nSea","Caribbean\nSea"),labelsize=c(0.15,0.35,0.9))
+wbd$geom <- st_sfc(st_point(c(-71.6,9.75)),st_point(c(-68,11.25)),st_point(c(-75,11.25)))
+
+ann <- data.frame(name=c("1","3","4","2"),labelsize=c(0.25,0.25,0.2,0.2))
+ann$geom <- st_sfc(st_point(c(-71.0504,8.54114)),
+                   st_point(c(-71.0001,8.54740)),
+                   st_point(c(-70.800833,8.755278)),
+                   st_point(c(-71.024722,8.541944)))
+ann <- st_as_sf(ann,crs=4326)
+```
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-map
+#| fig-cap: As this study we use 1:2 million data from the World Bank, a digital elevation model and hillshade from a map service, in combination with partial transparency  to provide geographical context. The vector layer for the protected areas is from Protected Planet.
+
+
+## tmap mode set to plotting
+tmap_mode("plot")
+
+
+main_fig <- 
+  tm_shape(osm_SNNP) +
+  tm_rgb(alpha=.6) +
+  tm_shape(rivers) +
+  tm_lines(col='cyan3',alpha=.6) +
+  tm_shape(WDPA.crop) +
+  tm_fill(col='darkgreen',alpha=.2)+
+  tm_borders(col="darkgreen") +
+  tm_text("label",size=0.8,col="black",
+          xmod=c(2,1,2), ymod=c(3,2,1)) +
+  tm_shape(AOO.cell) +
+  tm_borders(col="black") +
+  tm_shape(ann) +
+    tm_text("name",size=0.6) +
+  #tm_text("Name")+
+  tm_scale_bar() +
+  tm_graticules(n.x=4, n.y=4, labels.margin.y=0, ticks=TRUE,
+                labels.inside.frame = FALSE, lines=FALSE,
+                labels.size = 0.7)
+
+sfig1 <- 
+  tm_shape(adm0) +
+  tm_polygons(col="white",border.col="black", lwd = .5) +
+  tm_shape(adm0_xy) +
+  tm_text("NAME_EN",size="labelsize",just="center",
+          xmod=c(0,.5,0,0,1.5), ymod=c(-.7,1,-.6,-.6,-1.1)) +
+  tm_shape(st_bbox(WDPA.crop) %>% st_as_sfc) +
+  tm_fill(col="black",alpha=.6)+
+  tm_legend(show = FALSE) +
+  tm_layout(inner.margin=0,bg.color="aliceblue")
+
+
+main_fig
+print(sfig1, vp = viewport(0.8, 0.35, width = 0.4, height = 0.4))
+
+```
+
+
+Available global data of glacier extent overestimates its distribution in the Cordillera de Mérida. The Randolph Glacier Inventory version 6.0 [@RGI_2017_glacier_inventory] includes glacier outlines for the Humboldt and Bolivar Peaks shown in @fig-map. These outlines were digitised between 2000 and 2003 but do not include ground calibration and appear to overestimate the extent of the glaciers at that point in time.
+
+The changes in occurrence and extent of the glacier and ice fields in the Cordillera de Mérida have been described by @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela based on measures on the ground or estimated from cartographic and remote sensing analysis. The extent of the current single occurrence is less than 1 $km^2$ and can be seen in recent satellite imagery [@fig-sat].
+
+```{r}
+#| label: fig-sat
+#| fig-cap: Satellite image and topographic maps of Cordillera de Mérida and glacier outlines from RGI 6.0.
+#| warning: false
+
+t_lbls <- sprintf("<strong>%s</strong> (%s)",venezuela_rgi6$Name,venezuela_rgi6$RGIId) %>% lapply(htmltools::HTML)
+
+#leaflet providers:
+#OpenStreetMap.Mapnik, MapTilesAPI.OSMEnglish, Stadia.OSMBright, Thunderforest.MobileAtlas, CyclOSM
+# not available? Jawg.Terrain, Wikimedia, Stadia.Outdoors
+leaflet() %>%
+  addProviderTiles(providers$Esri.WorldImagery,group='Esri WorldImagery') %>%
+  addProviderTiles(providers$OpenStreetMap.HOT,group='OpenStreetMap') %>% # not available
+  addProviderTiles(providers$OpenTopoMap,group='OpenTopoMap') %>%
+  addPolygons(data = venezuela_rgi6 , fillColor = "red", color='darkred',
+              weight = 0.8, fillOpacity = 0.15, label=t_lbls,
+              highlightOptions = highlightOptions(weight = 2, color = 'orange'),
+              group='RGI 6.0 polygons') %>%
+  addPolygons(data = venezuela_buffer,color='black',
+              weight = 0.8,
+              group='Spatial buffer') %>%
+  addPolygons(data = AOO.cell,color='yellow',
+              weight = 0.8,
+              group='AOO grid') %>%
+  addLayersControl(
+    baseGroups = c('Esri WorldImagery','OpenStreetMap','OpenTopoMap'),
+    overlayGroups = c("RGI 6.0 polygons","AOO grid","Spatial buffer"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = "topright"
+  )  %>% hideGroup("Spatial buffer")
+```

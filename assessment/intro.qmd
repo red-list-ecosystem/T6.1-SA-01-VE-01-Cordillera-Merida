@@ -1,0 +1,36 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Unit of assessment
+
+**Ecosystem id**: T6.1-SA-01-VE-01
+
+**Assessment authors**: José R. Ferrer-Paris, Luis D. Llambi, Alejandra Melfo
+
+**Other contributors**: David Keith
+
+## Scope of the assessment
+
+This is a global and national assessment for this ecosystem unit. The assessment unit is defined in a global context but its whole distribution is contained in one country (Venezuela). Thus, the assessment outcomes will inform both global and national RLE initiatives.
+
+## Ecosystem description
+
+Tropical Glacier Ecosystems are cryogenic ecosystems in tropical environments where the main substrate is formed by ice accumulated over several years and provides different habitats to microbiological communities and other meso- and macro-biota.
+
+Tropical Glacier Ecosystems are originally formed by processes of snow and ice accumulation and ablation over geological time frames. However the characteristic microbiota can persist in the ice substrate even if processes of ice accumulation have ceased or the overall mass balance of ice is negative.
+
+The Tropical Glacier Ecosystem of the Cordillera de Mérida is geographically isolated from the nearest occurrences of Tropical Glacier Ecosystems in Colombia and has distinct bioclimatic characteristics.
+
+## Classification
+
+We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a reference ecosystem classification system and identify ***Tropical Glacier Ecosystems*** as a subgroup within the ecosystem functional group _T6.1 Ice sheets, glaciers and perennial snowfields_:
+
+IUCN Global Ecosystem Typology
+
+- Level 1: Terrestrial Realm
+  - Level 2: T6 Polar/Alpine (cryogenic) functional biome
+    - Level 3: T6.1 Ice sheets, glaciers and perennial snowfields
+      - Subgroup: Tropical Glacier Ecosystems
+      - Level 4: T6.1-SA-01-VE-01 Tropical Glacier Ecosystem of the Cordillera de Mérida

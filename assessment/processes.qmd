@@ -1,0 +1,47 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Ecosystemss processes and threats
+
+## Processes and interactions
+
+Tropical Glacier Ecosystem in the Cordillera de Mérida have a dynamic of ice accumulation and ablation influenced by precipitation (in the form of snow- or rainfall due to temperature fluctuations), temperature and solar radiation that can trigger annual and diurnal cycles of melting and freezing conditions, and the geomorphology that modulates the rate of basal melting and movement of the ice on top of the rocky substrate.
+
+
+```{r out.height="400px"}
+#| label: fig-CEM
+#| fig-cap: Conceptual Ecosystem Model for the Tropical Glacier Ecosystem of the Cordillera de Mérida
+DiagrammeR::grViz("../assets/CEM-Venezuela-TGE.gv")
+```
+
+Mass balance of the icy substrate is likely dominated by interannual fluctuations [@Andressen_2007_clima_merida; @Braun_2013_glacier_venezuela], but no quantitative studies have been conducted. Substantial reductions in precipitation and higher exposure to solar radiation are expected with El Niño–Southern Oscillation years, while high precipitations and more cloud coverage are expected during La Niña years.
+
+Deposition of light absorbing particles from the atmosphere on snow and ice can reduce glaciers surface albedo and enhance the melting process [@Gilardoni_2022_LAPs_SouthAmerica]. Concentration of black carbon in the high elevations of the Cordillera de Mérida have been linked to biomass burning in Venezuelan savannah, with higher fire activity and higher concentration following El Niño years [@Hamburger_2013_pollution_Merida].
+
+Atmospheric or aeolian deposition (windfall) provide key nutrients to the biota of the supraglacial zone [@Edwards_1987_nival_arthropods]. Nutrients and meltwater can be transported through interglacial cracks and crevasses to reach the subglacial zone, where it combines with small particles produced by rock comminution [Hotaling_2017_glacier_ecosystem].  Englacial and subglacial biota of this ecosystem are still undescribed.
+
+The role of the supra- and subglacial microbiota on the exposed glacier forefield has not been studied in the Cordillera de Mérida, but the pioneer lichen and bryophyte species might have a facilitation effect on the long-term establishment of wind-dispersed and -pollinated vascular plants [@Llambi_2021_periglacial_merida].
+
+## Threats
+
+The two main threats to the Tropical Glacier Ecosystem of the Cordillera de Mérida are climate changes and severe weather, and pollution by air borne pollutants (@tbl-threats).
+
+Reconstruction of glacier advances in the last 1500 years highlights their sensibility to natural changes in climate, and this has likely been magnified by the human influence on climate [@Polissar_2006_IceAge_Andes]. The effect of increasing temperatures and decreasing precipitations  on the venezuelan glaciers over the last decades has been discussed by @Braun_2013_glacier_venezuela. Evidence suggests that this is an ongoing threat affecting the whole distribution of the ecosystem and is likely to cause rapid declines.
+
+Although pollution by light absorbing particles could account for up to 22% of albedo reduction in parts of the tropical Andes [@Gilardoni_2022_LAPs_SouthAmerica], the effect of such pollutants in the Cordillera de Mérida have not been measured [@Hamburger_2013_pollution_Merida]. Thus the scope and severity of this threat are not known.
+
++-----------------------------------------+---------+--------------+----------------+-------------+
+| Threat classification                   | Timing  | Scope        |  Severity      | Score       |
++=========================================+=========+==============+================+=============+
+| - 9 Pollution                           | Ongoing | Unknown      | Unknown        | Unknown     |
+|   - 9.5 Air-borne pollutants            |         |              |                |             |
+|     - 9.5.4 Type Unknown/Unrecorded     |         |              |                |             |
++-----------------------------------------+---------+--------------+----------------+-------------+
+| - 11 Climate change & severe weather    | Ongoing | Whole (>90%) | Rapid declines | High Impact |
+|   - 11.1 Habitat shifting & alteration  |         |              |                |             |
+|   - 11.5 Other impacts                  |         |              |                |             |
++-----------------------------------------+---------+--------------+----------------+-------------+
+: Threats to the Tropical Glacier Ecosystem of the Cordillera de Mérida according to the IUCN Threat Classification and Threat Impact Scoring System {#tbl-threats}
+

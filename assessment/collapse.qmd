@@ -1,0 +1,24 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Collapse definition
+
+According to @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela there is historical evidence of five or six glaciers or ice patches in the Cordillera de Mérida in the last 150 years, with earliest records dating back to 1864 (from paintings) and 1886 (from scientific literature). All but one have disappeared and can be considered collapsed due to the complete absence of permanent snow or ice:
+
+- A small ice/firn field below Pico Mucuñuque (at 4609 m) at the Sierra de Santo Domingo existed at least until 1922.
+- Perennial snow and ice cover on Pico El Toro (4728 m) existed around 1900 and a small glacier remained until about 1931.
+- Pico El Leon (4750 m) had perennial snow and ice cover around 1900 but was ice free in 1910.
+- La Concha was included in measurement of glacier extent in 1910 and 1952, but it disappeared before 1990.
+- A glacier at Pico Espejo was located below Pico Bolivar and disappeared between 1936 and 1956.
+- Bolivar was included in measurement of glacier extent in 1910 and 1952 and 1998, it had a small remaining ice mass in 2011 but was not longer considered a glacier, it finally disappeared by 2017.
+- Humboldt is the only remaining glaciated area.
+
+In the cases of Pico Mucuñuque and Pico Bolívar, small remnants of ice were considered 'static' or extinct glaciers due to the absence of dynamic processes of ice accumulation. However, prospective microbiological studies in Pico Bolivar [@Rondon_2016_biota_merida, sampled ca. six years before its complete disappearance] and Pico Humboldt [@Ball_2014_biota_merida] suggest similar micro-biotas regardless of the size of the remaining ice substrate.
+
+Thus we consider that the complete disappearance of permanent snow and ice is the best indicator of collapse.
+
+Tropical glaciers are very sensitive to changes in climate, thus the evaluation of climate variables can help us infer the temporal changes in glacier conditions leading to their collapse. In the Cordillera de Mérida the equilibrium-line altitude (ELA; the elevation of the dividing line between the glacier accumulation and ablation areas) and the atmospheric freezing level height (FLH; the altitude of the 0°C isotherm) have been used as indicators of change in glacier extent [@Polissar_2006_IceAge_Andes; @Braun_2013_glacier_venezuela]. The increase in ELA or FLH reduces the available area for long-term glacier persistence, and a collapse threshold can be set according to peak height or the maximum elevation of the snow accumulation.
+
+We also use an indirect approach to project the probability of persistence of Tropical Glacier Ecosystems into the future by means of correlative models of environmental suitability (Ferrer-Paris et al. in prep.). In this case the bioclimatic conditions of areas with and without glaciers are compared using a machine learning algorithm and a probability or suitability index is produced. This index can be calibrated with existing data to find optimal classification thresholds for discriminating presence and absence of the glacier under current conditions, and the model is then used to predict future suitability. In this case, the classification threshold is assumed to represent a collapse threshold.

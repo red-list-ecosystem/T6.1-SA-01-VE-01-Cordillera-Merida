@@ -4,11 +4,11 @@ Create project and render a preview of the document:
 
 ```sh
 conda deactivate
-cd ~/proyectos/IUCN-GET-L4/
-quarto create-project T6.1-tropical-glaciers-docs --type book
-quarto render T6.1-tropical-glaciers-docs
+cd ~/proyectos/IUCN-RLE
+quarto create-project T6.1-SA-01-VE-01-Cordillera-Merida --type book
+quarto render T6.1-SA-01-VE-01-Cordillera-Merida
 
-quarto preview T6.1-tropical-glaciers-docs
+quarto preview T6.1-SA-01-VE-01-Cordillera-Merida
 ```
 
 

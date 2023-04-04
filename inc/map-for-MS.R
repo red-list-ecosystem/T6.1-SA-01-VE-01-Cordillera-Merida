@@ -73,12 +73,6 @@ tm_shape(osm_glacs) +
 data(World, metro, rivers, land)
 
 
-## tmap mode set to plotting
-adm0_xy <- {adm0 %>% st_centroid() %>% slice(1:4)}
-adm0_xy$labelsize=c(2,2,.1,.1)
-
-wbd <- data.frame(name=c("Maracaibo\nLake","Caribbean\nSea","Caribbean\nSea"),labelsize=c(0.15,0.35,0.9))
-wbd$geom <- st_sfc(st_point(c(-71.6,9.75)),st_point(c(-68,11.25)),st_point(c(-75,11.25)))
 
 
 tmap_mode("plot")

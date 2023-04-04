@@ -1,0 +1,128 @@
+digraph G {
+    #label = "Conceptual Ecosystem Model for Tropical Glacier Ecosystem of the Cordillera de Mérida"
+    compound=true; #nodesep=1.0;
+    newrank=true;
+    rankdir=LR;
+    #layout=twopi;
+  edge [color="grey"]
+    { node [ shape=octagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB1 [label="Ramirez et al.\n"]
+        PUB3 [label="Braun and Bezada\n2013"]
+        PUB4 [label="Polissar et al.\n 2006"]
+        PUB7 [label="Llambí et al.\n2021"]
+        PUB8 [label="Microbiota\nrefs"]
+    }
+    { node [ shape=doubleoctagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB2 [label="Glacier\ninventories"]
+        PUB5 [label="PyGEM / ...\nmodels" ]
+        PUB6 [label="CHELSA"]
+        
+    }
+     { node [ shape=circle fontsize=8 fixedsize=true style=filled]
+      A1 [label="CR" color=red fontcolor="white"]
+      A2 [label="CR\n(EN-CR)" color=red fontcolor="white"]
+      A3 [label="CR\n(CR-CO)" color=red fontcolor="white"]
+      B1 [label="CR" color=red fontcolor="white"]
+      B2 [label="CR" color=red fontcolor="white"]
+      B3 [label="NE" style='dashed']
+      C1 [label="CR\n(VU-CO)" color="red" fontcolor="white"]
+      C2 [label="CR\n(EN-CO)" color="red" fontcolor="white"]
+      C3 [label="EN\n(VU-CR)" color="orange"]
+      D1 [style='dashed']
+      D2 [style='dashed']
+      D3 [style='dashed']
+      E [label="CR" color=red fontcolor="white"]
+    }
+    {node [ shape=box fontsize=8 fixedsize=true fillcolor=grey style=filled]
+      data [label="Glacier\nextent\ntemp. series"]
+       pols [label="Glacier\noutlines"]
+        ELA [label="Equilibrium\nline\naltitude"]
+    FLH [label="Freeze level\nheight\n(as plotted)"]
+    mass [label="Predicted\nmass per year"]
+    FORE [label="Forefield\nsuccession"]
+    MICRO [label="Glacial microbiota"]
+    }
+    {node [ shape=box fontsize=8 fixedsize=true]
+     model [label="Generalised\nLinear\nModel"]
+     decline[label="Obs.cont.\ndecline"]
+      threat[label="threatening\nprocess"]
+      locs[label="threat\ndefined\nlocation"]
+      loess [label="digitized +\nLOESS\nregression"]
+      yoc [label="Pred.\nYear of\ncollapse"]
+      GBM [label="Gradient\nBoosting\nMachine"]
+     AOO
+     EOO
+     FOREQ1 [label="???" style=dotted]
+    MICROQ2 [label="???" style=dotted]
+    }
+    {node [ shape=egg fontsize=10 fixedsize=true style=dashed width=1.5 height=1]
+    GCM [label="Climate models"]
+    GIS [label="Cartography\nfield measurements\nand lit. review"]
+    RS [label="Remote sensing\nproducts"]
+    FIELD [label="Field\nsampling"]
+    }
+    PUB1 -> data
+    
+    data -> model
+    data -> decline
+    data -> A1 [headlabel="A1"]
+      data -> A3 [headlabel="A3"]
+    subgraph cluster_critA {
+      label="Criterion A"
+      
+      {rank="same"; A1 A2 A3}
+      model -> A2 [headlabel="A2"]
+      A1 -> A2 -> A3 [style=invis; rank="same"]
+    }
+    PUB2 -> pols -> locs
+    PUB3 -> threat
+    {pols;PUB1} -> AOO 
+    pols -> EOO 
+    subgraph cluster_critB {
+      label="Criterion B"
+      subgraph cluster_litts {
+        label=""; pencolor=invis
+        locs -> litts [style=dashed]
+        decline -> litts [style=dashed]
+        threat -> litts [style=dashed]
+        litts [label="a(i)bc"]
+      }
+      litts -> {B1;B2}
+      AOO -> B2 [headlabel="B2"]
+      EOO -> B1 [headlabel="B1"]
+      locs -> B3 [headlabel="B3" style=dotted]
+    }
+    PUB3 -> FLH -> loess
+    PUB4 -> ELA
+    ELA -> C3 [headlabel="C3"]
+    PUB6 -> GBM
+    pols -> GBM [style=dashed]
+    subgraph cluster_critC {
+      label="Criterion C"
+      loess -> C1 [headlabel="C1"]
+      GBM -> C2 [headlabel="C2"]
+      {rank="same"; C1 C2 C3}
+      
+    }
+    PUB7 -> FORE
+    PUB8 -> MICRO
+    FORE -> FOREQ1
+    MICRO -> MICROQ2
+    subgraph cluster_critD {
+      label="Criterion D"
+      MICROQ2 -> {D1} [style=dotted]
+      FOREQ1 -> {D1;D2;D3} [style=dotted]
+    }
+    PUB5 -> mass -> yoc
+     pols -> PUB5 [style=dashed]
+    subgraph cluster_critE {
+      label="Criterion E" pos="bottom"
+      yoc -> E
+    }
+    GCM -> {PUB6;PUB3;PUB5}
+    RS -> {PUB1;PUB2}
+    GIS -> {PUB1;PUB3;PUB4}
+    FIELD -> {PUB7;PUB8}
+    PUB1 -> PUB7 [style=dotted]
+  {rank="same"; A1 A2 A3 B1 B2 B3 D1 D2 D3 C1 C2 C3 E}
+}
