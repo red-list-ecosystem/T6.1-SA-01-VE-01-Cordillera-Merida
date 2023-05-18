@@ -4,8 +4,12 @@ project:
 book:
   title: "Tropical Glacier Ecosystem of the Cordillera de Mérida"
   subtitle: "IUCN Red List of Ecosystem assessment"
-  author: "José R. Ferrer-Paris"
-  date: "2022-10-03"
+  author: 
+    - "José R. Ferrer-Paris"
+    - "Luis D. Llambí"
+    - "Alejandra Melfo" 
+    - "David A. Keith"
+  date: "2023-05-03"
   chapters:
     - index.qmd
     - part: "IUCN RLE assessment"
