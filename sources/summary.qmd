@@ -1,6 +1,6 @@
 # Data sources
 
-This is a list of the data sources used for the global assessment of Tropical Glacier Ecosystems.
+This is a list of the data sources used for the global assessment of Tropical glacier ecosystems.
 
 ## Overview
 

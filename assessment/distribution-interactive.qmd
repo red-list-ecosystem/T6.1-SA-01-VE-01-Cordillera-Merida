@@ -10,6 +10,7 @@ editor_options:
 #| message: false
 require(units)
 require(sf)
+require(leaflet)
 library(tmap)
 library(tmaptools)
 #library(rnaturalearth)
@@ -132,4 +133,36 @@ print(sfig1, vp = viewport(0.8, 0.35, width = 0.4, height = 0.4))
 
 Available global data of glacier extent overestimates its distribution in the Cordillera de Mérida. The Randolph Glacier Inventory version 6.0 [@RGI_2017_glacier_inventory] includes glacier outlines for the Humboldt and Bolivar Peaks shown in @fig-map. These outlines were digitised between 2000 and 2003 but do not include ground calibration and appear to overestimate the extent of the glaciers at that point in time.
 
-The changes in occurrence and extent of the glacier and ice fields in the Cordillera de Mérida have been described by @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela based on measures on the ground or estimated from cartographic and remote sensing analysis. The extent of the current single occurrence is less than 1 $km^2$. 
+The changes in occurrence and extent of the glacier and ice fields in the Cordillera de Mérida have been described by @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela based on measures on the ground or estimated from cartographic and remote sensing analysis. The extent of the current single occurrence is less than 1 $km^2$ and can be seen in recent satellite imagery [@fig-sat].
+
+```{r}
+#| label: fig-sat
+#| fig-cap: Satellite image and topographic maps of Cordillera de Mérida and glacier outlines from RGI 6.0.
+#| warning: false
+
+t_lbls <- sprintf("<strong>%s</strong> (%s)",venezuela_rgi6$Name,venezuela_rgi6$RGIId) %>% lapply(htmltools::HTML)
+
+#leaflet providers:
+#OpenStreetMap.Mapnik, MapTilesAPI.OSMEnglish, Stadia.OSMBright, Thunderforest.MobileAtlas, CyclOSM
+# not available? Jawg.Terrain, Wikimedia, Stadia.Outdoors
+leaflet() %>%
+  addProviderTiles(providers$Esri.WorldImagery,group='Esri WorldImagery') %>%
+  addProviderTiles(providers$OpenStreetMap.HOT,group='OpenStreetMap') %>% # not available
+  addProviderTiles(providers$OpenTopoMap,group='OpenTopoMap') %>%
+  addPolygons(data = venezuela_rgi6 , fillColor = "red", color='darkred',
+              weight = 0.8, fillOpacity = 0.15, label=t_lbls,
+              highlightOptions = highlightOptions(weight = 2, color = 'orange'),
+              group='RGI 6.0 polygons') %>%
+  addPolygons(data = venezuela_buffer,color='black',
+              weight = 0.8,
+              group='Spatial buffer') %>%
+  addPolygons(data = AOO.cell,color='yellow',
+              weight = 0.8,
+              group='AOO grid') %>%
+  addLayersControl(
+    baseGroups = c('Esri WorldImagery','OpenStreetMap','OpenTopoMap'),
+    overlayGroups = c("RGI 6.0 polygons","AOO grid","Spatial buffer"),
+    options = layersControlOptions(collapsed = FALSE),
+    position = "topright"
+  )  %>% hideGroup("Spatial buffer")
+```

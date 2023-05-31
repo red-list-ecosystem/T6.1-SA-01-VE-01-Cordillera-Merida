@@ -96,28 +96,28 @@ This is a global and national assessment for this ecosystem unit. The assessment
 
 ## Ecosystem description
 
-Tropical Glacier Ecosystems are cryogenic ecosystems in tropical environments where the main substrate is formed by ice accumulated over several years and provides different habitats to microbiological communities and other meso- and macro-biota.
+Tropical glacier ecosystems are cryogenic ecosystems in tropical environments where the main substrate is formed by ice accumulated over several years and provides different habitats to microbiological communities and other meso- and macro-biota.
 
-Tropical Glacier Ecosystems are originally formed by processes of snow and ice accumulation and ablation over geological time frames. However the characteristic microbiota can persist in the ice substrate even if processes of ice accumulation have ceased or the overall mass balance of ice is negative.
+Tropical glacier ecosystems are originally formed by processes of snow and ice accumulation and ablation over geological time frames. However the characteristic microbiota can persist in the ice substrate even if processes of ice accumulation have ceased or the overall mass balance of ice is negative.
 
-The Tropical Glacier Ecosystem of the Cordillera de Mérida is geographically isolated from the nearest occurrences of Tropical Glacier Ecosystems in Colombia and has distinct bioclimatic characteristics.
+The Tropical glacier ecosystem of the Cordillera de Mérida is geographically isolated from the nearest occurrences of Tropical glacier ecosystems in Colombia and has distinct bioclimatic characteristics.
 
 ## Classification
 
-We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a reference ecosystem classification system and identify ***Tropical Glacier Ecosystems*** as a subgroup within the ecosystem functional group _T6.1 Ice sheets, glaciers and perennial snowfields_:
+We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a reference ecosystem classification system and identify ***Tropical glacier ecosystems*** as a subgroup within the ecosystem functional group _T6.1 Ice sheets, glaciers and perennial snowfields_:
 
 IUCN Global Ecosystem Typology
 
 - Level 1: Terrestrial Realm
   - Level 2: T6 Polar/Alpine (cryogenic) functional biome
     - Level 3: T6.1 Ice sheets, glaciers and perennial snowfields
-      - Subgroup: Tropical Glacier Ecosystems
-      - Level 4: T6.1-SA-01-VE-01 Tropical Glacier Ecosystem of the Cordillera de Mérida
+      - Subgroup: Tropical glacier ecosystems
+      - Level 4: T6.1-SA-01-VE-01 Tropical glacier ecosystem of the Cordillera de Mérida
 
 
 ## Spatial distribution
 
-The Tropical Glacier Ecosystem of the Cordillera de Mérida included at least five occurrences of glaciers or ice patches in the Sierra Nevada de Mérida and one in the Sierra de Santo Domingo, but is currently represented by a single ice mass in the former range.
+The Tropical glacier ecosystem of the Cordillera de Mérida included at least five occurrences of glaciers or ice patches in the Sierra Nevada de Mérida and one in the Sierra de Santo Domingo, but is currently represented by a single ice mass in the former range.
 
 Available global data of glacier extent overestimates its distribution in the Cordillera de Mérida. The Randolph Glacier Inventory version 6.0 [@RGI_2017_glacier_inventory] includes glacier outlines for the Humboldt and Bolivar Peaks shown in @fig-map. These outlines were digitised between 2000 and 2003 but do not include ground calibration and appear to overestimate the extent of the glaciers at that point in time.
 
@@ -154,7 +154,7 @@ leaflet() %>%
 
 ## Characteristic biota
 
-Tropical Glacier Ecosystems have five main ecological zones [@Hotaling_2017_glacier_ecosystem]: the supraglacial surfaces, englacial interior, subglacial bedrock–ice interface, proglacial streams and lakes and glacier forefields. The few available ecological studies on the Cordillera de Mérida have focused on some elements of the supraglacial surfaces and the vegetation succession in the glacier forefield, while sediments and pollen of proglacial lakes have been studied to reconstruct paleoclimates and do not provide information on their biota  [@Polissar_2006_IceAge_Andes, @Stansell_2014_ProglacialLakes_Merida].
+Tropical glacier ecosystems have five main ecological zones [@Hotaling_2017_glacier_ecosystem]: the supraglacial surfaces, englacial interior, subglacial bedrock–ice interface, proglacial streams and lakes and glacier forefields. The few available ecological studies on the Cordillera de Mérida have focused on some elements of the supraglacial surfaces and the vegetation succession in the glacier forefield, while sediments and pollen of proglacial lakes have been studied to reconstruct paleoclimates and do not provide information on their biota  [@Polissar_2006_IceAge_Andes, @Stansell_2014_ProglacialLakes_Merida].
 
 ### Supraglacial surfaces
 
@@ -170,13 +170,13 @@ The areas exposed in the last 10 years show a strong dominance of lichenized fun
 
 ## Abiotic environment
 
-The Tropical Glacier Ecosystem of the Cordillera de Mérida belong to the inner tropics subregion according to @Sagredo_2012_climatology_andes. Glaciers in this region are exposed to annual and diurnal variation in temperature, but diurnal temperature variability far exceeds yearly differences in monthly mean temperatures (less than 3°C between the coldest and the warmest month). Precipitation can occur throughout the year, but it can often be in the form of rain due to temperature fluctuations.
+The Tropical glacier ecosystem of the Cordillera de Mérida belong to the inner tropics subregion according to @Sagredo_2012_climatology_andes. Glaciers in this region are exposed to annual and diurnal variation in temperature, but diurnal temperature variability far exceeds yearly differences in monthly mean temperatures (less than 3°C between the coldest and the warmest month). Precipitation can occur throughout the year, but it can often be in the form of rain due to temperature fluctuations.
 
 Current annual precipitation at the highest elevations in the Sierra Nevada de Mérida is estimated to be 1,000 to 1,200 mm with high interannual variability [@Ramirez_2020_glacier_Venezuela].  The dry period extends between December and March, when the influence of the northeastern trade winds predominates [@Andressen_2007_clima_merida]. Hence, both rainfall and snowfall concentrate during the wet season, with snow increasing in frequency with elevation above c. 4,000 m  In this region the interannual mass balance variability is more likely to be controlled by year-to-year temperature variations rather than seasonal variation. Dry periods with significant reductions in precipitation are associated with El Niño–Southern Oscillation years [@RodriguezMorales_2019_hydrology_merida, @Andressen_2007_clima_merida].
 
 Both precipitation and temperature decrease with elevation in the study area from 1,811 mm mean annual precipitation and 7.1°C mean temperature at La Aguada cable car station (3,446 m) to 1,173 mm and −0.4°C in the highest station where records are available in the country (4,766 m). Mean temperature decreases 0.63°C for every 100 m increase in elevation  [@Azocar_2003_Paramos_Venezuela]. However variability between years can lead to large differences in published summaries [see @Pulwarty_1998_precipitation_Merida].
 
-We used global datasets of interpolated climatic variables and time series of remote sensing products to compare the climatic conditions of different Tropical Glacier Ecosystems around the world. Methods and spatial resolution (pixel size from 500 m to 5 km) of the datasets means that estimated values are not directly comparable to field measurements and can not provide rigorous mass balance insights, but they allow to compare relative differences in the climate of each glacier site [@Sagredo_2012_climatology_andes].
+We used global datasets of interpolated climatic variables and time series of remote sensing products to compare the climatic conditions of different Tropical glacier ecosystems around the world. Methods and spatial resolution (pixel size from 500 m to 5 km) of the datasets means that estimated values are not directly comparable to field measurements and can not provide rigorous mass balance insights, but they allow to compare relative differences in the climate of each glacier site [@Sagredo_2012_climatology_andes].
 
 @fig-climatogram shows how climatogram based on historical data [@Monasterio_1980_Clima_Merida] compared to climatograms estimated from time series of remote sensing data at different locations [@Funk_2015_CHIRPS_descriptor; @Wan_2015_LST_data].
 
@@ -350,12 +350,12 @@ ylab("Precipitation from CHIRPS+ [mm]")+ xlab("Year")
 
 ## Processes and interactions
 
-Tropical Glacier Ecosystem in the Cordillera de Mérida have a dynamic of ice accumulation and ablation influenced by precipitation (in the form of snow- or rainfall due to temperature fluctuations), temperature and solar radiation that can trigger annual and diurnal cycles of melting and freezing conditions, and the geomorphology that modulates the rate of basal melting and movement of the ice on top of the rocky substrate.
+Tropical glacier ecosystem in the Cordillera de Mérida have a dynamic of ice accumulation and ablation influenced by precipitation (in the form of snow- or rainfall due to temperature fluctuations), temperature and solar radiation that can trigger annual and diurnal cycles of melting and freezing conditions, and the geomorphology that modulates the rate of basal melting and movement of the ice on top of the rocky substrate.
 
 
 ```{r out.height="800px"}
 #| label: fig-CEM
-#| fig-cap: Conceptual Ecosystem Model for the Tropical Glacier Ecosystem of the Cordillera de Mérida
+#| fig-cap: Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida
 DiagrammeR::grViz("../assets/graphviz/CEM-Venezuela-TGE.gv")
 ```
 
@@ -369,7 +369,7 @@ The role of the supra- and subglacial microbiota on the exposed glacier forefiel
 
 ## Threats
 
-The two main threats to the Tropical Glacier Ecosystem of the Cordillera de Mérida are climate changes and severe weather, and pollution by air borne pollutants (@tbl-threats).
+The two main threats to the Tropical glacier ecosystem of the Cordillera de Mérida are climate changes and severe weather, and pollution by air borne pollutants (@tbl-threats).
 
 Reconstruction of glacier advances in the last 1500 years highlights their sensibility to natural changes in climate, and this has likely been magnified by the human influence on climate [@Polissar_2006_IceAge_Andes]. The effect of increasing temperatures and decreasing precipitations  on the venezuelan glaciers over the last decades has been discussed by @Braun_2013_glacier_venezuela. Evidence suggests that this is an ongoing threat affecting the whole distribution of the ecosystem and is likely to cause rapid declines.
 
@@ -386,7 +386,7 @@ Although pollution by light absorbing particles could account for up to 22% of a
 |   - 11.1 Habitat shifting & alteration  |         |              |                |             |
 |   - 11.5 Other impacts                  |         |              |                |             |
 +-----------------------------------------+---------+--------------+----------------+-------------+
-: Threats to the Tropical Glacier Ecosystem of the Cordillera de Mérida according to the IUCN Threat Classification and Threat Impact Scoring System {#tbl-threats}
+: Threats to the Tropical glacier ecosystem of the Cordillera de Mérida according to the IUCN Threat Classification and Threat Impact Scoring System {#tbl-threats}
 
 ## Collapse definition
 
@@ -406,7 +406,7 @@ Thus we consider that the complete disappearance of permanent snow and ice is th
 
 Tropical glaciers are very sensitive to changes in climate, thus the evaluation of climate variables can help us infer the temporal changes in glacier conditions leading to their collapse. In the Cordillera de Mérida the equilibrium-line altitude (ELA; the elevation of the dividing line between the glacier accumulation and ablation areas) and the atmospheric freezing level height (FLH; the altitude of the 0°C isotherm) have been used as indicators of change in glacier extent [@Polissar_2006_IceAge_Andes; @Braun_2013_glacier_venezuela]. The increase in ELA or FLH reduces the available area for long-term glacier persistence, and a collapse threshold can be set according to peak height or the maximum elevation of the snow accumulation.
 
-We also use an indirect approach to project the probability of persistence of Tropical Glacier Ecosystems into the future by means of correlative models of environmental suitability (Ferrer-Paris et al. in prep.). In this case the bioclimatic conditions of areas with and without glaciers are compared using a machine learning algorithm and a probability or suitability index is produced. This index can be calibrated with existing data to find optimal classification thresholds for discriminating presence and absence of the glacier under current conditions, and the model is then used to predict future suitability. In this case, the classification threshold is assumed to represent a collapse threshold.
+We also use an indirect approach to project the probability of persistence of Tropical glacier ecosystems into the future by means of correlative models of environmental suitability (Ferrer-Paris et al. in prep.). In this case the bioclimatic conditions of areas with and without glaciers are compared using a machine learning algorithm and a probability or suitability index is produced. This index can be calibrated with existing data to find optimal classification thresholds for discriminating presence and absence of the glacier under current conditions, and the model is then used to predict future suitability. In this case, the classification threshold is assumed to represent a collapse threshold.
 
 ## Risk assessment
 
@@ -511,7 +511,7 @@ calc_decline(totals,start=1,end=7) %>% rename(`S.E.`="error")%>% rename_with(~st
 
 Reconstruction of the historical evolution of glaciers in South America suggests that the maximum glacial extent in Venezuela occurred around the year 1730 and glaciers retreated continuously in the following centuries with only minor readvances around 1760, 1820 and 1880 [@Jomelli_2009_glacier_history,Polissar_2006_IceAge_Andes]. Thus we can assume that the observed decline between 1910 and the present represents a lower bound of the total decline between 1750 and the present.
 
-For subcriterion A3 we can assume that the historical decline in extent is >99 %, thus the Tropical Glacier Ecosystems of the Cordillera de Merida are considered **Critically Endangered** with high risk of imminent Collapse: CR (CR-CO).
+For subcriterion A3 we can assume that the historical decline in extent is >99 %, thus the Tropical glacier ecosystems of the Cordillera de Merida are considered **Critically Endangered** with high risk of imminent Collapse: CR (CR-CO).
 
 
 ### Criterion B
@@ -623,7 +623,7 @@ The subcriterion C1 is assessed as **Critically Endangered** with a plausible ra
 
 #### Subcriterion C2
 
-For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical Glacier Ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical Glacier Ecosystems in all the tropics. Details of the model fitting and validation process are in preparation (Ferrer-Paris et al. MS), brief summary follows.
+For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical glacier ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical glacier ecosystems in all the tropics. Details of the model fitting and validation process are in preparation (Ferrer-Paris et al. MS), brief summary follows.
 
 Occurrence records were selected using stratified random sampling from all the glacier outlines in tropical areas and 25 km distance buffers around glacier outlines. We applied a first partition of the data by withhold the occurrence records of the target assessment unit for final model evaluation of prediction performance of the model (target partition) and the rest of the occurrence records were used for model fitting (modeling partition). Random subsets of the modeling partition were divided in calibration (80%) and test partitions (20%) for tuning of model parameters (number of trees, interaction depth, shrinkage and minimum number of observations per node) using cross validation.
 
@@ -795,7 +795,7 @@ Criterion E is evaluated as **Critically Endangered**.
 
 ## Assessment outcome
 
-The Tropical Glacier Ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
+The Tropical glacier ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
 
 All criteria with sufficient data indicate the highest level of threat from historical (A1, A3, C1), present (A2b, B1 and B2) and future (C2a, E) processes.
 

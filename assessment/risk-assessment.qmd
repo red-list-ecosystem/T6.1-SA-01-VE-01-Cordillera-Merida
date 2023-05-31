@@ -29,6 +29,8 @@ here::i_am("assessment/distribution.qmd")
 target.dir <- "sandbox"
 load(here::here(target.dir,"assessment-data-Cordillera-de-Merida.rda"))
 load(here::here(target.dir,"gbm-model-Cordillera-de-Merida.rda"))
+load(here::here(target.dir,"mb-year-collapse-Cordillera-de-Merida.rda"))
+rslts <- readRDS(here::here(target.dir,"gbm-RS-Cordillera-de-Merida.rds"))
 ```
 
 ```{r}
@@ -144,7 +146,7 @@ calc_decline(totals,start=1,end=7) %>% rename(`S.E.`="error")%>% rename_with(~st
 
 Reconstruction of the historical evolution of glaciers in South America suggests that the maximum glacial extent in Venezuela occurred around the year 1730 and glaciers retreated continuously in the following centuries with only minor readvances around 1760, 1820 and 1880 [@Jomelli_2009_glacier_history,Polissar_2006_IceAge_Andes]. Thus we can assume that the observed decline between 1910 and the present represents a lower bound of the total decline between 1750 and the present.
 
-For subcriterion A3 we can assume that the historical decline in extent is >99 %, thus the Tropical Glacier Ecosystems of the Cordillera de Merida are considered **Critically Endangered** with high risk of imminent Collapse: CR (CR-CO).
+For subcriterion A3 we can assume that the historical decline in extent is >99 %, thus the Tropical glacier ecosystems of the Cordillera de Merida are considered **Critically Endangered** with high risk of imminent Collapse: CR (CR-CO).
 
 
 ## Criterion B
@@ -232,13 +234,13 @@ Relative severity was calculated as 67 and 100 % (observed decline higher than m
 
 The subcriterion C1 is assessed as **Critically Endangered** with a plausible range from **Vulnerable** to **Collapsed**: *CR (VU-CO)*.
 
-### Subcriterion C2
+### Subcriterion C2a
 
-For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical Glacier Ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical Glacier Ecosystems in all the tropics. Details of the model fitting and validation process are in preparation (Ferrer-Paris et al. MS), brief summary follows.
+For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical glacier ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical glacier ecosystems in all the tropics. Details of the model fitting and validation process are in preparation [@ferrer-paris_describing_nodate], brief summary follows.
 
 Occurrence records were selected using stratified random sampling from all the glacier outlines in tropical areas and 25 km distance buffers around glacier outlines. We applied a first partition of the data by withhold the occurrence records of the target assessment unit for final model evaluation of prediction performance of the model (target partition) and the rest of the occurrence records were used for model fitting (modeling partition). Random subsets of the modeling partition were divided in calibration (80%) and test partitions (20%) for tuning of model parameters (number of trees, interaction depth, shrinkage and minimum number of observations per node) using cross validation.
 
-We used 19 bioclimatic variables from the CHELSA dataset representing climatological mean values for present conditions (1981-2010) as predictor variables. Eight variables were excluded from the model due to high correlation to other variables. Variables were centered and scaled to zero mean and unit variance.
+We used 19 bioclimatic variables from the CHELSA dataset representing climatological mean values for present conditions (1981-2010) as predictor variables. Variables were centered and scaled to zero mean and unit variance.
 
 We fitted the GBM model for classification (two classes: glacier or not-glacier) using a bernoulli error distribution, and evaluated the predictive performance of the final model on the target partition:
 
@@ -248,58 +250,78 @@ We fitted the GBM model for classification (two classes: glacier or not-glacier)
 #model
 # plot(model)
 
-test.features = testing %>% dplyr::select(bio10_01:bio10_19)
+test.features = testing %>% dplyr::select(starts_with("bio"))
 test.target = testing %>% pull(glacier)
 predictions = predict(model, newdata = test.features, type='prob')
 
 e1 <- evaluate(predictions$G[test.target=="G"],predictions$G[test.target=="N"])
 
-#e1
+e1
 # par(las=2)
 #summary(model)
 
 ```
 
-We used the final fitted model to predict the suitability in the present timeframe (1981-2010) and future timeframes (2011-2040 and 2041-2071). We considered uncertainty due to climate change projections (five general circulation models and three representative pathways), and due to the choice of cut-off values to classify predicted suitability into binary score (glacier/non-glacier):
+We used the final fitted model to predict the suitability in the present timeframe (1981-2010) and future timeframes (2011-2040 and 2041-2071). We considered uncertainty due to climate change projections (five general circulation models and three representative pathways), and due to the choice of optimal cut-off values of the confusion matrix of observed classes  (glacier/non-glacier) vs. predicted suitability score. We selected thresholds of maximum accuracy (acc) and equal sensitivity and specificity (ess).
 
-- modeled prevalence is closest to observed prevalence
-- maximum sum of the sensitivity (true positive rate) and specificity (true negative rate),
-- equal sensitivity and specificity
-
-We summarised the outcomes for each combination of models, pathways and cut-off values and calculated relative severity of each outcome in two ways.
-
-First we counted the number of raster cells classified as glacier using each cut-off value, in this case the initial value was three cells and the collapse threshold is zero cells [@fig-C2a; upper panels]. Both extreme outcomes are equally likely, either all cells remain (**Least Concern**) or all cells disappear (**Critically Endangered**).
-
-Next we estimated relative severity by comparing the predicted suitability to the cut-off value [@fig-C2a; lower panels]. Here we assume that the predicted suitability represent the initial and final value and the cut-off value represents the collapse threshold (transition from Glacier to Non-glacier class). We then calculated the mean relative severity of all cells for each combination:
+We summarised the outcomes for each combination of models, pathways and cut-off values and calculated relative severity for each of the three cells overlapping with current glacier outlines (@fig-C2a). Here we assume that the predicted suitability represent the initial and final value and the cut-off value represents the collapse threshold (transition from Glacier to Non-glacier class). 
 
 ```{r}
 #| label: fig-C2a
-#| fig-cap: Outcome of model projections for two future timeframes considering five general circulation models three representative pathways and three collapse thresholds. Upper panels show frequency of the number of cells classified as glacier, lower panels show the calculated mean relative severity.
+#| fig-cap: Outcome of model projections for two future timeframes considering five general circulation models three representative pathways and two collapse thresholds. 
 #| warning: false
 
 rslts <- rslts %>% mutate(
   pathway=str_replace(pathway,"[ssp]+([0-9])([0-9])([0-9])","SSP\\1-\\2.\\3")
-  )
+  ) %>% filter(threshold %in% c("acc","ess")) # ppv == acc in this case
 
-fig_data <- filter(rslts,modelname!="observed",timeframe %in% c("2011-2040","2041-2070")) 
+fig_data <- filter(rslts, timeframe %in% c("2011-2040","2041-2070")) 
 
-figa <- ggplot(fig_data) +
-  geom_histogram(aes(x=predCells,fill=pathway),bins = 4) + facet_wrap(timeframe~.) + xlab("Nr. of cells") + ylab("Frequency") + theme(legend.position = "none")
+ ggplot(fig_data) + 
+   geom_point(aes(y = RS_cor, x = pathway, colour = threshold)) +
+   facet_grid(timeframe~modelname) + 
+   theme(legend.position = "top") + 
+   xlab("Pathways") + 
+   ylab("Relative Severity")
 
-figb <- ggplot(rslts %>% filter(!is.na(pathway),timeframe %in% c("2011-2040","2041-2070"))) + geom_boxplot(aes(y=meanRS,x=pathway,colour=pathway)) + facet_wrap(timeframe~.) + theme(legend.position = "none") + xlab("Pathways") + ylab("Mean Relative Severity")
-
-ggarrange(figa, figb, ncol = 1, nrow = 2)
 
 ```
 
 ```{r}
 #| echo: false
 # rslts %>% filter(modelname!="observed",timeframe %in% c("2011-2040","2041-2070")) %>% mutate(RS=(3-predCells)/3) %>% pull(RS) %>% table
+fig_data <- rslts %>% 
+  filter(timeframe %in% c("2011-2040","2041-2070")) %>%
+  group_by(modelname,pathway,timeframe,threshold) %>% 
+  summarise(n=n(),
+            RSa=mean(RS_cor),
+            ED30=mean(RS_cor>0.3),
+            ED50=mean(RS_cor>0.5),
+            ED80=mean(RS_cor>0.8),
+            cat_mean=case_when(
+              RSa>=0.8 ~ "CR",
+              RSa>=0.5 ~ "EN",
+              RSa>=0.3 ~ "VU",
+              TRUE ~ "LC"
+            ),
+            cat=case_when(
+              ED80>.8 ~ "CR",
+              ED80>.5 ~ "EN",
+              ED50>.8 ~ "EN",
+              ED80>.3 ~ "VU",
+              ED50>.5 ~ "VU",
+              ED30>.8 ~ "VU",
+              TRUE ~ "LC"
+            ))
 
-qs <- round(quantile(rslts %>% filter(!is.na(pathway),timeframe %in% c("2011-2040","2041-2070")) %>% pull(meanRS),p=c(0.95,0.9,0.5,0.1,0.05)) * 100,1)
+##table(fig_data$timeframe, fig_data$cat,fig_data$threshold)
+table(fig_data$timeframe,fig_data$cat_mean,fig_data$threshold)
+
+
+qs <- round(quantile(fig_data$RSa,c(0.05,.5,.95))*100,1)
 ```
 
-The best estimate of mean relative severity across all predictions is `r qs[3]` % with a 90% confidence interval of `r qs[5]` to `r qs[1]`%.
+The best estimate of mean relative severity across all predictions is `r qs[2]` % with a 90% confidence interval of `r qs[1]` to `r qs[3]`%.
 
 The subcriterion C2a is assessed as **Critically Endangered** with a plausible bound of **Endangered** to **Collapsed**: CR (EN-CO)
 
@@ -338,24 +360,20 @@ The values used here are the output values (ice mass \pm median absolute deviati
 #| fig-cap: Estimated ice mass in Megatonnes for all glacier outlines of the Cordillera de Mérida for each shared socioeconomic pathways. 
 #| warning: false
 
-plot_data <- {massbalance_results %>% 
-    mutate(scn=str_replace(scn,"[ssp]+([0-9])([0-9])([0-9])","SSP\\1-\\2.\\3"),
-           mass=set_units(mass,'kg') %>% 
-             set_units("Mt"),
-           mad=set_units(mad,'kg') %>% 
-             set_units("Mt")) %>% 
+plot_data <- {mbdata %>% 
+    filter(!ssp %in% "SSP1-1.9") %>%
     drop_units() %>% 
-    group_by(year,scn,model_nr) %>% 
-    summarise(mean_mass=sum(mass,na.rm=T),
-              max_mass=sum(mass+mad,na.rm=T),
-              min_mass=sum(mass-mad,na.rm=T))}
+    group_by(year,ssp,model_nr) %>% 
+    summarise(mean_mass=sum(total_mass,na.rm=T),
+              max_mass=sum(max_mass,na.rm=T),
+              min_mass=sum(min_mass,na.rm=T))}
 
 ggplot(data=plot_data, aes(x=year,y=mean_mass)) +
   geom_errorbar(aes(ymin=min_mass, ymax=max_mass), width=.2,
                  position=position_dodge(.9),
                 alpha=.5,col="gray") +
-	 geom_point(aes(colour=scn),cex=.5) +
-	 facet_wrap(.~scn) +
+	 geom_point(aes(colour=ssp),cex=.5) +
+	 facet_wrap(.~ssp) +
   ylab("Projected annual mass of ice [Mt]") +
   xlab("Year") + 
   theme(legend.position = "none")
@@ -369,22 +387,14 @@ We use these mass projections to estimate the year of collapse (first year when 
 #| fig-cap: ECDF (empirical cumulative distribution function) plot of year of collapse for all models (black line) and for each shared socioeconomic pathways (SSP, labeled lines).
 #| warning: false
 
-plot_data <- massbalance_results %>% 
-    mutate(
-      ssp=str_replace(scn,"[ssp]+([0-9])([0-9])([0-9])","SSP\\1-\\2.\\3"),
-      non_collapsed=if_else(mass>0,year,2000),
-           max_non_collapsed=if_else(mass+mad>0,year,2000),
-           min_non_collapsed=if_else(mass-mad>0,year,2000)) %>% 
-    group_by(ssp,model_nr) %>% 
-    summarise(collapse_year=max(non_collapsed,na.rm=T)+1,
-              max_collapse_year=max(max_non_collapsed,na.rm=T)+1,
-              min_collapse_year=max(min_non_collapsed,na.rm=T)+1,)
+ycdata <- ycdata %>% 
+    filter(!ssp %in% "SSP1-1.9")
 
-label_xy <- tibble(ssp=unique(plot_data$ssp),
-                   x=c(2025, 2085, 2080, 2085, 2055), 
-                   y=c(.7,.55,.91,.99,.91))
+label_xy <- tibble(ssp=unique(ycdata$ssp),
+                   x=c(2085, 2080, 2085, 2055), 
+                   y=c(.55,.91,.99,.91))
 
-ggplot(data=plot_data) +
+ggplot(data=ycdata) +
 #  geom_histogram(aes(x=collapse_year,fill=scn)) +
   stat_ecdf(aes(x=collapse_year,color = ssp,linetype = ssp), 
               geom = "step") +
@@ -398,13 +408,13 @@ ggplot(data=plot_data) +
 
 ```
 
-Focusing on the 50 year time frame between 2020 and 2070 we find that `r sprintf("%0.1f %%", ecdf(plot_data$collapse_year)(2070)*100)` of the models end in collapse. Uncertainty in mass estimates (mean absolute deviation) do not have a major effect on the estimated year of collapse. Considering each scenarios separately, the proportion of models that predict collapse by 2070 is higher than 50% (threshold for CR) in all cases, except for scenario SSP1-2.6.
+Focusing on the 50 year time frame between 2020 and 2070 we find that `r sprintf("%0.1f %%", ecdf(ycdata$collapse_year)(2070)*100)` of the models end in collapse. Uncertainty in mass estimates (mean absolute deviation) do not have a major effect on the estimated year of collapse. Considering each scenarios separately, the proportion of models that predict collapse by 2070 is higher than 50% (threshold for CR) in all cases, except for scenario SSP1-2.6.
 
 Criterion E is evaluated as **Critically Endangered**.
 
 # Assessment outcome
 
-The Tropical Glacier Ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
+The Tropical glacier ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
 
 All criteria with sufficient data indicate the highest level of threat from historical (A1, A3, C1), present (A2b, B1 and B2) and future (C2a, E) processes.
 

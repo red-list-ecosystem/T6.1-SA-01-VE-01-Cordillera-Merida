@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Tropical Glacier Ecosystem of the Cordillera de Mérida"
+  title: "Tropical glacier ecosystem of the Cordillera de Mérida"
   subtitle: "IUCN Red List of Ecosystem assessment"
   author: 
     - "José R. Ferrer-Paris"
@@ -16,11 +16,6 @@ book:
       chapters:
         - assessment/intro.qmd
         - assessment/distribution.qmd
-        - assessment/biota.qmd
-        - assessment/abiotic.qmd
-        - assessment/processes.qmd
-        - assessment/collapse.qmd
-        - assessment/risk-assessment.qmd
     - references.qmd
   appendices:
     - sources/summary.qmd
@@ -34,6 +29,7 @@ book:
 bibliography: 
   - bibTeX/references.bib
   - bibTeX/glacier-assessments.bib
+  - bibTeX/additional-refs.bib
 csl: bibTeX/oryx.csl
 
 execute:
@@ -43,7 +39,9 @@ format:
   html:
     theme: cosmo
     number-depth: 2
+  pdf: 
+    documentclass: scrreprt
+    fontfamily: libertinus
 
 prefer-html: true
-  
   

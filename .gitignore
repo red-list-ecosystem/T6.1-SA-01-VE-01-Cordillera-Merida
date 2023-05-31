@@ -4,3 +4,5 @@
 /old/
 sandbox/
 .Rproj.user
+.Rhistory
+*-test.*
