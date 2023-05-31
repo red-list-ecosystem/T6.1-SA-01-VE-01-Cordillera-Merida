@@ -23,3 +23,9 @@ Download:
 https://download.oracle.com/java/20/latest/jdk-20_macos-aarch64_bin.dmg
 
 and Install
+
+## Install MacTeX
+
+
+## PDF output
+Cannot use graphviz directly, will need to transform with dot into a static PNG or SVG.

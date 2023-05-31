@@ -45,6 +45,8 @@ Current annual precipitation at the highest elevations in the Sierra Nevada de M
 
 Both precipitation and temperature decrease with elevation in the study area from 1,811 mm mean annual precipitation and 7.1°C mean temperature at La Aguada cable car station (3,446 m) to 1,173 mm and −0.4°C in the highest station where records are available in the country (4,766 m). Mean temperature decreases 0.63°C for every 100 m increase in elevation  [@Azocar_2003_Paramos_Venezuela]. However variability between years can lead to large differences in published summaries [see @Pulwarty_1998_precipitation_Merida].
 
+## Climatic conditions in the area of assessment
+
 We used global datasets of interpolated climatic variables and time series of remote sensing products to compare the climatic conditions of different Tropical glacier ecosystems around the world. Methods and spatial resolution (pixel size from 500 m to 5 km) of the datasets means that estimated values are not directly comparable to field measurements and can not provide rigorous mass balance insights, but they allow to compare relative differences in the climate of each glacier site [@Sagredo_2012_climatology_andes].
 
 @fig-climatogram shows how climatogram based on historical data [@Monasterio_1980_Clima_Merida] compared to climatograms estimated from time series of remote sensing data at different locations [@Funk_2015_CHIRPS_descriptor; @Wan_2015_LST_data].
@@ -145,7 +147,7 @@ Humboldt <- ggplot(RSdata %>%
 
 ```
 
-### Bioclimatic conditions in regional context
+## Bioclimatic conditions in regional context
 
 We characterised the 25 km spatial buffers around the glacier outlines of the Cordillera de Merida and the two nearest tropical glacier ecosystem units in the Sierra Nevada de Santa Marta and the Sierra Nevada del Cocuy (Colombia). We extracted the mean values of 19 bioclimatic variables, snow days and frost change frequency (fcf) for the period 1979-2013 based on the CHELSA dataset [ @Karger_2017_CHELSA_descriptor; @Karger_2018_CHELSA_data ].
 

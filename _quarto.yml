@@ -12,10 +12,13 @@ book:
   date: "2023-05-03"
   chapters:
     - index.qmd
-    - part: "IUCN RLE assessment"
-      chapters:
-        - assessment/intro.qmd
-        - assessment/distribution.qmd
+    - assessment/intro.qmd
+    - assessment/distribution.qmd
+    - assessment/biota.qmd
+    - assessment/abiotic.qmd
+    - assessment/processes.qmd
+    - assessment/collapse.qmd
+    - assessment/risk-assessment.qmd
     - references.qmd
   appendices:
     - sources/summary.qmd

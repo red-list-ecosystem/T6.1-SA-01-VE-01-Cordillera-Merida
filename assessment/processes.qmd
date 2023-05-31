@@ -10,11 +10,12 @@ editor_options:
 Tropical glacier ecosystem in the Cordillera de Mérida have a dynamic of ice accumulation and ablation influenced by precipitation (in the form of snow- or rainfall due to temperature fluctuations), temperature and solar radiation that can trigger annual and diurnal cycles of melting and freezing conditions, and the geomorphology that modulates the rate of basal melting and movement of the ice on top of the rocky substrate.
 
 
-```{r out.height="400px"}
-#| label: fig-CEM
-#| fig-cap: Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida
-DiagrammeR::grViz("../assets/CEM-Venezuela-TGE.gv")
-```
+::: {#fig-CEM}
+
+![](../sandbox/CEM-TGE-CdM.png)
+
+Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida
+:::
 
 Mass balance of the icy substrate is likely dominated by interannual fluctuations [@Andressen_2007_clima_merida; @Braun_2013_glacier_venezuela], but no quantitative studies have been conducted. Substantial reductions in precipitation and higher exposure to solar radiation are expected with El Niño–Southern Oscillation years, while high precipitations and more cloud coverage are expected during La Niña years.
 

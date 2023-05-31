@@ -25,25 +25,20 @@ This is a list of the data sources used for the global assessment of Tropical gl
 The [Randolph Glacier Inventory](https://www.glims.org/RGI/), version 6.0 has global coverage [@RGI_2017_glacier_inventory].
 The data was downloaded from http://www.glims.org/RGI/rgi60_dl.html, our use here follows the [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf).
 
-We also used the Global Land Ice Measurements from Space ([GLIMS](http://www.glims.org/)) glacier database
+We also considered the Global Land Ice Measurements from Space ([GLIMS](http://www.glims.org/)) glacier database
 
 > Raup, B.H.; A. Racoviteanu; S.J.S. Khalsa; C. Helm; R. Armstrong; Y. Arnaud (2007).  "The GLIMS Geospatial Glacier Database: a New Tool for Studying Glacier Change".  Global and Planetary Change 56:101--110. (doi:10.1016/j.gloplacha.2006.07.018)
 
 > GLIMS and NSIDC (2005, updated 2019): Global Land Ice Measurements from Space glacier database.  Compiled and made available by the international GLIMS community and the National Snow and Ice Data Center, Boulder CO, U.S.A.  DOI:10.7265/N5V98602
 
-### Inventario Nacional de Glaciares - Argentina
+For the study region both RGI and GLIMS have the same information about glacier outlines.
 
-https://www.glaciaresargentinos.gob.ar/
-
-> Zalazar, L., Ferri, L., Castro, M., Gargantini, H., Gimenez, M., Pitte, P., . . . Villalba, R. (2020). Spatial distribution and characteristics of Andean ice masses in Argentina: Results from the first National Glacier Inventory. Journal of Glaciology, 66(260), 938-949. doi:10.1017/jog.2020.55
-
->  IANIGLA-Inventario Nacional de Glaciares. 2018. Resumen ejecutivo de los resultados del Inventario Nacional de Glaciares. IANIGLA-CONICET, Ministerio de Ambiente y Desarrollo Sustentable de la Nación. Pp. 27.
+## Additional GIS data
 
 ### GMBA mountain inventory V1.2
 
 GMBA mountain inventory_V1.2 data is available at: https://ilias.unibe.ch/goto_ilias3_unibe_cat_1000515.html
 
-#### Citation
 > Körner C, Jetz W, Paulsen J, Payne D, Rudmann-Maurer K, Spehn EM (2017) A global inventory of mountains for bio-geographical applications. Alpine Botany 127(1): 1-15, DOI: 10.1007/s00035-016-0182-6 and the dataset DOI: 10.7892/boris.106896
 > Körner C, Paulsen J, Spehn E (2011) A definition of mountains and their bioclimatic belts for global comparisons of biodiversity data. Alpine Botany 121(2): 73-78 and the dataset DOI: 10.7892/boris.83486.
 
@@ -53,31 +48,9 @@ GMBA mountain inventory_V1.2 data is available at: https://ilias.unibe.ch/goto_i
 
 RESOLVE (2017) ecoregions available at https://ecoregions2017.appspot.com, see also the [documentation](https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017). @Dinerstein_2017_TEOW
 
-### Holocene Volcano List
 
-Download data from
-https://volcano.si.edu/list_volcano_holocene.cfm
-
-#### Citation
-
-@Venzke_2013_Volcano_List
-
-### Species distribution data from GBIF
-
-For the Glacier Finch (White-winged Diuca-Finch), Idiopsar speculifer (d'Orbigny & Lafresnaye, 1837):
-GBIF.org (05 January 2022) GBIF Occurrence Download  https://doi.org/10.15468/dl.w3dzkt
-GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.r2jgb5
-
-For the White-fronted Ground-Tyrant, Muscisaxicola albifrons (Tschudi, 1844):
-GBIF.org (05 January 2022) GBIF Occurrence Download  https://doi.org/10.15468/dl.9q4pgm
-GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.psn2w3
-
-Aves in custom polygon:
-GBIF.org (22 August 2022) GBIF Occurrence Download https://doi.org/10.15468/dl.g3s43q
 
 ### Glacier thickness database
-
-#### Citation
 
 > GlaThiDa Consortium (2020): Glacier Thickness Database 3.1.0. World Glacier Monitoring Service, Zurich, Switzerland. DOI: 10.5904/wgms-glathida-2020-10
 

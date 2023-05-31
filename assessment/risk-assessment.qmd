@@ -144,7 +144,7 @@ The decline between the oldest and the most recent estimates of extent in @tbl-e
 calc_decline(totals,start=1,end=7) %>% rename(`S.E.`="error")%>% rename_with(~str_replace_all(.x,"_"," ")) %>% knitr::kable()
 ```
 
-Reconstruction of the historical evolution of glaciers in South America suggests that the maximum glacial extent in Venezuela occurred around the year 1730 and glaciers retreated continuously in the following centuries with only minor readvances around 1760, 1820 and 1880 [@Jomelli_2009_glacier_history,Polissar_2006_IceAge_Andes]. Thus we can assume that the observed decline between 1910 and the present represents a lower bound of the total decline between 1750 and the present.
+Reconstruction of the historical evolution of glaciers in South America suggests that the maximum glacial extent in Venezuela occurred around the year 1730 and glaciers retreated continuously in the following centuries with only minor readvances around 1760, 1820 and 1880 [@Jomelli_2009_glacier_history;@Polissar_2006_IceAge_Andes]. Thus we can assume that the observed decline between 1910 and the present represents a lower bound of the total decline between 1750 and the present.
 
 For subcriterion A3 we can assume that the historical decline in extent is >99 %, thus the Tropical glacier ecosystems of the Cordillera de Merida are considered **Critically Endangered** with high risk of imminent Collapse: CR (CR-CO).
 
