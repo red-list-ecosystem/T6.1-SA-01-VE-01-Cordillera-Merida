@@ -1,0 +1,10 @@
+# Graphical overview of data, analysis and results
+
+Figure @fig-overview represent the different datasources (dashed shapes), references representing local measures (simple octagons) and global datasets (double octagons), and the main data inputs (shaded boxes) and analysis steps (clear boxes and ovals) for each criterion of the IUCN Red List of Ecosystems protocol. Results for each criterion or subcriterion are indicated with coloured circles and category abbreviations.
+
+::: {#fig-overview}
+
+![](../sandbox/Graphical-assessment-summary.png)
+
+Data sources, steps of analysis and results of the IUCN RLE assessment
+:::

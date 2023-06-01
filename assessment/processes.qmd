@@ -3,7 +3,7 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-# Ecosystemss processes and threats
+# Ecosystem processes and threats
 
 ## Processes and interactions
 
@@ -12,7 +12,7 @@ Tropical glacier ecosystem in the Cordillera de Mérida have a dynamic of ice ac
 
 ::: {#fig-CEM}
 
-![](../sandbox/CEM-TGE-CdM.png)
+![](../sandbox/CEM-Venezuela-TGE.png)
 
 Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida
 :::
@@ -23,7 +23,7 @@ Deposition of light absorbing particles from the atmosphere on snow and ice can 
 
 Atmospheric or aeolian deposition (windfall) provide key nutrients to the biota of the supraglacial zone [@Edwards_1987_nival_arthropods]. Nutrients and meltwater can be transported through interglacial cracks and crevasses to reach the subglacial zone, where it combines with small particles produced by rock comminution [@Hotaling_2017_glacier_ecosystem].  Englacial and subglacial biota of this ecosystem are still undescribed.
 
-The role of the supra- and subglacial microbiota on the exposed glacier forefield has not been studied in the Cordillera de Mérida, but the pioneer lichen and bryophyte species might have a facilitation effect on the long-term establishment of wind-dispersed and -pollinated vascular plants [@Llambi_2021_periglacial_merida].
+The role of the supra- and subglacial microbiota on the exposed glacier forefield is currently understudy in the Cordillera de Mérida. The pioneer lichen and bryophyte species might have a facilitation effect on the long-term establishment of wind-dispersed and -pollinated vascular plants [@Llambi_2021_periglacial_merida].
 
 ## Threats
 

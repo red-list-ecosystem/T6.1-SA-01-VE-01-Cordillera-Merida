@@ -47,7 +47,7 @@ source(here::here("inc","functions.R"))
 
 ## Criterion A
 
-Cartographic estimates of glacier extent were reviewed by @Ramirez_2020_glacier_Venezuela for three peaks in the Cordillera de Mérida (Concha, Bolívar and Humboldt). For this assessment we added the values of these three peaks and calculated their standard errors (@tbl-extent).
+Cartographic estimates of glacier extent were reviewed by @Ramirez_2020_glacier_Venezuela for three peaks in the Cordillera de Mérida (Bolívar, Concha and Humboldt, @fig-map). For this assessment we added the values of these three peaks and calculated their standard errors (@tbl-extent).
 
 ```{r}
 #| label: tbl-extent
@@ -121,7 +121,7 @@ cf2 <- coef(mod2)
 cf2.int <- confint(mod2, level=0.9)
 ```
 
-A model fitted using all observations from 1910 onwards suggests a large proportional rate of decline (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f",cf1[2],cf1.int[2,1],cf1.int[2,2])`, @fig-A2b; left panel), but the most recent observation clearly deviate from the expected values (@fig-A2b; right panel). Another model fitted only to the most recent observations (1998 onwards), predicts a more pronounced decline, but it overestimates values before 1998 and has very narrow confidence intervals due to the small number of observations used  (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f", cf2[2], cf2.int[2,1], cf2.int[2,2])`).
+A model fitted using all observations from 1910 onwards suggests a large proportional rate of decline (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f",cf1[2],cf1.int[2,1],cf1.int[2,2])`, @fig-A2b; left panel), but the most recent observation clearly deviate from the expected values (@fig-A2b; right panel, see @Ramirez_2020_glacier_Venezuela). Another model fitted only to the most recent observations (1998 onwards), predicts a more pronounced decline, but it overestimates values before 1998 and has very narrow confidence intervals due to the small number of observations used  (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f", cf2[2], cf2.int[2,1], cf2.int[2,2])`).
 
 The clear recent acceleration of the rate of decline makes it difficult to fit a consistent model with so few observations [@Ramirez_2020_glacier_Venezuela], but given the very rapid decline of the glacier in the Bolívar Peak between 1998 and 2017, and the comparable size of the Humboldt glacier at the time of the last measurement (0.045 $km^2$ by 2019) it is reasonable to expect that it would disappear completely in the next 20-30 years.
 
@@ -177,13 +177,13 @@ raw.grid %>%  st_sf(layer=1:length(raw.grid),
 
 ```
 
-The extent of occurrence (EOO) was calculated as the area of the convex hull around the glacier outlines from the RGI 6.0 database. The EOO for the outline corresponding to the Humboldt Peak is `r {VEN %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% max %>% round(3)}` $km^2$ and for all outlines together including the collapsed glaciers is `r {VEN %>% st_union %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% round(3)}` $km^2$. Both estimates are below the threshold of 20000 $km^2$.
+The extent of occurrence (EOO) was calculated as the area of the convex hull around the glacier outlines from the RGI 6.0 database [RGI_2017_glacier_inventory]. The EOO for the outline corresponding to the Humboldt Peak is `r {VEN %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% max %>% round(3)}` $km^2$ and for all outlines together including the collapsed glaciers and other associated areas (proglacial waters and glacier forefield) is `r {VEN %>% st_union %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% round(3)}` $km^2$. Both estimates are below the threshold of 20000 $km^2$.
 
 The ecosystem is **Critically Endangered** under subcriterion B1a(i)bc
 
 ### Subriterion B2
 
-All occurrences (extant and collapsed) occupy one 10x10 km cell.
+The main occurrences of known glaciers (extant and collapsed; but excluding the historical occurrence of Mucuñuque peak) occupy one 10x10 km cell [@fig-map]. This cell very likely contains all occurrences of associated habitats with connected microbiota (proglacial waters and glacier forefield).
 
 The ecosystem is **Critically Endangered** under subcriterion B2a(i)bc
 
@@ -268,7 +268,7 @@ We summarised the outcomes for each combination of models, pathways and cut-off 
 
 ```{r}
 #| label: fig-C2a
-#| fig-cap: Outcome of model projections for two future timeframes considering five general circulation models three representative pathways and two collapse thresholds. 
+#| fig-cap: "Outcome of model projections for two future timeframes considering five general circulation models, three representative pathways, and two collapse thresholds (acc: maximum accuracy; ess: equal sensitivity and specificity)."
 #| warning: false
 
 rslts <- rslts %>% mutate(
@@ -289,6 +289,7 @@ fig_data <- filter(rslts, timeframe %in% c("2011-2040","2041-2070"))
 
 ```{r}
 #| echo: false
+#| results: hide
 # rslts %>% filter(modelname!="observed",timeframe %in% c("2011-2040","2041-2070")) %>% mutate(RS=(3-predCells)/3) %>% pull(RS) %>% table
 fig_data <- rslts %>% 
   filter(timeframe %in% c("2011-2040","2041-2070")) %>%
@@ -302,8 +303,7 @@ fig_data <- rslts %>%
               RSa>=0.8 ~ "CR",
               RSa>=0.5 ~ "EN",
               RSa>=0.3 ~ "VU",
-              TRUE ~ "LC"
-            ),
+              TRUE ~ "LC"),
             cat=case_when(
               ED80>.8 ~ "CR",
               ED80>.5 ~ "EN",
@@ -312,7 +312,8 @@ fig_data <- rslts %>%
               ED50>.5 ~ "VU",
               ED30>.8 ~ "VU",
               TRUE ~ "LC"
-            ))
+            ), 
+            .groups='keep')
 
 ##table(fig_data$timeframe, fig_data$cat,fig_data$threshold)
 table(fig_data$timeframe,fig_data$cat_mean,fig_data$threshold)
@@ -339,7 +340,7 @@ Subcriterion C3 is assessed as **Endangered** with a plausible bound from **Vuln
 
 ## Criterion D
 
-The biota of this assessment unit is poorly known, and there is no direct information on temporal changes in microbial communities in the different habitats after the loss of the ice substrate. 
+The biota of this assessment unit is poorly known, and there is no direct information on temporal changes in microbial communities in the different habitats after the loss of the ice substrate. Data collected at Humboldt peak in 2019 and 2021 may shed light on this issue. Analysis is still underway (Huber et al. in prep.).
 
 The study of the glacier forefield at Humboldt peak provide a post-glacial chronosequence: vascular vegetation is already present after 10 years of the glacier retreat, and soil properties change significantly after 21 and 60 years [@Llambi_2021_periglacial_merida]. 
 
@@ -352,6 +353,8 @@ We use ice mass balance projections for the glacier of the Cordillera de Mérida
 According to the published methods [@Rounce_2023_MassBalance_Global]:
 
 > The model computes the climatic mass balance (i.e., snow accumulation minus melt plus refreezing) for each surface elevation bin using a monthly time step. The model computes glacier melt using a degree-day model, accumulation using a temperature threshold, and refreezing based on the annual air temperature. Glacier geometry is updated annually using a flowline model based on the Shallow-Ice Approximation to explicitly account for glacier dynamics using a density of 900 kg m-3 for converting mass to volume. 
+
+This hybrid model is applied to all glaciers in the world independently, using globally available datasets of glacier outlines [RGI_2017_glacier_inventory], glacier-wide geodetic mass balance data and regional ice volume estimates for calibration [@farinotti_consensus_2019; @hugonnet_accelerated_2021]. In the case of small regions with no direct measurements (like the Cordillera de Mérida) the model uses initial estimates of ice volume based on digital elevation models and most likely overestimates initial mass, making the projections very conservative [@Rounce_2023_MassBalance_Global]. 
 
 The values used here are the output values (ice mass \pm median absolute deviation) of the model for the four glacier outlines of the Randolph Glacier Inventory for the cordillera de Mérida downloaded from @Rounce_2022_MassBalance_Global_Data and presented in @fig-Ea. These values clearly overestimate the existing ice mass but we focus the analysis on the point of collapse and not on the mass value _per se_.
 

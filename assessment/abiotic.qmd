@@ -68,7 +68,8 @@ LomaRedonda <- ggplot(LomaRedondaCD) +
   geom_bar(aes(x=Month, y=Precip),stat="identity", fill = "skyblue") +
   geom_line(aes(x=Month,y = a + Temp*b,group=1), colour = "orangered",lwd=2) +
   scale_y_continuous("Precipitation [mm]", sec.axis = sec_axis(~ (. - a)/b, name = "Temperature [°C]")) +
-    ggtitle("Loma Redonda station")
+    ggtitle("Loma Redonda station") +
+  scale_x_discrete(labels=substr(month.abb,0,1))
 
 
 #load("../Rdata/RS-at-climate-station.rda")
@@ -98,6 +99,7 @@ PicoEspejo <- ggplot(RSdata %>%  drop_units) +
      geom_line(aes(x=monthn,y = a + mean_temp*b,group=1), colour = "orangered",lwd=2,alpha=.7) +
      scale_y_continuous("CHIRPS+ [mm]", sec.axis = sec_axis(~ (. - a)/b, name = "Modis LST [°C]"),limits=c(0,NA)) +
   xlab("Month") +
+  scale_x_discrete(labels=substr(month.abb,0,1)) +
     ggtitle("Pico Espejo")
 
 
@@ -130,6 +132,7 @@ Bolivar <- ggplot(RSdata %>%
                      geom_line(aes(x=monthn,y = a + mean_temp*b,group=1), colour = "orangered",lwd=2,alpha=.7) +
                         scale_y_continuous("CHIRPS+ [mm]", sec.axis = sec_axis(~ (. - a)/b, name = "Modis LST [°C]"),limits=c(0,NA)) +
       xlab("Month") +
+  scale_x_discrete(labels=substr(month.abb,0,1)) +
         ggtitle("Pico Bolivar")
 
 Humboldt <- ggplot(RSdata %>%
@@ -140,6 +143,7 @@ Humboldt <- ggplot(RSdata %>%
      geom_line(aes(x=monthn,y = a + mean_temp*b,group=1), colour = "orangered",lwd=2,alpha=.7) +
       scale_y_continuous("CHIRPS+ [mm]", sec.axis = sec_axis(~ (. - a)/b, name = "Modis LST [°C]"),limits=c(0,NA)) +
       xlab("Month") +
+  scale_x_discrete(labels=substr(month.abb,0,1)) +
         ggtitle("Pico Humboldt")
 
 

@@ -1,0 +1,39 @@
+
+# Data sources
+
+Details of the data sources used in the IUCN Red List of Ecosystem assessment of the tropical glacier ecosystem of the Cordillera de Merida.
+
+## Glacier inventories
+
+The [Randolph Glacier Inventory](https://www.glims.org/RGI/), version 6.0 has global coverage [@RGI_2017_glacier_inventory]. We used following links for [data download](http://www.glims.org/RGI/rgi60_dl.html) and [user guidelines](http://www.glims.org/RGI/00_rgi60_TechnicalNote.pdf).
+
+We also considered the Global Land Ice Measurements from Space ([GLIMS](http://www.glims.org/)) glacier database [@raup_glims_2007; @glims_consortium_glims_0]
+
+For the study region both RGI and GLIMS have the same information about glacier outlines.
+
+## Glacier extent measurements
+
+All measures of extent of glacier ice come from the published work of @Ramirez_2020_glacier_Venezuela.
+
+## Climatic data
+
+- For description of current climatic mean conditions in the study region we used:
+  - Climatic data for one climate station digitised from a published climadiagram in @Azocar_2003_Paramos_Venezuela.
+  - Two remote sensing time series: Modis Land Surface Temperature data [@Wan_2015_LST_data] and CHIRPS monthly precipitation data [@Funk_2015_CHIRPS_descriptor].
+
+- For spatial analysis we used interpolated surfaces of bioclimatic variables from Chelsa: https://chelsa-climate.org/exchelsa-extended-bioclim/ [@Karger_2017_CHELSA_descriptor]
+
+ 
+## General GIS data for data exploration and visualisation
+
+For data exploration and visualisation we used following layers:
+
+- GMBA mountain inventory [version 1.2](https://ilias.unibe.ch/goto_ilias3_unibe_cat_1000515.html) [@spehn_gmba_2011; @korner_global_2017]
+
+- [RESOLVE terrestrial ecoregions](https://ecoregions2017.appspot.com), see also the [documentation](https://developers.google.com/earth-engine/datasets/catalog/RESOLVE_ECOREGIONS_2017) [@Dinerstein_2017_TEOW]
+
+- Global 1-km Topography from [EarthEnv](http://www.earthenv.org//topography) [@amatulli_giuseppe_suite_2018;@amatulli_suite_2018]
+
+- Copernicus Global Land Service, Land Cover 100m. Links to: [map visualization](https://lcviewer.vito.be/), [webpage](https://land.copernicus.eu/global/documents/lc100/v2/pum) and [more info](https://blog.vito.be/remotesensing/towards-mapping-annual-land-cover-changes) [@buchhorn_copernicus_2019].
+
+- World Database of Protected Areas at [protectedplanet.net](http://www.protectedplanet.net) [@WDPA]

@@ -21,7 +21,8 @@ book:
     - assessment/risk-assessment.qmd
     - references.qmd
   appendices:
-    - sources/summary.qmd
+    - appendix/summary.qmd
+    - appendix/sources.qmd
   page-footer:
     left: "Created by: JR Ferrer-Paris"
     right:

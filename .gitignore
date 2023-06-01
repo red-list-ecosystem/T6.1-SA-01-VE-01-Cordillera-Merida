@@ -6,3 +6,4 @@ sandbox/
 .Rproj.user
 .Rhistory
 *-test.*
+.DS_Store

@@ -85,8 +85,7 @@ ann <- st_as_sf(ann,crs=4326)
 #| warning: false
 #| message: false
 #| label: fig-map
-#| fig-cap: As this study we use 1:2 million data from the World Bank, a digital elevation model and hillshade from a map service, in combination with partial transparency  to provide geographical context. The vector layer for the protected areas is from Protected Planet.
-
+#| fig-cap: "Map of the study area in the Cordillera de Mérida, Venezuela. This assessment focuses in three glaciated peaks: (1) Bolívar, (2) La Concha, and (3) Humboldt. These peaks and other historically glaciated areas are encompassed in a single 10x10 km cell (indicated by a square, area of occupancy=1). The isolated Mucuñuque peak at 4609m (4) lost its ice before 1930."
 
 ## tmap mode set to plotting
 tmap_mode("plot")
@@ -101,7 +100,7 @@ main_fig <-
   tm_fill(col='darkgreen',alpha=.2)+
   tm_borders(col="darkgreen") +
   tm_text("label",size=0.8,col="black",
-          xmod=c(2,1,2), ymod=c(3,2,1)) +
+          xmod=c(2,1,2), ymod=c(3,2,1)-.7) +
   tm_shape(AOO.cell) +
   tm_borders(col="black") +
   tm_shape(ann) +
@@ -130,6 +129,6 @@ print(sfig1, vp = viewport(0.8, 0.35, width = 0.4, height = 0.4))
 ```
 
 
-Available global data of glacier extent overestimates its distribution in the Cordillera de Mérida. The Randolph Glacier Inventory version 6.0 [@RGI_2017_glacier_inventory] includes glacier outlines for the Humboldt and Bolivar Peaks shown in @fig-map. These outlines were digitised between 2000 and 2003 but do not include ground calibration and appear to overestimate the extent of the glaciers at that point in time.
+Available global data of glacier extent overestimates its distribution in the Cordillera de Mérida. The Randolph Glacier Inventory version 6.0 [@RGI_2017_glacier_inventory] includes glacier outlines for the Humboldt, La Concha and Bolivar Peaks shown in @fig-map. These outlines were digitised between 2000 and 2003 but do not include ground calibration and appear to overestimate the extent of the glaciers at that point in time.
 
 The changes in occurrence and extent of the glacier and ice fields in the Cordillera de Mérida have been described by @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela based on measures on the ground or estimated from cartographic and remote sensing analysis. The extent of the current single occurrence is less than 1 $km^2$. 
