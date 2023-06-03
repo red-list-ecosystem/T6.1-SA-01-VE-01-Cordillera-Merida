@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: _output
+
+book:
+  title: "Tropical glacier ecosystem of the Cordillera de Mérida"
+  subtitle: "IUCN Red List of Ecosystem assessment"
+  author: 
+    - "José R. Ferrer-Paris"
+    - "Luis D. Llambí"
+    - "Alejandra Melfo" 
+    - "David A. Keith"
+  date: "2023-05-03"
+  chapters:
+    - index.qmd
+    - ../assessment/intro.qmd
+    - ../assessment/distribution.qmd
+
+bibliography: 
+  - ../bibTeX/references.bib
+  - ../bibTeX/glacier-assessments.bib
+  - ../bibTeX/additional-refs.bib
+csl: ../bibTeX/oryx.csl
+
+execute:
+  echo: false
+
+format:
+  pdf: 
+    documentclass: scrreprt
+    fontfamily: libertinus
+
+  
