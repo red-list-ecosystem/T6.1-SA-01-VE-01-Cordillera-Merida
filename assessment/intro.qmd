@@ -1,9 +1,10 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 ---
 # Unit of assessment
+
+**Ecosystem name**: Tropical glacier ecosystem of the Cordillera de Mérida
 
 **Ecosystem id**: T6.1-SA-01-VE-01 (preliminary ID)
 

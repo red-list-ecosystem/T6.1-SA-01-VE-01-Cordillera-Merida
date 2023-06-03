@@ -1,0 +1,13 @@
+# Abstract {.unnumbered}
+
+This document uses the IUCN Red List of Ecosystems guidelines to diagnose the collapse of the **Tropical glacier ecosystems of the Cordillera de Mérida** in Venezuela.
+
+Tropical glaciers are rapidly disappearing, particularly in isolated mountain peaks and lower elevations. These glaciers are fundamental substrates for unique cryogenic ecosystems in tropical environments where the ice, melting water and rocky substrate sustain microbiological communities and other meso- and macro-biota. 
+
+The [IUCN Red List of Ecosystems](https://iucnrle.org) assessment protocol provides a valuable framework for comparative analysis of threatened ecosystems. We undertook the assessment with existing data derived from field observations and samples, literature review, cartographic reconstruction, remote sensing products and climatic models, and complemented these with additional statistical analysis and modelling to calculate and predict rates of decline and relative severity of degradation. 
+
+The evidence suggests an extreme risk of collapse ([Critically Endangered](https://iucnrle.org/rle-categ-and-criteria)) due to prolonged and acute declines in ice extent and changes in climatic conditions that are leading towards a complete loss of ice mass. The biotic compartments of the glacial ecosystem will consequently be lost, with ice loss also initiating a decades-long succession of forefield vegetation. Even the most optimistic climate change projections are unlikely to prevent imminent ecosystem collapse in this region. 
+
+This assessment is summarised in a manuscript currently under review.
+
+

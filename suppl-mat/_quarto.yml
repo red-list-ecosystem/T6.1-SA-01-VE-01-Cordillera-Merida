@@ -1,10 +1,11 @@
 project:
   type: book
   output-dir: _output
+  
 
 book:
-  title: "Tropical glacier ecosystem of the Cordillera de Mérida"
-  subtitle: "IUCN Red List of Ecosystem assessment"
+  title: "IUCN Red List of Ecosystem assessment: Tropical glacier ecosystem of the Cordillera de Mérida"
+  subtitle: "Supplementary material to: First Red List of Ecosystems assessment of a tropical glacier ecosystem to diagnose the pathways toward imminent collapse"
   author: 
     - "José R. Ferrer-Paris"
     - "Luis D. Llambí"
@@ -15,19 +16,28 @@ book:
     - index.qmd
     - ../assessment/intro.qmd
     - ../assessment/distribution.qmd
+    - ../assessment/biota.qmd
+    - ../assessment/abiotic.qmd
+    - ../assessment/processes.qmd
+    - ../assessment/collapse.qmd
+    - ../assessment/risk-assessment.qmd
+    - ../references.qmd
 
+number-depth: 2
+top-level-division: section
 bibliography: 
   - ../bibTeX/references.bib
   - ../bibTeX/glacier-assessments.bib
   - ../bibTeX/additional-refs.bib
 csl: ../bibTeX/oryx.csl
+toc-depth: 2
 
 execute:
   echo: false
 
 format:
   pdf: 
-    documentclass: scrreprt
+    documentclass: scrartcl
     fontfamily: libertinus
 
   
