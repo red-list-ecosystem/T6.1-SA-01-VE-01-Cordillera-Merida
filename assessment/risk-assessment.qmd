@@ -242,7 +242,18 @@ Occurrence records were selected using stratified random sampling from all the g
 
 We used 19 bioclimatic variables from the CHELSA dataset representing climatological mean values for present conditions (1981-2010) as predictor variables [@Karger_2017_CHELSA_descriptor]. Variables were centered and scaled to zero mean and unit variance.
 
-We fitted the GBM model for classification (two classes: glacier or not-glacier) using a bernoulli error distribution, and evaluated the predictive performance of the final model on the target partition:
+We fitted the GBM model for classification (two classes: glacier or not-glacier) using a bernoulli error distribution. The best performing model had following parameters:
+
+```{r}
+model$bestTune
+```
+
+And predictive performance on the training dataset:
+```{r}
+model$results[which.max(model$results$ROC),5:10]
+```
+
+We also evaluated the predictive performance of the final model on the Cordillera de Merida:
 
 ```{r}
 #| echo: false
@@ -254,9 +265,15 @@ test.features = testing %>% dplyr::select(starts_with("bio"))
 test.target = testing %>% pull(glacier)
 predictions = predict(model, newdata = test.features, type='prob')
 
+dat <- data.frame(obs=test.target,
+           pred = predict(model, newdata = test.features)) %>% 
+  bind_cols(predictions)
+
 e1 <- evaluate(predictions$G[test.target=="G"],predictions$G[test.target=="N"])
 
-e1
+
+twoClassSummary(data=dat,lev=c("G","N"))
+#e1
 # par(las=2)
 #summary(model)
 
