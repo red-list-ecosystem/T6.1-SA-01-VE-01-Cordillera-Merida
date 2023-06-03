@@ -155,8 +155,8 @@ Spatial data is sufficient for estimation of extent of occurrence (EOO) and area
 
 For the assessment of subcriteria B1 and B2 we considered that three conditions are met:
 
-- there is an observed continuing decline in spatial extent,
-- these is an inferred threatening process that is likely to cause continuing declines in geographic distribution within the next 20 years, and
+- there is an observed continuing decline in spatial extent [@Ramirez_2020_glacier_Venezuela],
+- there is an inferred threatening process that is likely to cause continuing declines in geographic distribution within the next 20 years [@Braun_2013_glacier_venezuela], and
 - the ecosystem exists at only one threat-defined location.
 
 ### Subcriterion B1
@@ -177,7 +177,7 @@ raw.grid %>%  st_sf(layer=1:length(raw.grid),
 
 ```
 
-The extent of occurrence (EOO) was calculated as the area of the convex hull around the glacier outlines from the RGI 6.0 database [RGI_2017_glacier_inventory]. The EOO for the outline corresponding to the Humboldt Peak is `r {VEN %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% max %>% round(3)}` $km^2$ and for all outlines together including the collapsed glaciers and other associated areas (proglacial waters and glacier forefield) is `r {VEN %>% st_union %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% round(3)}` $km^2$. Both estimates are below the threshold of 20000 $km^2$.
+The extent of occurrence (EOO) was calculated as the area of the convex hull around the glacier outlines from the RGI 6.0 database [@RGI_2017_glacier_inventory]. The EOO for the outline corresponding to the Humboldt Peak is `r {VEN %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% max %>% round(3)}` $km^2$ and for all outlines together including the collapsed glaciers and other associated areas (proglacial waters and glacier forefield) is `r {VEN %>% st_union %>% st_convex_hull() %>% st_area %>% set_units('km^2') %>% round(3)}` $km^2$. Both estimates are below the threshold of 20000 $km^2$.
 
 The ecosystem is **Critically Endangered** under subcriterion B1a(i)bc
 
@@ -240,7 +240,7 @@ For Criterion C we analysed the potential effect of climate change on the suitab
 
 Occurrence records were selected using stratified random sampling from all the glacier outlines in tropical areas and 25 km distance buffers around glacier outlines. We applied a first partition of the data by withhold the occurrence records of the target assessment unit for final model evaluation of prediction performance of the model (target partition) and the rest of the occurrence records were used for model fitting (modeling partition). Random subsets of the modeling partition were divided in calibration (80%) and test partitions (20%) for tuning of model parameters (number of trees, interaction depth, shrinkage and minimum number of observations per node) using cross validation.
 
-We used 19 bioclimatic variables from the CHELSA dataset representing climatological mean values for present conditions (1981-2010) as predictor variables. Variables were centered and scaled to zero mean and unit variance.
+We used 19 bioclimatic variables from the CHELSA dataset representing climatological mean values for present conditions (1981-2010) as predictor variables [@Karger_2017_CHELSA_descriptor]. Variables were centered and scaled to zero mean and unit variance.
 
 We fitted the GBM model for classification (two classes: glacier or not-glacier) using a bernoulli error distribution, and evaluated the predictive performance of the final model on the target partition:
 

@@ -143,6 +143,8 @@ main_fig
 print(sfig1, vp = viewport(0.8, 0.35, width = 0.35, height = 0.35))
 
 tmap_save(main_fig,
-        filename="~/Desktop/Fig1-Study-area.png",
+        filename=here::here(target.dir,"Fig1-Study-area.png"),
+        width=120, height=120, units = "mm",
+        dpi=600,
         insets_tm=sfig1,
-        insets_vp=viewport(0.8, 0.30, width = 0.35, height = 0.35))
+        insets_vp=viewport(0.8, 0.35, width = 0.30, height = 0.30))

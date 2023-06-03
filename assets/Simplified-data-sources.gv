@@ -1,0 +1,65 @@
+digraph G {
+    compound=true; 
+    newrank=true;
+    rankdir=LR;
+  edge [color="grey"]
+    { node [ shape=octagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB1 [label="Ramirez et al.2020\n"]
+        PUB3 [label="Braun and Bezada\n2013"]
+        PUB4 [label="Polissar et al.\n 2006"]
+
+    }
+    { node [ shape=doubleoctagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB2 [label="RGI v6.0"]
+        PUB5 [label="Hybrid models\nRounce et al. 2023" ]
+        PUB6 [label="CHELSA\nKarger et al. 2017"]
+        PUB7 [label="GCM + SSP"]
+        
+    }
+     
+    {node  [shape=box fontsize=8 fixedsize=true fillcolor=lightgrey style=filled]
+      data [label="Glacier\nextent\ntemp. series"]
+       pols [label="Glacier\noutlines"]
+        ELA [label="Equilibrium\nline\naltitude"]
+    FLH [label="Freeze level\nheight\n(as plotted)"]
+    mass [label="Predicted\nmass per year"]
+    }
+    {node [ shape=box fontsize=8 fixedsize=true]
+     model [label="Generalised\nLinear\nModel"]
+      loess [label="digitized +\nLOESS\nregression"]
+      yoc [label="Pred.\nYear of\ncollapse"]
+      GBM [label="Gradient\nBoosting\nMachine"]
+     AOO
+     EOO
+    }
+    PUB7 -> {PUB6;PUB5}
+    PUB1 -> data
+    
+    A13 [label="A1 and A3"]
+    data -> model
+    data -> A13 
+    model -> A2 
+    
+  
+    PUB2 -> pols 
+    {pols;PUB1} -> AOO 
+    pols -> EOO 
+    
+    
+      AOO -> B2
+      EOO -> B1
+      
+        
+    PUB3 -> FLH -> loess
+    PUB4 -> ELA
+    ELA -> C3
+    PUB6 -> GBM
+    pols -> GBM [style=dashed]
+
+      loess -> C1
+    GBM -> C2
+  
+    PUB5 -> mass -> yoc
+     pols -> PUB5 [style=dashed]
+      yoc -> E
+}

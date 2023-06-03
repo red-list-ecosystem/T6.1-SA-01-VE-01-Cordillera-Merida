@@ -7,7 +7,7 @@ editor_options:
 
 **Ecosystem id**: T6.1-SA-01-VE-01 (preliminary ID)
 
-**Assessment authors**: José R. Ferrer-Paris, Luis D. Llambi, Alejandra Melfo
+**Assessment authors**: José R. Ferrer-Paris, Luis D. Llambí, Alejandra Melfo
 
 **Other contributors**: David Keith
 

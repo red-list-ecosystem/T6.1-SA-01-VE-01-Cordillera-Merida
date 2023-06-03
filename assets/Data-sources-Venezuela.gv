@@ -1,5 +1,4 @@
 digraph G {
-    #label = "Conceptual Ecosystem Model for Tropical glacier ecosystem of the Cordillera de Mérida"
     compound=true; #nodesep=1.0;
     newrank=true;
     rankdir=LR;
