@@ -20,11 +20,12 @@ Error: path for html_dependency not found: /var/folders/14/vyrp_30975d7y17lqxjbl
 ```
 This seems to be related to the use of leaflet in the code. Should I create a branch for the pdf output without the interactive map?
 
+Another option is to use a different subfolder with its own quarto.yml file to create a pdf document with different rules and composition as the html book. We trial this in a sepparate branch and test with:
 
-Edit the qmd and yml files:
 ```sh
-atom ~/proyectos/IUCN-GET-L4/T6.1-tropical-glaciers-docs
+quarto render suppl-mat/
 ```
+
 
 ## Citation and bibliography
 

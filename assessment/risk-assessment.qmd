@@ -91,7 +91,7 @@ We used the data from @tbl-extent above to extrapolate the expected rate of decl
 
 ```{r}
 #| label: fig-A2b
-#| fig-cap: Projected rates of decline into the future.
+#| fig-cap: "Extent of glacier ice measured between 1910 and 2019 and projected future extent using all seven observations with 90% prediction confidence interval (left panel), and using only the five most recent observations (blue line, right panel)." 
 #| warning: false
 
 mod1 <- glm(eco_extent~years,data=totals %>% drop_units, weights=1/sqrt(error_extent),

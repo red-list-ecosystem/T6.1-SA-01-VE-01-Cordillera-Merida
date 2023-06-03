@@ -1,0 +1,44 @@
+digraph G {
+    compound=true; 
+    newrank=true;
+    rankdir=LR;
+  edge [color="grey"]
+    { node [ shape=octagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB1 [label="Ramirez et al.\n"]
+        PUB3 [label="Braun and Bezada\n2013"]
+
+    }
+    { node [ shape=doubleoctagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
+        PUB2 [label="Glacier\ninventories"]
+        
+    }
+     { node [ shape=circle fontsize=8 fixedsize=true style=filled]
+      B1 [label="CR" color=red fontcolor="white"]
+      B2 [label="CR" color=red fontcolor="white"]
+      B3 [label="NE" style="dashed"]
+    }
+    {node [ shape=box fontsize=8 fixedsize=true fillcolor=grey style=filled]
+      
+       pols [label="Glacier\noutlines"]
+    }
+    {node [ shape=box fontsize=10 fixedsize=true]
+     AOO
+     EOO
+    }
+    
+    PUB2 -> pols 
+    {pols;PUB1} -> AOO 
+    pols -> EOO 
+    
+      pols -> litts [style=dashed, label="threat defined\nlocation" fontsize=8]
+        PUB1 -> litts [style=dashed label="obs. cont.\ndecline" fontsize=8]
+        PUB3 -> litts [style=dashed label="threatening\nprocess" fontsize=8]
+        
+    litts [label="a(i)bc" fontsize=10]
+      litts -> {B1;B2}
+
+      AOO -> B2 [headlabel="B2"]
+      EOO -> B1 [headlabel="B1"]
+      pols -> B3 [headlabel="B3" style=dotted]
+    
+}
