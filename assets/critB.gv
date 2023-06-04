@@ -3,13 +3,13 @@ digraph G {
     newrank=true;
     rankdir=LR;
   edge [color="grey"]
-    { node [ shape=octagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
-        PUB1 [label="Ramirez et al.\n"]
-        PUB3 [label="Braun and Bezada\n2013"]
+    { node [ shape=octagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1.4]
+        PUB1 [label="Ramirez et al. 2020\nDecline in glacier ice extent"]
+        PUB3 [label="Braun and Bezada 2013\nEffects of climate change"]
 
     }
-    { node [ shape=doubleoctagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1]
-        PUB2 [label="Glacier\ninventories"]
+    { node [ shape=doubleoctagon fontsize=8 fixedsize=true fillcolor=lightyellow style=filled width=1.4]
+        PUB2 [label="RGI 6.0\nGlacier outlines"]
         
     }
      { node [ shape=circle fontsize=8 fixedsize=true style=filled]
@@ -17,20 +17,17 @@ digraph G {
       B2 [label="CR" color=red fontcolor="white"]
       B3 [label="NE" style="dashed"]
     }
-    {node [ shape=box fontsize=8 fixedsize=true fillcolor=grey style=filled]
-      
-       pols [label="Glacier\noutlines"]
-    }
+    
     {node [ shape=box fontsize=10 fixedsize=true]
      AOO
      EOO
     }
     
-    PUB2 -> pols 
-    {pols;PUB1} -> AOO 
-    pols -> EOO 
+   # PUB2 -> pols 
+    {PUB2;PUB1} -> AOO 
+    PUB2 -> EOO 
     
-      pols -> litts [style=dashed, label="threat defined\nlocation" fontsize=8]
+      PUB2 -> litts [style=dashed, label="threat defined\nlocation" fontsize=8]
         PUB1 -> litts [style=dashed label="obs. cont.\ndecline" fontsize=8]
         PUB3 -> litts [style=dashed label="threatening\nprocess" fontsize=8]
         
@@ -39,6 +36,6 @@ digraph G {
 
       AOO -> B2 [headlabel="B2"]
       EOO -> B1 [headlabel="B1"]
-      pols -> B3 [headlabel="B3" style=dotted]
+      PUB2 -> B3 [headlabel="B3" style=dotted]
     
 }
