@@ -1,7 +1,7 @@
 project:
   type: book
   output-dir: _output
-  
+  execute-dir: file
 
 book:
   title: "IUCN Red List of Ecosystem assessment: Tropical glacier ecosystem of the Cordillera de Mérida"
@@ -22,6 +22,7 @@ book:
     - ../assessment/collapse.qmd
     - ../assessment/risk-assessment.qmd
     - ../references.qmd
+    
 
 number-depth: 2
 top-level-division: section
