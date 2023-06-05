@@ -245,12 +245,15 @@ We used 19 bioclimatic variables from the CHELSA dataset representing climatolog
 We fitted the GBM model for classification (two classes: glacier or not-glacier) using a bernoulli error distribution. The best performing model had following parameters:
 
 ```{r}
-model$bestTune
+model$bestTune %>% 
+  knitr::kable(row.names = FALSE)
 ```
 
 And predictive performance on the training dataset:
+
 ```{r}
-model$results[which.max(model$results$ROC),5:10]
+model$results[which.max(model$results$ROC),5:10] %>% 
+  knitr::kable(row.names = FALSE)
 ```
 
 We also evaluated the predictive performance of the final model on the Cordillera de Merida:
@@ -272,7 +275,7 @@ dat <- data.frame(obs=test.target,
 e1 <- evaluate(predictions$G[test.target=="G"],predictions$G[test.target=="N"])
 
 
-twoClassSummary(data=dat,lev=c("G","N"))
+twoClassSummary(data=dat,lev=c("G","N")) %>% knitr::kable()
 #e1
 # par(las=2)
 #summary(model)
@@ -373,8 +376,6 @@ According to the published methods [@Rounce_2023_MassBalance_Global]:
 
 This hybrid model is applied to all glaciers in the world independently, using globally available datasets of glacier outlines [RGI_2017_glacier_inventory], glacier-wide geodetic mass balance data and regional ice volume estimates for calibration [@farinotti_consensus_2019; @hugonnet_accelerated_2021]. In the case of small regions with no direct measurements (like the Cordillera de Mérida) the model uses initial estimates of ice volume based on digital elevation models and most likely overestimates initial mass, making the projections very conservative [@Rounce_2023_MassBalance_Global]. 
 
-The values used here are the output values (ice mass \pm median absolute deviation) of the model for the four glacier outlines of the Randolph Glacier Inventory for the cordillera de Mérida downloaded from @Rounce_2022_MassBalance_Global_Data and presented in @fig-Ea. These values clearly overestimate the existing ice mass but we focus the analysis on the point of collapse and not on the mass value _per se_.
-
 ```{r}
 #| label: fig-Ea
 #| fig-cap: Estimated ice mass in Megatonnes for all glacier outlines of the Cordillera de Mérida for each shared socioeconomic pathways. 
@@ -400,12 +401,15 @@ ggplot(data=plot_data, aes(x=year,y=mean_mass)) +
 
 ```
 
+The values used here are the output values (ice mass \pm median absolute deviation) of the model for the four glacier outlines of the Randolph Glacier Inventory for the cordillera de Mérida downloaded from @Rounce_2022_MassBalance_Global_Data and presented in @fig-Ea. These values clearly overestimate the existing ice mass but we focus the analysis on the point of collapse and not on the mass value _per se_.
+
 We use these mass projections to estimate the year of collapse (first year when mass reaches zero) for each combination of models and scenarios. The empirical cumulative distribution function of the year of collapse (@fig-Eb) allow us to estimate the proportion of models indicating collapse for each year. 
 
 ```{r}
 #| label: fig-Eb
 #| fig-cap: ECDF (empirical cumulative distribution function) plot of year of collapse for all models (black line) and for each shared socioeconomic pathways (SSP, labeled lines).
 #| warning: false
+#| fig-pos: 'H'
 
 ycdata <- ycdata %>% 
     filter(!ssp %in% "SSP1-1.9")

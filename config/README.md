@@ -26,6 +26,15 @@ Another option is to use a different subfolder with its own quarto.yml file to c
 quarto render suppl-mat/
 ```
 
+We can also use a pdf document output with a template and sourcing the other component quarto documents:
+```sh
+cd alt-report
+quarto install extension red-list-ecosystem/RLEpdf
+quarto render RLE-report.qmd --to RLEpdf-pdf
+```
+
+This template has a problem with the list of authors, would need to fix that later on.
+
 
 ## Citation and bibliography
 
@@ -82,27 +91,4 @@ scp $zID@kdm.restech.unsw.edu.au:/srv/scratch/z3529065/output/T6.1-tropical-glac
 ```sh
 git remote add origin git@github.com:red-list-ecosystem/T6.1-tropical-glaciers-docs.git
 git push -u origin main
-```
-
-## git lfs
-
-Download binary from https://git-lfs.github.com/
-```sh
-cd ~/Downloads/git-lfs-3.2.0/
-./install.sh
-```
-
-Then we can initialise lfs in repository and add the files
-```sh
-git lfs install
-git lfs track "*.rda"
-git add .gitattributes
-git add Rdata
-git commit -m "track *.rda files using Git LFS"
-```
-
-If we have problems check this https://github.blog/2017-06-27-git-lfs-2-2-0-released/:
-```sh
-git lfs migrate info
-git lfs migrate import --include="*.rda"
 ```
