@@ -54,7 +54,7 @@ digraph G {
       rank="same";
 
     subgraph clusterIce {
-          label = "Ice" style = "dashed" pos="topright"
+          label = "Ice" style = "dashed" labelloc="topright"
         #subgraph {
             CB1 -> CB2 -> CB3
         #}
