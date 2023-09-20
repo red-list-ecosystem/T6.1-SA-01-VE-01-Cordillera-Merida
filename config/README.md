@@ -92,3 +92,31 @@ scp $zID@kdm.restech.unsw.edu.au:/srv/scratch/z3529065/output/T6.1-tropical-glac
 git remote add origin git@github.com:red-list-ecosystem/T6.1-tropical-glaciers-docs.git
 git push -u origin main
 ```
+
+
+
+## Data download
+We need to download data from the OSF cloud storage:
+
+Run the script in `config/download-data.R`
+
+## Install quarto
+
+Download from here and install: https://quarto.org/docs/get-started/
+
+## Install Java
+
+For some of the maplayers I need Java
+
+https://www.oracle.com/java/technologies/downloads/#jdk20-mac
+
+Download:
+https://download.oracle.com/java/20/latest/jdk-20_macos-aarch64_bin.dmg
+
+and Install
+
+## Install MacTeX
+
+
+## PDF output
+Cannot use graphviz directly, will need to transform with dot into a static PNG or SVG.

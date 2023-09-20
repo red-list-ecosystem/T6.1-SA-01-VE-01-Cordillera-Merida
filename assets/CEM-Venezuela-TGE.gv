@@ -7,7 +7,7 @@ digraph G {
     #layout=neato
     concentrate=True;
     #layout=twopi;
-    { node [ shape=parallelogram fontsize=10 fixedsize=true fillcolor=lightgrey style=filled width=1.25]
+    { node [ shape=parallelogram fontsize=10 fixedsize=true fillcolor=white style=filled width=1.25]
         IN1 [label="Bioclimatic\nvariables"]
         IN2 [label="Snowline\nand other\nindicators"]
         IN3 [label="Mass\nbalance"]
@@ -15,7 +15,7 @@ digraph G {
       # IN5 [label="Species\nabundance\nand diversity"]
     }
   {
-    node [margin=0 fillcolor= lightblue fontcolor=black fontsize=12 shape= hexagon style=filled fixedsize=true width=1.75]
+    node [margin=0 fillcolor=lightblue fontcolor="#06020F" fontsize=12 shape= hexagon style=filled fixedsize=true width=1.75]
     AE1 [label="Snow fall"]
     AE2 [label="Temperature"]
     AE3 [label="Radiation"]
@@ -25,23 +25,23 @@ digraph G {
     #AE6 [label="Meltwater"]
   }
   {
-    node [ shape=ellipse fillcolor=lightblue fontsize=12 style=filled fixedsize=true width=1.5]
+    node [ shape=ellipse fillcolor=lightblue fontcolor="#06020F" fontsize=12 style=filled fixedsize=true width=1.5]
     AP1 [label="Ice accumulation"]
     AP2 [label="Ice ablation"]
   }
   {
-    node [shape=rectangle fillcolor=pink style=filled fixedsize=true width=1.5]
+    node [shape=rectangle fillcolor=white color="#F6020F" fontcolor=red style=filled fixedsize=true width=1.5]
     TR1 [label="Air Pollution"]
     # TR2 [label="Vulcanism"]
     TR3 [label="Climate change"]
   }
   {
-    node [shape=ellipse fillcolor="#7ef57eb7" fontsize=12 style=filled width=1.5]
+    node [shape=ellipse fillcolor="#1ea51e" fontcolor=white fontsize=12 style=filled width=1.5]
     BP1 [label="Propagules"]
     BP2 [label="Windfall "] # (nutrients and propagules)
   }
   {
-    node [margin=0 fillcolor="#7ef57eb7" fontcolor=black fontsize=12 width=1.5 shape=hexagon style=filled fixedsize=false]
+    node [margin=0 fillcolor="#1ea51e" fontcolor=white fontsize=12 width=1.5 shape=hexagon style=filled fixedsize=false]
     CB1 [label="Supraglacial\nbiota"]
     CB2 [label="Endoglacial\nbiota"]
     CB3 [label="Subglacial\nbiota"]
@@ -100,4 +100,6 @@ digraph G {
     IN1->{TR3; AE1; AE2} [style=dashed  arrowhead=none color=grey ]
     IN3->{AP1;AP2} [style=dashed arrowhead=none color=grey]
     #CB4->IN5->CB5 [style=tapered arrowhead=none dir=both ]
+    
+ 
 }

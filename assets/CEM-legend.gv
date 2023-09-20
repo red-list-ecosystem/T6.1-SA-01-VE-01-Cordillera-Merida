@@ -1,0 +1,34 @@
+digraph G {
+    rankdir=LR;
+    concentrate=True;
+    subgraph clusterLEG { 
+      rank="same";
+      label="Legend"
+      node [fontsize=7 fixedsize=true  width=0.65 margin=0 ]
+      
+      node [fillcolor=lightblue fontcolor="#06020F" shape= hexagon style=filled ]
+      ACLEG [label="Abiotic\ncomponent"]
+      node [ shape=ellipse fillcolor=lightblue fontcolor="#06020F" style=filled ]
+      APLEG [label="Abiotic\nprocess"]
+      node [shape=ellipse fillcolor="#1ea51e" color=black fontcolor=white style=filled ]
+      BPLEG [label="Biotic\nprocess"]
+      node [fillcolor="#1ea51e" fontcolor=white shape=hexagon style=filled ]
+      BCLEG [label="Biotic\ncomponent"]
+      node [ shape=parallelogram fillcolor=white fontcolor=black style=filled ]
+      INDLEG [label="Indicator\nvariables"]
+      node [shape=rectangle fillcolor=white color="#F6020F" fontcolor=red style=filled ]
+      TRLEG [label="Threatening\nprocess"]
+      
+      APLEG -> ACLEG [style="invis"]
+      BPLEG -> BCLEG [style="invis"]
+      TRLEG -> INDLEG [style="invis"]
+      
+      node [style="solid" shape="square" color=white fontcolor=black]
+      MDLEG1 [label="might\nreduce"]
+      MDLEG2 [ label="might\npromote"]
+      MDLEG1->MDLEG2 [arrowtail=dot arrowhead=normal dir=both style=dashed ]
+      MPLEG1 [label="reduces"]
+      MPLEG2 [ label="promotes"]
+      MPLEG1->MPLEG2 [ arrowtail=dot arrowhead=normal dir=both style=solid ]
+    }
+  }

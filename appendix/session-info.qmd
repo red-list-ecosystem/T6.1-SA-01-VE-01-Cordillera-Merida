@@ -1,0 +1,74 @@
+---
+title: Software used for analysis and documentation
+bibliography: 
+  - ../bibTeX/r-packages.bib
+csl: ../bibTeX/oryx.csl
+---
+
+## Details of R session
+
+```{r}
+#| eval: true
+#| warning: false
+#| message: false
+
+# spatial data
+library(sf)
+
+#map viz
+library(leaflet)
+library(tmap)
+library(tmaptools)
+#library(rnaturalearth)
+library(OpenStreetMap)
+
+# plots / graphics
+library(ggplot2)
+library(ggrepel)
+library(ggpubr)
+library(ggforce)
+library(grid)
+library(DiagrammeR)
+
+#tidyverse
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(tidyr)
+library(stringr)
+
+
+#models / ML
+library(gbm)
+library(caret)
+library(dismo)
+
+# other utils
+library(here)
+library(units)
+library(RColorBrewer)
+
+# documentation
+library(quarto)
+library(respondR)
+
+
+```
+
+All statistical analysis were performed using `r R.version$version.string` [@CRAN]. For the suitability model we used packages *gbm* [@pkg_gbm] and *caret* [@pkg_caret] and some functions of package *dismo* [@pkg_dismo].
+
+```{r}
+sessionInfo()
+
+```
+
+## Other software and templates
+
+- Quarto
+- RLE-pdf template
+
+## References for selected packages
+
+
+::: {#refs}
+:::

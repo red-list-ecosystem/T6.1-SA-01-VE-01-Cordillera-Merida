@@ -23,6 +23,7 @@ book:
   appendices:
     - appendix/summary.qmd
     - appendix/sources.qmd
+    - appendix/session-info.qmd
   page-footer:
     left: "Created by: JR Ferrer-Paris"
     right:
