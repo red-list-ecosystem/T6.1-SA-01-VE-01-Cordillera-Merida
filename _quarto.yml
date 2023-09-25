@@ -35,6 +35,8 @@ bibliography:
   - bibTeX/references.bib
   - bibTeX/glacier-assessments.bib
   - bibTeX/additional-refs.bib
+  - bibTeX/r-packages.bib
+  - bibTeX/reviewer-suggested.bib
 csl: bibTeX/oryx.csl
 
 execute:

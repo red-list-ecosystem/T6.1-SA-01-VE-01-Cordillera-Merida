@@ -14,16 +14,18 @@ Tropical glacier ecosystem in the Cordillera de Mérida have a dynamic of ice ac
 
 ![](../sandbox/CEM-Venezuela-TGE.png)
 
-Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida
+Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida. The diagram shows the most important processes, but some processes mentioned in the text are excluded for clarity of visualisation.
 :::
 
-Mass balance of the icy substrate is likely dominated by interannual fluctuations [@Andressen_2007_clima_merida; @Braun_2013_glacier_venezuela], but no quantitative studies have been conducted. Substantial reductions in precipitation and higher exposure to solar radiation are expected with El Niño–Southern Oscillation years, while high precipitations and more cloud coverage are expected during La Niña years.
+Mass balance of the icy substrate is likely dominated by interannual fluctuations [@Andressen_2007_clima_merida; @Braun_2013_glacier_venezuela], but no quantitative studies have been conducted. Substantial reductions in precipitation and higher exposure to solar radiation are expected with El Niño–Southern Oscillation years, while high precipitations and more cloud coverage are expected during La Niña years. However, these glaciers are believed to be out of balance (i.e. dominated by ablation that drives a continuing decline in ice mass and extent) due to their location near or even below theoretical equilibrium lines [@Polissar_2006_IceAge_Andes; @Braun_2013_glacier_venezuela].
+
+Reduction and fragmentation of the glacier ice extent makes them more vulnerable to scale and edge effects. When the glacier is below a critical size they are more exposed to the warm air produced by the incidence of solar radiation on the surrounding rocks, and this could explain accelerated shrinkage of the icy substrate [@ceballos_2006_shrinkage_Colombia]. The Bolivar peak was fragmented and had higher perimeter to area ratio than the Humboldt peak in 1952 and 1998, and the Humboldt peak has experienced a dramatic increase in the perimeter to area ratio after 1998 [@Ramirez_2020_glacier_Venezuela].
 
 Deposition of light absorbing particles from the atmosphere on snow and ice can reduce glaciers surface albedo and enhance the melting process [@Gilardoni_2022_LAPs_SouthAmerica]. Concentration of black carbon in the high elevations of the Cordillera de Mérida have been linked to biomass burning in Venezuelan savannah, with higher fire activity and higher concentration following El Niño years [@Hamburger_2013_pollution_Merida].
 
-Atmospheric or aeolian deposition (windfall) provide key nutrients to the biota of the supraglacial zone [@Edwards_1987_nival_arthropods]. Nutrients and meltwater can be transported through interglacial cracks and crevasses to reach the subglacial zone, where it combines with small particles produced by rock comminution [@Hotaling_2017_glacier_ecosystem].  Englacial and subglacial biota of this ecosystem are still undescribed.
+Atmospheric or aeolian deposition (windfall) provide key nutrients (e.g. Carbon, Nitrate and Ammonium) to the biota of the supraglacial zone [@Edwards_1987_nival_arthropods]. Nutrients and meltwater can be transported through interglacial cracks and crevasses to reach the subglacial zone, where it combines with small particles produced by rock comminution [@Hotaling_2017_glacier_ecosystem].  Englacial and subglacial biota of this ecosystem are still undescribed.
 
-The role of the supra- and subglacial microbiota on the exposed glacier forefield is currently understudy in the Cordillera de Mérida. The pioneer lichen and bryophyte species might have a facilitation effect on the long-term establishment of wind-dispersed and -pollinated vascular plants [@Llambi_2021_periglacial_merida].
+The role of the supra- and subglacial microbiota on the exposed glacier forefield is currently under study in the Cordillera de Mérida. The pioneer lichen and bryophyte species might have a facilitation effect on the long-term establishment of wind-dispersed and -pollinated vascular plants [@Llambi_2021_periglacial_merida].
 
 ## Threats
 

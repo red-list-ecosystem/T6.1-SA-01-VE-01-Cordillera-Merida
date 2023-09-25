@@ -8,6 +8,8 @@ bibliography:
   - ../bibTeX/references.bib
   - ../bibTeX/glacier-assessments.bib
   - ../bibTeX/additional-refs.bib
+  - ../bibTeX/r-packages.bib
+  - ../bibTeX/reviewer-suggested.bib
 csl: ../bibTeX/oryx.csl
 
 execute:
@@ -43,7 +45,9 @@ We thank Nerio Ramírez for his invaluable work documenting glacier retreat and 
 
 # Citation
 
-This report is intended as Suplementary Material for an article under review. Citation information will be updated upon journal decision.
+This report is uploaded in EcoEvoRxiv as manuscript number:
+
+This report was produced as a complement to a manuscript under review. Citation information will be updated upon journal decision.
 
 # Linked documents and data
 
@@ -59,3 +63,4 @@ The data and code that support the findings of this study are openly available i
 | Date | Version | Info |
 |---|---|---|
 | 2023-06-08 | v1.0 | First version attached to submitted manuscript |
+| 2023-09-23 | v2.0 | Second version, including suggestions from two anonymous reviewers |

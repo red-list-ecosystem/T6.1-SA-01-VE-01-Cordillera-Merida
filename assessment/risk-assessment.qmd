@@ -47,12 +47,9 @@ source(here::here("inc","functions.R"))
 
 ## Criterion A
 
-Cartographic estimates of glacier extent were reviewed by @Ramirez_2020_glacier_Venezuela for three peaks in the Cordillera de Mérida (Bolívar, Concha and Humboldt, @fig-map). For this assessment we added the values of these three peaks and calculated their standard errors (@tbl-extent).
+Cartographic estimates of glacier extent were reviewed by @Ramirez_2020_glacier_Venezuela for three peaks in the Cordillera de Mérida (Bolívar, Concha and Humboldt, @fig-map). 
 
 ```{r}
-#| label: tbl-extent
-#| tbl-cap: Cartographic estimates of glacier extent in the Cordillera de Mérida.
-
 # Table 1 in Ramirez et al 2020
 peaks <- rep(c('La Concha','Bolivar','Humboldt'),c(2,3,7))
 year <- set_units(c(1910,1952,1910,1952,1998,1910,1952,1998,2009,2015,2016,2019),year)
@@ -61,16 +58,47 @@ glacier_area_se <- c(NA,0.008,NA,0.04,0.009,NA,0.044,0.027,0.019,0.005,0.005,0.0
 perimeter <- c(3.98,2.15,7.16,10.39,1.69,11.48,11.62,4.99,3.32,2.13,2.27,1.46) %>% set_units(km)
 terminus <- c(4420,4623,4280,4482,4735,4280,4460,4620,4720,4740,4780,4800)%>% set_units(m)
 
-ven_rslts <- tibble(peaks,years=year,glacier_extent=glacier_area,glacier_extent_error=glacier_area_se,perimeter,terminus)
+ven_rslts <- tibble(peaks,
+                    years = year,
+                    glacier_extent = glacier_area,
+                    glacier_extent_error = glacier_area_se,
+                    perimeter,
+                    terminus)
 # rslts %>% drop_units %>% dplyr::select(1:4) %>% rename(Peak=peaks,Year=years,`Extent (km^2)`=glacier_extent,`S.E. (km^2)`=glacier_extent_error) %>% knitr::kable()
+# As the area of each glacier diminishes, the ratio of perimeter to area increases, indicating increasing exposure that might explain accelerated decline rates.
+#ggplot(ven_rslts) +
+#  geom_point(aes(y=perimeter/glacier_extent,x=year,colour=peaks)) +
+#  labs(x = "Year", y = "Perimeter/Area ratio", colour = "Peaks")
+```
 
-totals <- ven_rslts %>% group_by(years) %>%
+For this assessment we added the values of these three peaks and calculated their standard errors (@tbl-extent).
+
+```{r}
+#| label: tbl-extent
+#| tbl-cap: Cartographic estimates of glacier extent in the Cordillera de Mérida.
+
+totals <- ven_rslts %>% 
+  group_by(years) %>%
   summarise(
+    `Nr. of units` = n_distinct(peaks),
     eco_extent=sum(glacier_extent),
     error_extent=sqrt(sum(glacier_extent_error^2,na.rm=T))
 )
-totals$error_extent[1] <- max(totals$error_extent)
-totals %>% drop_units %>% rename(Year=years,`Extent (km^2)`=eco_extent,`S.E. (km^2)`=error_extent) %>% knitr::kable()
+totals$error_extent[1] <- max(totals$error_extent)*2 # extra uncertainty
+totals$`Sources` <- c('reinterpretation of maps', 
+                        'aerial photo 1:20000',
+                        'aerial photo 1:20000',
+                        'satellite image 2.5m',
+                        'satellite image 1m',
+                        'satellite image 1m',
+                        'field GPS and drone image'
+                        )
+totals %>% 
+  drop_units %>% 
+  rename(Year = years,
+         `Extent (km^2)` = eco_extent,
+         `S.E. (km^2)` = error_extent) %>% 
+  knitr::kable(digits=3)
 ```
 
 For calculations we assume that the threshold of collapse is when the glacier extent reduces to zero $km^2$ (absolute threshold).
@@ -80,14 +108,71 @@ For calculations we assume that the threshold of collapse is when the glacier ex
 There is no direct estimate of decline in extent for the last 50 years, but calculations of rates of decline from selected rows of @tbl-extent can be used as minimum and maximum bounds:
 
 ```{r}
-calc_decline(totals,start=2:3,end=7) %>% rename(`S.E.`="error")%>% rename_with(~str_replace_all(.x,"_"," ")) %>% knitr::kable()
+calc_decline(totals,start=2:3,end=7) %>% 
+  rename(`S.E.` = "error") %>% 
+  rename_with( ~ str_replace_all(.x, "_", " ")) %>% 
+  knitr::kable(digits=3)
 ```
 
 The decline in the last 50 years is estimated to be between 89 and 98%, both estimates meet the threshold for **Critically Endangered** for subcriterion A1.
 
 ### Subriterion A2
 
-We used the data from @tbl-extent above to extrapolate the expected rate of decline for a 50 year period including the present and future (subcriterion A2b). We fitted a generalised linear model with quasi-poisson distribution and logarithmic link function, and weighted observations by the inverse of the standard error of the measurements. We used the model to predict expected values of extent and standard errors for the time frame 1990 to 2040, and then derived the back-transformed best estimate and 90% confidence intervals considering over-dispersion and a normal approximation of the error distribution.
+We used the data from @tbl-extent above to extrapolate the expected rate of decline for a 50 year period including the present and future (subcriterion A2b).
+
+#### Using fixed proportional rates of decline
+
+The proportional rate of decline can be calculated analytically using two reference points in time. Here we apply the formula:
+$$
+\mathrm{PRD} = 100 \times (1-(\frac{A_2}{A_1})^{\frac{1}{t_2-t_1}})
+$$. 
+Where $A_1$ is the extent in the start year $t_1$, and $A_2$ is the extent in the end year $t_2$. We also calculate uncertainty using an error propagation formula based on the standard error of the measurements as reported by the original source.
+
+
+
+
+For example, the proporional rates of decline based on the observed decline in the last 67 or 21 years are:
+```{r}
+PRD_data <- calc_PRD(totals,start=2:3,end=7)
+PRD_data %>% 
+  rename(`S.E.` = "error") %>% 
+  rename_with( ~ str_replace_all(.x, "_", " ")) %>% 
+  knitr::kable(digits=3)
+```
+
+We can project the future extent ($\hat{A_2}$) using a initial value ($A_1$) and assuming a constant PRD over $n$ years:
+
+$$
+\hat{A_2} = A_1 \times (1-(\mathrm{PRD}/100))^n
+$$. 
+
+
+For example, using the two estimates of PRD calculated above using two different starting points:
+
+```{r}
+future_proj <- PRDproj(totals,3, PRD_data) 
+future_proj %>% 
+  drop_units %>% 
+  dplyr::select(years, eco_extent, error_extent,Sources) %>% 
+  rename(Year = years,
+         `Extent (km^2)` = eco_extent,
+         `S.E. (km^2)` = error_extent) %>% 
+  knitr::kable(digits=3)
+```
+
+And we can now calculate the projected decline for the 50 years period:
+```{r}
+calc_decline(future_proj,start=1,end=2:3) %>% 
+  rename(`S.E.` = "error") %>% 
+  rename_with( ~ str_replace_all(.x, "_", " ")) %>% 
+  knitr::kable(digits=3)
+```
+
+#### Regression of proportional rates of decline
+
+An alternative approach is to use a generalised linear regression framework. This allows to use all available measurements to estimate the value of PRD using maximum (quasi-)likelihood.
+
+We fitted a generalised linear model with quasi-poisson distribution and logarithmic link function, and weighted observations by the inverse of the standard error of the measurements. We used the model to predict expected values of extent and standard errors for the time frame 1990 to 2040, and then derived the back-transformed best estimate and 90% confidence intervals considering over-dispersion and a normal approximation of the error distribution.
 
 ```{r}
 #| label: fig-A2b
@@ -96,7 +181,7 @@ We used the data from @tbl-extent above to extrapolate the expected rate of decl
 
 mod1 <- glm(eco_extent~years,data=totals %>% drop_units, weights=1/sqrt(error_extent),
             family=quasipoisson(log))
-prd1 <- futurePred(mod1,eval.years=1910:2040)
+prd1 <- futurePred(mod1,eval.years=1910:2048)
 
 mod2 <- glm(eco_extent~years,data=totals %>% drop_units %>% filter(years>1990) , weights=1/sqrt(error_extent),
             family=quasipoisson(log))
@@ -115,26 +200,46 @@ geom_ribbon(data=prd2,aes(x=years,ymin=lower,ymax=upper),fill="lightblue",alpha=
 
 ggarrange(figa, figb, ncol = 2, nrow = 1)
 
+
+```
+
+A model fitted using all observations from 1910 onwards suggests a large proportional rate of decline ( @fig-A2b; left panel), but the most recent observation clearly deviate from the expected values (@fig-A2b; right panel, see @Ramirez_2020_glacier_Venezuela). Another model fitted only to the most recent observations (1998 onwards), predicts a more pronounced decline, with narrower confidence intervals due to the small number of observations used .
+
+Here we transform the model parameter to the percentage scale of the PRD formula and calculate the magnitude of the decline for the period 1998 to 2048, we also include the lower and upper bounds of the 90% C.I.):
+
+```{r}
+#| warning: false
+#| message: false
+
 cf1 <- coef(mod1)
 cf1.int <- confint(mod1, level=0.9)
 cf2 <- coef(mod2)
 cf2.int <- confint(mod2, level=0.9)
-```
-
-A model fitted using all observations from 1910 onwards suggests a large proportional rate of decline (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f",cf1[2],cf1.int[2,1],cf1.int[2,2])`, @fig-A2b; left panel), but the most recent observation clearly deviate from the expected values (@fig-A2b; right panel, see @Ramirez_2020_glacier_Venezuela). Another model fitted only to the most recent observations (1998 onwards), predicts a more pronounced decline, but it overestimates values before 1998 and has very narrow confidence intervals due to the small number of observations used  (`r sprintf("%0.3f, 90%% C.I.: %0.3f -- %0.3f", cf2[2], cf2.int[2,1], cf2.int[2,2])`).
-
-The clear recent acceleration of the rate of decline makes it difficult to fit a consistent model with so few observations [@Ramirez_2020_glacier_Venezuela], but given the very rapid decline of the glacier in the Bolívar Peak between 1998 and 2017, and the comparable size of the Humboldt glacier at the time of the last measurement (0.045 $km^2$ by 2019) it is reasonable to expect that it would disappear completely in the next 20-30 years.
-
-
-```{r, message=FALSE, warning=FALSE,echo=FALSE}
-prd <- prd1 %>% filter(years %in% c(1990,2040))
+prd <- prd1 %>% filter(years %in% c(1998,2048))
 final.prd1 <- 100*(1-(prd[2,-1]/prd[1,-1]))
 prd <- prd2 %>% filter(years %in% c(1998,2048))
 final.prd2 <- 100*(1-(prd[2,-1]/prd[1,-1]))
 
+tibble(
+  PRD=abs(c(cf1[2],cf2[2]))*100,
+  `PRD lower`=abs(c(cf1.int[2,2],cf2.int[2,2]))*100,
+  `PRD upper`=abs(c(cf1.int[2,1],cf2.int[2,1]))*100,
+  decline=c(final.prd1[[1]],final.prd2[[1]]),
+  `decline lower`=c(final.prd1[[3]],final.prd2[[3]]),
+  `decline upper`=c(final.prd1[[2]],final.prd2[[2]])
+) %>% 
+  knitr::kable(digits=3)
 ```
 
-Based on the results of both models the total decline for the 50 year period is predicted as `r sprintf("%0.1f (%0.1f -- %0.1f) %%",final.prd1["best"],final.prd1["upper"],final.prd2["lower"])`, and the assessment unit should be considered **Critically Endangered**, with plausible bounds between **Endangered** and **Critically Endangered**: CR (EN-CR).
+These values of PRD and the projected decline are lower than those obtained using the fixed PRD formula. This is because the linear model approach averages the rate of decline across all measurements, and probably underestimates or underplays the recent acceleration of the rate of decline  [@Ramirez_2020_glacier_Venezuela]. The model giving a value of $PRD < 4.5%$ is heavily influenced by the older observations and does not match the more recent measurements. We decided to discard it in favor of the alternative model and analytical estimates.
+
+#### Final considerations
+
+Both projections based on analytical and linear regression estimates of the proportional rate of decline suggest declines above 80% in a 50 years time frame including past and future. Some estimates are close to 100%, indicating a likely collapse. 
+
+Given the very rapid decline of the glacier in the Bolívar Peak between 1998 and 2017, and the comparable size of the Humboldt glacier at the time of the last measurement (0.045 $km^2$ by 2019) it is reasonable to expect that it would disappear completely within the next 20 years.
+
+The assessment unit is classified as **Critically Endangered**, with plausible bounds between **Endangered** and **Collapsed**: CR (CR-CO).
 
 ### Subriterion A3
 

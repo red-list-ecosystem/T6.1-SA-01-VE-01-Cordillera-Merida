@@ -1,8 +1,5 @@
 ---
 title: Software used for analysis and documentation
-bibliography: 
-  - ../bibTeX/r-packages.bib
-csl: ../bibTeX/oryx.csl
 ---
 
 ## Details of R session
@@ -55,7 +52,7 @@ library(respondR)
 
 ```
 
-All statistical analysis were performed using `r R.version$version.string` [@CRAN]. For the suitability model we used packages *gbm* [@pkg_gbm] and *caret* [@pkg_caret] and some functions of package *dismo* [@pkg_dismo].
+All statistical analysis were performed using `r R.version$version.string` [@CRAN]. For the suitability model we used package *caret* [@pkg_caret] and some functions of packages s *gbm* [@pkg_gbm] and *dismo* [@pkg_dismo].
 
 ```{r}
 sessionInfo()
@@ -64,11 +61,12 @@ sessionInfo()
 
 ## Other software and templates
 
-- Quarto
-- RLE-pdf template
+Apart from R we used these pieces of software and templates:
 
-## References for selected packages
-
-
-::: {#refs}
-:::
+- [Quarto](https://quarto.org) 
+  - An open-source scientific and technical publishing system
+- RLE-pdf, available [on GitHub](https://github.com/red-list-ecosystem/RLEpdf) 
+  - Quarto extension for a template to generate a PDF with (pretty) LaTeX styling for RLE assessments:
+- [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/)
+  - Web based tool to extract data from plots, images, and maps
+- [Color Blind Vision Simulator](https://pilestone.com/pages/color-blindness-simulator-1#) from pilestone.com

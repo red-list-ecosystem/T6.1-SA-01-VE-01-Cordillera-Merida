@@ -102,7 +102,9 @@ PicoEspejo <- ggplot(RSdata %>%  drop_units) +
   scale_x_discrete(labels=substr(month.abb,0,1)) +
     ggtitle("Pico Espejo")
 
-
+dry_precip_espejo <- precs %>% reframe(dry_precip = 
+                    sum(precip*if_else(month %in% c(1:3,12),1,0))*100/
+                    sum(precip)) %>% pull
 #load('../Rdata/modis-LST-and-CHIRPS.rda')
 
 f1 <- clim_vars %>% filter(glacier) %>% pull(cellnr)
@@ -148,8 +150,34 @@ Humboldt <- ggplot(RSdata %>%
 
 
   ggarrange(LomaRedonda, PicoEspejo, Bolivar, Humboldt, ncol = 2, nrow = 2)
+  
+dry_precip_redonda <- sum(LomaRedondaCD$Precip[c(1:3,12)])*100/sum(LomaRedondaCD$Precip)
+dry_precip_peaks <-  c(dry_precip_espejo,
+                       unlist({
+                         RSdata %>% 
+                           group_by(RGIId) %>% 
+                           summarise(
+                             precip_dry=sum(precip*if_else(month %in% c(1:3,12),1,0))*100/
+                               sum(precip),
+                             .groups="drop") %>% 
+                           reframe(range(precip_dry)) %>% 
+                           pull}))
 
+  
 ```
+
+The four months with lowest precipitation contribute `r sprintf("%0.1f %%", dry_precip_redonda)` of the mean annual precipitation in Loma Redonda station and between `r sprintf("%0.1f and %0.1f %%", min(dry_precip_peaks),max(dry_precip_peaks))` in the three peaks.
+
+The remote sensing estimates of temperature over the three peaks show large ($> 12 °C$) differences between min and max monthly temperatures, and low to moderate differences between months ($< 6 °C$)
+
+```{r}
+RSdata %>% 
+  group_by(RGIId) %>% 
+   summarise(diurnal_range=mean(max_temp-min_temp),
+           annual_range=max(mean_temp)-min(mean_temp),
+           isothermality = diurnal_range/annual_range)
+```
+
 
 ## Bioclimatic conditions in regional context
 
@@ -173,23 +201,46 @@ bioclim_dat %>% group_by(Region=group) %>%
 #| fig-cap: Histogram of three bioclimatic variables in the three regions.
 #| warning: false
 
-pbio01 <- ggplot(bioclim_dat %>% mutate(bio01=bio1/10)) + geom_histogram(aes(x=bio01,fill=fcf>0), bins=25) +
-  facet_col(group ~.) + xlab("Annual Mean Temp.") + ylab("Nr. of cells")
+pbio01 <- ggplot(bioclim_dat) + 
+  geom_histogram(aes(x=bio1,fill=fcf>0), bins=25) +
+  facet_col(group ~.) + 
+  xlab("Annual Mean Temp.") + ylab("Nr. of cells")
 
-pbio07 <- ggplot(bioclim_dat %>% mutate(bio07=bio7/10)) + geom_histogram(aes(x=bio07,fill=fcf>0), bins=25) +
-  facet_col(group ~.) + xlab("Temp. Annual Range") + ylab("Nr. of cells")
-pbio19 <- ggplot(bioclim_dat) + geom_histogram(aes(x=bio19,fill=fcf>0), bins=25) +
+pbio07 <- ggplot(bioclim_dat ) + 
+  geom_histogram(aes(x=bio7,fill=fcf>0), bins=25) +
+  facet_col(group ~.) + 
+  xlab("Temp. Annual Range") + ylab("Nr. of cells")
+
+pbio02 <- ggplot(bioclim_dat ) + 
+  geom_histogram(aes(x=bio2,fill=fcf>0), bins=25) +
+  facet_col(group ~.) + 
+  xlab("Temp. Diurnal Range") + ylab("Nr. of cells")
+
+pbio03 <- ggplot(bioclim_dat ) + 
+  geom_histogram(aes(x=bio3,fill=fcf>0), bins=25) +
+  facet_col(group ~.) + 
+  xlab("Isothermality") + ylab("Nr. of cells")
+
+pbio24 <- ggplot(bioclim_dat ) + 
+  geom_histogram(aes(x=bio2/bio4,fill=fcf>0), bins=25) +
+  facet_col(group ~.) + 
+  xlab("Diurnal/Annual Temp. Range") + ylab("Nr. of cells")
+
+pbio19 <- ggplot(bioclim_dat) + 
+  geom_histogram(aes(x=bio19,fill=fcf>0), bins=25) +
   facet_col(group ~.) + xlab("Precip. of Coldest Quarter") + ylab("Nr. of cells")
 
- ggarrange(pbio01, pbio07, pbio19, ncol = 3, nrow = 1, common.legend = TRUE)
+ ggarrange(pbio01, pbio02, pbio19, ncol = 3, nrow = 1, common.legend = TRUE)
 
 ```
+
+These plots show general differences between regions but the values are interpolated over large areas are not accurate representation of microclimatic conditions, for example diurnal temperature ranges are probably underestimated and annual ranges overestimated.
 
 
 ```{r}
 #| eval: false
 
-bioclim_dat %>% filter(fcf>0) %>% group_by(group) %>% summarise(across(bio10_01:bio10_19,~ mean(.x, na.rm = TRUE))) %>% knitr::kable(digits=2)
+bioclim_dat %>% filter(fcf>0) %>% group_by(group) %>% summarise(across(bio10_1:bio10_19,~ mean(.x, na.rm = TRUE))) %>% knitr::kable(digits=2)
 
 ```
 
