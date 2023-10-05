@@ -37,3 +37,5 @@ For data exploration and visualisation we used following layers:
 - Copernicus Global Land Service, Land Cover 100m. Links to: [map visualization](https://lcviewer.vito.be/), [webpage](https://land.copernicus.eu/global/documents/lc100/v2/pum) and [more info](https://blog.vito.be/remotesensing/towards-mapping-annual-land-cover-changes) [@buchhorn_copernicus_2019].
 
 - World Database of Protected Areas at [protectedplanet.net](http://www.protectedplanet.net) [@WDPA]
+
+- Mosaic of satellite images (Sentinel 2 MultiSpectral Instrument, Level 2A; December 2021 to March 2022; clouds and shadows removed).
