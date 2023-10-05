@@ -175,7 +175,7 @@ RSdata %>%
   group_by(RGIId) %>% 
    summarise(`Diurnal range`=mean(max_temp-min_temp),
            `Annual range`=max(mean_temp)-min(mean_temp),
-           Isothermality = diurnal_range/annual_range) %>% knitr::kable(digits=2)
+           Isothermality = `Diurnal range`/`Annual range`) %>% knitr::kable(digits=2)
 ```
 
 
