@@ -12,7 +12,7 @@ According to @Braun_2013_glacier_venezuela and @Ramirez_2020_glacier_Venezuela t
 - Pico El Leon (4750 m) had perennial snow and ice cover around 1900 but was ice free in 1910.
 - La Concha was included in measurement of glacier extent in 1910 and 1952, but it disappeared before 1990.
 - A glacier at Pico Espejo was located below Pico Bolivar and disappeared between 1936 and 1956.
-- Bolivar was included in measurement of glacier extent in 1910, 1952 and 1998, but was already fragmented (two patches) in 1998, it had a small remaining ice mass between 2011 and 2017 but was not longer considered a glacier ($<0.01km^2$ in extent), a small remnant firn patch disappeared by 2020.
+- Bolivar was included in measurement of glacier extent in 1910, 1952 and 1998, but was already fragmented (two patches) in 1998, it had a small remaining ice mass between 2011 and 2017 but was not longer considered a glacier ($<0.01\textrm{km}^2$ in extent), a small remnant firn patch disappeared by 2020.
 - Humboldt is the only remaining glaciated area.
 
 In the cases of Pico Mucuñuque and Pico Bolívar, small remnants of ice were considered 'static' or extinct glaciers due to the absence of dynamic processes of ice accumulation. However, prospective microbiological studies in Pico Bolivar [@Rondon_2016_biota_merida, sampled ca. six years before its complete disappearance] and Pico Humboldt [@Ball_2014_biota_merida] suggest similar micro-biotas regardless of the size of the remaining ice substrate.

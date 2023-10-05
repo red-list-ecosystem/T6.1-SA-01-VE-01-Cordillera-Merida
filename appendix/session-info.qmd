@@ -70,3 +70,4 @@ Apart from R we used these pieces of software and templates:
 - [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/)
   - Web based tool to extract data from plots, images, and maps
 - [Color Blind Vision Simulator](https://pilestone.com/pages/color-blindness-simulator-1#) from pilestone.com
+- [Error Propagation Calculator](https://astro.subhashbose.com/tools/error-propagation-calculator) by Subhash Bose
