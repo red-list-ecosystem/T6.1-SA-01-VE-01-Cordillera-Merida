@@ -1,13 +1,15 @@
 # Graphical overview of data, analysis and results
 
+The assessment is based on three local studies [@Ramirez_2020_glacier_Venezuela; @Braun_2013_glacier_venezuela; @Polissar_2006_IceAge_Andes] two references that provide global data [@Rounce_2023_MassBalance_Global; @RGI_2017_glacier_inventory], and  unpublished analysis. Additional local studies could inform assessment of biotic components, but data was considered insufficient for risk assessment [@Llambi_2021_periglacial_merida]. @fig-datatypes shows the different types of input data that is related with each publication or dataset.
 
 ::: {#fig-datatypes}
 
-![](../sandbox/Types-of-data.png)
+![](../sandbox/Types-of-data.png){width=400}
 
 Types of data used in the references included in the assessment.
 :::
 
+The @fig-datasources shows a simple workflow of input data (grey boxes) provided by the references and additional steps of analysis (white boxes) that lead to the evaluation of each sub-criterion.
 
 ::: {#fig-datasources}
 
@@ -16,7 +18,7 @@ Types of data used in the references included in the assessment.
 Data sources for each of the criteria.
 :::
 
-Figure @fig-overview represent the different datasources (dashed shapes), references representing local measures (simple octagons) and global datasets (double octagons), and the main data inputs (shaded boxes) and analysis steps (clear boxes and ovals) for each criterion of the IUCN Red List of Ecosystems protocol. Results for each criterion or subcriterion are indicated with coloured circles and category abbreviations.
+Figure @fig-overview summarises the complete workflow from data sources to final results. Different datasources (dashed shapes), references representing local measures (simple octagons) and global datasets (double octagons), and the main data inputs (shaded boxes) and analysis steps (clear boxes and ovals) for each criterion of the IUCN Red List of Ecosystems protocol. Results for each criterion or subcriterion are indicated with coloured circles and category abbreviations.
 
 ::: {#fig-overview}
 

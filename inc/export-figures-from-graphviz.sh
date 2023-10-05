@@ -5,7 +5,7 @@ dot -Tpng -Gsize=6.69,4\! -Gdpi=600 -osandbox/CEM-Venezuela-TGE.png assets/CEM-V
 
 dot -Tpng -Gsize=6.69,4\! -Gdpi=600 -osandbox/CEM-legend.png assets/CEM-legend.gv
 
-dot -Tpng -Gsize=10 -Gdpi=300 -osandbox/Graphical-assessment-summary.png assets/Data-sources-Venezuela.gv 
+dot -Tpng -Gsize=5,7 -Gdpi=300 -osandbox/Graphical-assessment-summary.png assets/Data-sources-Venezuela.gv 
 
 dot -Tpng -Gsize=5,5 -Gdpi=300 -osandbox/Types-of-data.png assets/Types-of-data.gv
 dot -Tpng -Gsize=5,5 -Gdpi=300 -osandbox/Data-sources.png assets/Simplified-data-sources.gv

@@ -20,11 +20,12 @@ This is a global and national assessment for this ecosystem unit. The assessment
 
 ## Ecosystem description
 
-Tropical glacier ecosystems are cryogenic ecosystems in tropical environments where the main substrate is formed by ice accumulated over several years and provides different habitats to microbiological communities and other meso- and macro-biota.
+Tropical glacier ecosystems are cryogenic ecosystems in tropical environments where the main substrate is formed by ice accumulated over several years and provides different habitats to microbiological communities and other meso- and macro-biota. Tropical glaciers share key features with other glaciers, such as the icy substrate; atmospheric deposition of nutrients; a biota dominated by micro-organisms with cold-adaptation traits that inhabits several habitat compartments on (supra-), in (endo-) or below (subglacial) the icy substrate; truncated trophic networks; and very low productivity and diversity [@Keith_2020_Ecosystem_Typology; @Hotaling_2017_glacier_ecosystem; @Anesio_2012_Glaciers_biome]. 
+
 
 Tropical glacier ecosystems are originally formed by processes of snow and ice accumulation and ablation over geological time frames. However the characteristic microbiota can persist in the ice substrate even if processes of ice accumulation have ceased or the overall mass balance of ice is negative.
 
-The Tropical glacier ecosystem of the Cordillera de Mérida is geographically isolated from the nearest occurrences of Tropical glacier ecosystems in Colombia and has distinct bioclimatic characteristics.
+The Tropical glacier ecosystem of the Cordillera de Mérida is described here as a distinct ecosystem type that formerly occupied several peaks above 4600 m in the Sierra Nevada National Park in the state of Mérida, Venezuela. It is geographically isolated from the nearest occurrences of Tropical glacier ecosystems in Colombia and has distinct bioclimatic characteristics.
 
 ## Classification
 
@@ -37,6 +38,7 @@ We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a 
     - Level 3: T6.1 Ice sheets, glaciers and perennial snowfields
       - Subgroup: Tropical glacier ecosystems
       - Level 4: T6.1-SA-01-VE-01 Tropical glacier ecosystem of the Cordillera de Mérida
+
 
 ### Other classification schemata
 

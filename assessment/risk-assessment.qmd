@@ -129,9 +129,9 @@ $$.
 Where $A_1$ is the extent in the start year $t_1$, and $A_2$ is the extent in the end year $t_2$. We also calculate uncertainty using an error propagation formula based on the standard error of the measurements as reported by the original source.
 
 
-
-
 For example, the proporional rates of decline based on the observed decline in the last 67 or 21 years are:
+
+
 ```{r}
 PRD_data <- calc_PRD(totals,start=2:3,end=7)
 PRD_data %>% 
@@ -161,6 +161,7 @@ future_proj %>%
 ```
 
 And we can now calculate the projected decline for the 50 years period:
+
 ```{r}
 calc_decline(future_proj,start=1,end=2:3) %>% 
   rename(`S.E.` = "error") %>% 
@@ -382,7 +383,7 @@ dat <- data.frame(obs=test.target,
 e1 <- evaluate(predictions$G[test.target=="G"],predictions$G[test.target=="N"])
 
 
-twoClassSummary(data=dat,lev=c("G","N")) %>% knitr::kable()
+twoClassSummary(data=dat,lev=c("G","N")) %>% t() %>% knitr::kable()
 #e1
 # par(las=2)
 #summary(model)
@@ -481,11 +482,11 @@ According to the published methods [@Rounce_2023_MassBalance_Global]:
 
 > The model computes the climatic mass balance (i.e., snow accumulation minus melt plus refreezing) for each surface elevation bin using a monthly time step. The model computes glacier melt using a degree-day model, accumulation using a temperature threshold, and refreezing based on the annual air temperature. Glacier geometry is updated annually using a flowline model based on the Shallow-Ice Approximation to explicitly account for glacier dynamics using a density of 900 kg m-3 for converting mass to volume. 
 
-This hybrid model is applied to all glaciers in the world independently, using globally available datasets of glacier outlines [RGI_2017_glacier_inventory], glacier-wide geodetic mass balance data and regional ice volume estimates for calibration [@farinotti_consensus_2019; @hugonnet_accelerated_2021]. In the case of small regions with no direct measurements (like the Cordillera de Mérida) the model uses initial estimates of ice volume based on digital elevation models and most likely overestimates initial mass, making the projections very conservative [@Rounce_2023_MassBalance_Global]. 
+This hybrid model is applied to all glaciers in the world independently, using globally available datasets of glacier outlines [@RGI_2017_glacier_inventory], glacier-wide geodetic mass balance data and regional ice volume estimates for calibration [@farinotti_consensus_2019; @hugonnet_accelerated_2021]. In the case of small regions with no direct measurements (like the Cordillera de Mérida) the model uses initial estimates of ice volume based on digital elevation models and most likely overestimates initial mass, making the projections very conservative [@Rounce_2023_MassBalance_Global]. 
 
 ```{r}
 #| label: fig-Ea
-#| fig-cap: Estimated ice mass in Megatonnes for all glacier outlines of the Cordillera de Mérida for each shared socioeconomic pathways. 
+#| fig-cap: "Estimated ice mass in Megatonnes for all glacier outlines of the Cordillera de Mérida for each shared socioeconomic pathways. Codes for Shared Socioeconomic Pathways: SSP1-2.6 is a sustainable development scenario, SSP2-4.5 is intermediate, SSP3-7.0 prioritise national development and SSP5-8.5 is fossil-fueled development."
 #| warning: false
 
 plot_data <- {mbdata %>% 

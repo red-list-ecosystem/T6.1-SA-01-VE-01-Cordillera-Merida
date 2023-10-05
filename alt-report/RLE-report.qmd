@@ -63,4 +63,4 @@ The data and code that support the findings of this study are openly available i
 | Date | Version | Info |
 |---|---|---|
 | 2023-06-08 | v1.0 | First version attached to submitted manuscript |
-| 2023-09-23 | v2.0 | Second version, including suggestions from two anonymous reviewers |
+| 2023-10-05 | v2.0 | Second version, including suggestions from two anonymous reviewers |
