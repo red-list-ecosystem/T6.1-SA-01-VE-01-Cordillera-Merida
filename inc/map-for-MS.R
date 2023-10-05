@@ -1,7 +1,7 @@
 library(tmap)
 library(tmaptools)
-library(rnaturalearth)
-library(OpenStreetMap)
+#library(rnaturalearth)
+#library(OpenStreetMap)
 
 library(grid)
 
@@ -167,3 +167,4 @@ tmap_save(main_fig,
         dpi=600,
         insets_tm=sfig1,
         insets_vp=viewport(0.8, 0.35, width = 0.30, height = 0.30))
+

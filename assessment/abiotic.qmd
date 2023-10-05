@@ -173,9 +173,9 @@ The remote sensing estimates of temperature over the three peaks show large ($> 
 ```{r}
 RSdata %>% 
   group_by(RGIId) %>% 
-   summarise(diurnal_range=mean(max_temp-min_temp),
-           annual_range=max(mean_temp)-min(mean_temp),
-           isothermality = diurnal_range/annual_range)
+   summarise(`Diurnal range`=mean(max_temp-min_temp),
+           `Annual range`=max(mean_temp)-min(mean_temp),
+           Isothermality = diurnal_range/annual_range) %>% knitr::kable(digits=2)
 ```
 
 

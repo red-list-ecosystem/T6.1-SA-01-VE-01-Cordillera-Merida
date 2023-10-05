@@ -233,11 +233,13 @@ tibble(
 
 These values of PRD and the projected decline are lower than those obtained using the fixed PRD formula. This is because the linear model approach averages the rate of decline across all measurements, and probably underestimates or underplays the recent acceleration of the rate of decline  [@Ramirez_2020_glacier_Venezuela]. The model giving a value of $PRD < 4.5%$ is heavily influenced by the older observations and does not match the more recent measurements. We decided to discard it in favor of the alternative model and analytical estimates.
 
-#### Final considerations
+#### Additional considerations
 
 Both projections based on analytical and linear regression estimates of the proportional rate of decline suggest declines above 80% in a 50 years time frame including past and future. Some estimates are close to 100%, indicating a likely collapse. 
 
 Given the very rapid decline of the glacier in the Bolívar Peak between 1998 and 2017, and the comparable size of the Humboldt glacier at the time of the last measurement (0.045 $km^2$ by 2019) it is reasonable to expect that it would disappear completely within the next 20 years.
+
+#### Assigned category
 
 The assessment unit is classified as **Critically Endangered**, with plausible bounds between **Endangered** and **Collapsed**: CR (CR-CO).
 
