@@ -1,5 +1,21 @@
 # Graphical overview of data, analysis and results
 
+
+::: {#fig-datatypes}
+
+![](../sandbox/Types-of-data.png)
+
+Types of data used in the references included in the assessment.
+:::
+
+
+::: {#fig-datasources}
+
+![](../sandbox/Data-sources.png)
+
+Data sources for each of the criteria.
+:::
+
 Figure @fig-overview represent the different datasources (dashed shapes), references representing local measures (simple octagons) and global datasets (double octagons), and the main data inputs (shaded boxes) and analysis steps (clear boxes and ovals) for each criterion of the IUCN Red List of Ecosystems protocol. Results for each criterion or subcriterion are indicated with coloured circles and category abbreviations.
 
 ::: {#fig-overview}

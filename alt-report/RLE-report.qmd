@@ -1,0 +1,66 @@
+---
+title: "IUCN Red List of Ecosystem assessment: Tropical glacier ecosystem of the Cordillera de Mérida"
+subtitle: "Supplementary material to: First Red List of Ecosystems assessment of a tropical glacier ecosystem to diagnose the pathways toward imminent collapse (under review)"
+author: "J. R. Ferrer-Paris, Luis D. Llambí, Alejandra Melfo and David A. Keith"
+date: "2023-05-03"
+
+bibliography: 
+  - ../bibTeX/references.bib
+  - ../bibTeX/glacier-assessments.bib
+  - ../bibTeX/additional-refs.bib
+  - ../bibTeX/r-packages.bib
+  - ../bibTeX/reviewer-suggested.bib
+csl: ../bibTeX/oryx.csl
+
+execute:
+  echo: false
+
+format:
+  RLEpdf-pdf
+---
+
+# Abstract
+
+This document uses the IUCN Red List of Ecosystems guidelines to diagnose the collapse of the **Tropical glacier ecosystems of the Cordillera de Mérida** in Venezuela.
+
+Tropical glaciers are rapidly disappearing, particularly in isolated mountain peaks and lower elevations. These glaciers are fundamental substrates for unique cryogenic ecosystems in tropical environments where the ice, melting water and rocky substrate sustain microbiological communities and other meso- and macro-biota. 
+
+The [IUCN Red List of Ecosystems](https://iucnrle.org) assessment protocol provides a valuable framework for comparative analysis of threatened ecosystems. We undertook the assessment with existing data derived from field observations and samples, literature review, cartographic reconstruction, remote sensing products and climatic models, and complemented these with additional statistical analysis and modelling to calculate and predict rates of decline and relative severity of degradation. 
+
+The evidence suggests an extreme risk of collapse ([Critically Endangered](https://iucnrle.org/rle-categ-and-criteria)) due to prolonged and acute declines in ice extent and changes in climatic conditions that are leading towards a complete loss of ice mass. The biotic compartments of the glacial ecosystem will consequently be lost, with ice loss also initiating a decades-long succession of forefield vegetation. Even the most optimistic climate change projections are unlikely to prevent imminent ecosystem collapse in this region. 
+
+This assessment is summarised in a manuscript currently under review.
+
+{{< include ../assessment/intro.qmd >}}
+{{< include ../assessment/distribution.qmd >}}
+{{< include ../assessment/biota.qmd >}}
+{{< include ../assessment/abiotic.qmd >}}
+{{< include ../assessment/processes.qmd >}}
+{{< include ../assessment/collapse.qmd >}}
+{{< include ../assessment/risk-assessment.qmd >}}
+
+# Acknowledgements
+
+We thank Nerio Ramírez for his invaluable work documenting glacier retreat and Barbara Huber for kindly sharing preliminary results on glacier microbiota in the Venezuelan Andes. National Geographic Society provided financial support for LDL and AM (Grant No. NGS-55170R-19). We also thank the Mucumbarila cable car system and INPARQUES for their support in the access to the study sites near Humboldt peak.
+
+# Citation
+
+This report is uploaded in EcoEvoRxiv as manuscript number:
+
+This report was produced as a complement to a manuscript under review. Citation information will be updated upon journal decision.
+
+# Linked documents and data
+
+The data and code that support the findings of this study are openly available in OSF at https://osf.io/y3279/.
+
+# References
+
+::: {#refs}
+:::
+
+# Version control
+
+| Date | Version | Info |
+|---|---|---|
+| 2023-06-08 | v1.0 | First version attached to submitted manuscript |
+| 2023-09-23 | v2.0 | Second version, including suggestions from two anonymous reviewers |

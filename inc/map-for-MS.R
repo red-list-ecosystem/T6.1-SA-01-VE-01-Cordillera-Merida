@@ -63,12 +63,29 @@ adm0_xy$labelsize=c(2,2,.1,.1)
 wbd <- data.frame(name=c("Maracaibo\nLake","Caribbean\nSea","Caribbean\nSea"),labelsize=c(0.15,0.35,0.9))
 wbd$geom <- st_sfc(st_point(c(-71.6,9.75)),st_point(c(-68,11.25)),st_point(c(-75,11.25)))
 
-ann <- data.frame(name=c("1","3","4","2"),labelsize=c(0.25,0.25,0.2,0.2))
+ann <- data.frame(code=c("1","3","4","2"),
+                  name=c("Bolívar","Humboldt","Mucuñuque"," La Concha "),
+                  labelsize=c(0.25,0.25,0.2,0.2))
 ann$geom <- st_sfc(st_point(c(-71.0504,8.54114)),
                    st_point(c(-71.0001,8.54740)),
                    st_point(c(-70.800833,8.755278)),
                    st_point(c(-71.024722,8.541944)))
 ann <- st_as_sf(ann,crs=4326)
+
+tcks <- data.frame(code=c("71,2","71,0","70,8","70,6",
+                          "8,2","8,4","8,6","8,8"))
+mxy <- 8.0775
+mxx <- -71.395
+tcks$geom <- st_sfc(st_linestring(rbind(c(-71.2,8.0),c(-71.2,mxy))),
+                   st_linestring(rbind(c(-71.0,8.0),c(-71.0,mxy))),
+                   st_linestring(rbind(c(-70.8,8.0),c(-70.8,mxy))),
+                   st_linestring(rbind(c(-70.6,8.0),c(-70.6,mxy))),
+                   st_linestring(rbind(c(-71.44,8.2),c(mxx,8.2))),
+                   st_linestring(rbind(c(-71.44,8.4),c(mxx,8.4))),
+                   st_linestring(rbind(c(-71.44,8.6),c(mxx,8.6))),
+                   st_linestring(rbind(c(-71.44,8.8),c(mxx,8.8))))
+tcks <- st_as_sf(tcks,crs=4326)
+
 
 
 edos <- data.frame(name=c("M E R I D A","B A R I N A S"),
@@ -93,7 +110,7 @@ tmap_mode("plot")
 
 ## As this study we use 1:2 million data from the World Bank, a digital elevation model and hillshade from a map service, in combination with partial transparency  to provide geographical context. The vector layer for the protected areas is from Protected Planet.
 
-
+set.seed(832181)
 main_fig <- 
   tm_shape(osm_SNNP) +
   tm_rgb(alpha=.6) +
@@ -109,14 +126,16 @@ main_fig <-
   tm_text("label",size=0.8,col="black",
           xmod=c(2,1,2), ymod=c(3,2,1)) +
   tm_shape(AOO.cell) +
-  tm_borders(col="black") +
-  tm_shape(ann) +
-  tm_text("name",size=0.6) +
-  #tm_text("Name")+
+  tm_borders(col="#0F0F0FF0", lty = "dotted") +
+  tm_shape(tcks) +
+  tm_lines(col="#0F0F0FF0") +
+  tm_shape(ann[1:4,]) +
+  tm_dots(size=0.05, col="black", shapes = 24) +
+  tm_text("name",size=0.6, auto.placement = TRUE) +
   tm_scale_bar() +
   tm_graticules(n.x=4, n.y=4, labels.margin.y=0, ticks=TRUE,
                 labels.inside.frame = TRUE, lines=FALSE,
-                labels.size = 0.7)
+                labels.size = 0.5)
 
 sfig1 <- 
   tm_shape(adm0) +

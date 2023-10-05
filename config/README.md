@@ -20,11 +20,21 @@ Error: path for html_dependency not found: /var/folders/14/vyrp_30975d7y17lqxjbl
 ```
 This seems to be related to the use of leaflet in the code. Should I create a branch for the pdf output without the interactive map?
 
+Another option is to use a different subfolder with its own quarto.yml file to create a pdf document with different rules and composition as the html book. We trial this in a sepparate branch and test with:
 
-Edit the qmd and yml files:
 ```sh
-atom ~/proyectos/IUCN-GET-L4/T6.1-tropical-glaciers-docs
+quarto render suppl-mat/
 ```
+
+We can also use a pdf document output with a template and sourcing the other component quarto documents:
+```sh
+cd alt-report
+quarto install extension red-list-ecosystem/RLEpdf
+quarto render RLE-report.qmd --to RLEpdf-pdf
+```
+
+This template has a problem with the list of authors, would need to fix that later on.
+
 
 ## Citation and bibliography
 
@@ -83,25 +93,30 @@ git remote add origin git@github.com:red-list-ecosystem/T6.1-tropical-glaciers-d
 git push -u origin main
 ```
 
-## git lfs
 
-Download binary from https://git-lfs.github.com/
-```sh
-cd ~/Downloads/git-lfs-3.2.0/
-./install.sh
-```
 
-Then we can initialise lfs in repository and add the files
-```sh
-git lfs install
-git lfs track "*.rda"
-git add .gitattributes
-git add Rdata
-git commit -m "track *.rda files using Git LFS"
-```
+## Data download
+We need to download data from the OSF cloud storage:
 
-If we have problems check this https://github.blog/2017-06-27-git-lfs-2-2-0-released/:
-```sh
-git lfs migrate info
-git lfs migrate import --include="*.rda"
-```
+Run the script in `config/download-data.R`
+
+## Install quarto
+
+Download from here and install: https://quarto.org/docs/get-started/
+
+## Install Java
+
+For some of the maplayers I need Java
+
+https://www.oracle.com/java/technologies/downloads/#jdk20-mac
+
+Download:
+https://download.oracle.com/java/20/latest/jdk-20_macos-aarch64_bin.dmg
+
+and Install
+
+## Install MacTeX
+
+
+## PDF output
+Cannot use graphviz directly, will need to transform with dot into a static PNG or SVG.

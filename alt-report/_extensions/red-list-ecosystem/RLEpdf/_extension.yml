@@ -1,0 +1,14 @@
+title: RLEpdf
+author: JR Ferrer-Paris
+version: 0.0.1
+contributes:
+  formats: 
+    pdf:
+      include-in-header: 
+       - "RLEpdf.tex"
+      include-before-body:
+       - "pagestyle.tex"
+      toc: false
+      code-block-bg: light
+      linkcolor: highlight
+      urlcolor: highlight

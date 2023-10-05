@@ -21,7 +21,7 @@ old <- theme_set(theme_classic())
 
 
 # Fig 3 decline extent ----------------------------------------------------
-
+## excluded from MS after reviewer suggestions
 
 # Table 1 in Ramirez et al 2020
 peaks <- rep(c('La Concha','Bolivar','Humboldt'),c(2,3,7))
@@ -136,3 +136,5 @@ ggplot(data=ycdata) +
   ylab("Cummulative proportion of models") +
   theme(legend.position = "none")
 dev.off()
+
+

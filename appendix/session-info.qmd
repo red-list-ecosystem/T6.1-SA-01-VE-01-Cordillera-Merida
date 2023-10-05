@@ -1,0 +1,72 @@
+---
+title: Software used for analysis and documentation
+---
+
+## Details of R session
+
+```{r}
+#| eval: true
+#| warning: false
+#| message: false
+
+# spatial data
+library(sf)
+
+#map viz
+library(leaflet)
+library(tmap)
+library(tmaptools)
+#library(rnaturalearth)
+library(OpenStreetMap)
+
+# plots / graphics
+library(ggplot2)
+library(ggrepel)
+library(ggpubr)
+library(ggforce)
+library(grid)
+library(DiagrammeR)
+
+#tidyverse
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(tidyr)
+library(stringr)
+
+
+#models / ML
+library(gbm)
+library(caret)
+library(dismo)
+
+# other utils
+library(here)
+library(units)
+library(RColorBrewer)
+
+# documentation
+library(quarto)
+library(respondR)
+
+
+```
+
+All statistical analysis were performed using `r R.version$version.string` [@CRAN]. For the suitability model we used package *caret* [@pkg_caret] and some functions of packages s *gbm* [@pkg_gbm] and *dismo* [@pkg_dismo].
+
+```{r}
+sessionInfo()
+
+```
+
+## Other software and templates
+
+Apart from R we used these pieces of software and templates:
+
+- [Quarto](https://quarto.org) 
+  - An open-source scientific and technical publishing system
+- RLE-pdf, available [on GitHub](https://github.com/red-list-ecosystem/RLEpdf) 
+  - Quarto extension for a template to generate a PDF with (pretty) LaTeX styling for RLE assessments:
+- [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/)
+  - Web based tool to extract data from plots, images, and maps
+- [Color Blind Vision Simulator](https://pilestone.com/pages/color-blindness-simulator-1#) from pilestone.com

@@ -1,15 +1,18 @@
 ---
-output: html_document
 editor_options: 
   chunk_output_type: console
 ---
 # Unit of assessment
+
+**Ecosystem name**: Tropical glacier ecosystem of the Cordillera de Mérida
 
 **Ecosystem id**: T6.1-SA-01-VE-01 (preliminary ID)
 
 **Assessment authors**: José R. Ferrer-Paris, Luis D. Llambí, Alejandra Melfo
 
 **Other contributors**: David Keith
+
+**Peer Review**: 2 anonymous reviewers
 
 ## Scope of the assessment
 
@@ -38,3 +41,5 @@ We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a 
 ### Other classification schemata
 
 The [IUCN Habitat Classification Scheme](https://www.iucnredlist.org/resources/habitat-classification-scheme) does not have a category for glacier ecosystem or other cryogenic ecosystems.
+
+@Sagredo_2012_climatology_andes proposes a climatic classification of Andean glaciers and includes de Cordillera de Merida in *Group 1: inner tropics and Tierra del Fuego* and specifically in *Group 1.1 Inner tropics*.

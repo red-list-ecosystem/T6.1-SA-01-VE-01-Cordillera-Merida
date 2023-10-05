@@ -1,0 +1,14 @@
+
+These formulas are based on https://astro.subhashbose.com/tools/error-propagation-calculator
+
+We calculate the error of PRD as:
+$$
+\sqrt{\frac{\sigma_{A 2}^{2} \left(\frac{A_{2}}{A_{1}}\right)^{\frac{2}{- t_{1} + t_{2}}}}{A_{2}^{2} \left(- t_{1} + t_{2}\right)^{2}} + \frac{\sigma_{A 1}^{2} \left(\frac{A_{2}}{A_{1}}\right)^{\frac{2}{- t_{1} + t_{2}}}}{A_{1}^{2} \left(- t_{1} + t_{2}\right)^{2}}}
+$$
+
+
+For projections of future extent, we calculate error as:
+
+$$
+\sqrt{\frac{A_1^{2} n^{2} \sigma_{\mathrm{PRD}}^{2} \left(1 - \mathrm{PRD}\right)^{2 n}}{\left(1 - \mathrm{PRD}\right)^{2}} + \sigma_{A_1}^{2} \left(1 - \mathrm{PRD}\right)^{2 n}}
+$$
