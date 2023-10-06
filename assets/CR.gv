@@ -1,0 +1,4 @@
+digraph RLEcategory {
+  node [ shape=circle fontsize=22 fontname=Palatino fixedsize=true size=0.1 style=filled]
+  CR [label="CR" color=red fontcolor="white"]
+}

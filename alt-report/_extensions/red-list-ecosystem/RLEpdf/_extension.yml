@@ -1,14 +1,25 @@
 title: RLEpdf
 author: JR Ferrer-Paris
-version: 0.0.1
+version: 0.1.0
 contributes:
   formats: 
     pdf:
       include-in-header: 
        - "RLEpdf.tex"
+      header-includes: |
+        \usepackage{orcidlink}
+        \definecolor{light}{HTML}{f5f0f6}
+        \definecolor{highlight}{HTML}{6667ab}
+        \definecolor{dark}{HTML}{cc2936}
       include-before-body:
        - "pagestyle.tex"
       toc: false
       code-block-bg: light
       linkcolor: highlight
       urlcolor: highlight
+      template-partials:
+        - "partials/title.tex"
+        - "partials/_authors.tex"
+      format-resources:
+        - fonts/
+        - logo_RLE.png

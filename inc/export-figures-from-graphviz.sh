@@ -9,3 +9,5 @@ dot -Tpng -Gsize=5,7 -Gdpi=300 -osandbox/Graphical-assessment-summary.png assets
 
 dot -Tpng -Gsize=5,5 -Gdpi=300 -osandbox/Types-of-data.png assets/Types-of-data.gv
 dot -Tpng -Gsize=5,5 -Gdpi=300 -osandbox/Data-sources.png assets/Simplified-data-sources.gv
+
+dot -Tsvg -Gsize=1,1 -oalt-report/CR.svg assets/CR.gv
