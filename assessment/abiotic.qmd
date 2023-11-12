@@ -193,11 +193,7 @@ bioclim_dat %>% group_by(Region=group) %>%
             ) %>% knitr::kable(digits=2)
 ```
 
-@fig-bioclim and @fig-bioclim2 show the distribution of four bioclimatic variables in the three regions, highlighting how the cryogenic areas differ from the rest of the spatial buffer (blue vs. red areas in each plot), and how the distribution of values differs between the three regions. The extreme cryogenic areas of the Cordillera de Mérida are exposed to different bioclimatic conditions than the nearest glacier areas in Colombia. They are exposed to similar mean annual temperatures as the Sierra Nevada del Cocuy, but has lower annual and diurnal temperature ranges and much lower levels of precipitation in the coldest quarter.
 
-\newpage 
-
-These plots show general differences between regions but the values are interpolated over large areas are not accurate representation of microclimatic conditions, for example diurnal temperature ranges are probably underestimated and annual ranges overestimated.
 
 
 ```{r}
@@ -240,6 +236,7 @@ ggarrange(pbio01, pbio19, ncol = 1, nrow = 2, common.legend = TRUE)
 
 ```
 
+@fig-bioclim and @fig-bioclim2 show the distribution of four bioclimatic variables in the three regions, highlighting how the cryogenic areas differ from the rest of the spatial buffer (blue vs. red areas in each plot), and how the distribution of values differs between the three regions. The extreme cryogenic areas of the Cordillera de Mérida are exposed to different bioclimatic conditions than the nearest glacier areas in Colombia. They are exposed to similar mean annual temperatures as the Sierra Nevada del Cocuy, but has lower annual and diurnal temperature ranges and much lower levels of precipitation in the coldest quarter.
 
 
 ```{r}
@@ -248,6 +245,9 @@ ggarrange(pbio01, pbio19, ncol = 1, nrow = 2, common.legend = TRUE)
 #| warning: false
 ggarrange(pbio02, pbio07, ncol = 1, nrow = 2, common.legend = TRUE)
 ```
+
+
+These plots show general differences between regions but the values are interpolated over large areas are not accurate representation of microclimatic conditions, for example diurnal temperature ranges are probably underestimated and annual ranges overestimated.
 
 ```{r}
 #| eval: false

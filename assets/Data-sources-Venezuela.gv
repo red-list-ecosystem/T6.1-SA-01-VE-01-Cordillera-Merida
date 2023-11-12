@@ -19,7 +19,7 @@ digraph G {
     }
      { node [ shape=circle fontsize=8 fixedsize=true style=filled]
       A1 [label="CR" color=red fontcolor="white"]
-      A2 [label="CR\n(EN-CR)" color=red fontcolor="white"]
+      A2 [label="CR\n(CR-CO)" color=red fontcolor="white"]
       A3 [label="CR\n(CR-CO)" color=red fontcolor="white"]
       B1 [label="CR" color=red fontcolor="white"]
       B2 [label="CR" color=red fontcolor="white"]
@@ -44,6 +44,8 @@ digraph G {
     {node [ shape=box fontsize=8 fixedsize=true]
      model [label="Generalised\nLinear\nModel"]
      decline[label="Obs.cont.\ndecline"]
+     OTD[label="Obs. total\ndecline"]
+     PRD[label="Proportional\nrate of\ndecline"]
       threat[label="threatening\nprocess"]
       locs[label="threat\ndefined\nlocation"]
       loess [label="digitized +\nLOESS\nregression"]
@@ -62,15 +64,16 @@ digraph G {
     }
     PUB1 -> data
     
-    data -> model
+    data -> OTD -> PRD
+    data -> model -> PRD
     data -> decline
-    data -> A1 [headlabel="A1"]
-      data -> A3 [headlabel="A3"]
+    OTD -> A1 [headlabel="A1"]
+      OTD -> A3 [headlabel="A3"]
     subgraph cluster_critA {
       label="Criterion A"
       
       {rank="same"; A1 A2 A3}
-      model -> A2 [headlabel="A2"]
+      PRD -> A2 [headlabel="A2"]
       A1 -> A2 -> A3 [style=invis; rank="same"]
     }
     PUB2 -> pols -> locs
