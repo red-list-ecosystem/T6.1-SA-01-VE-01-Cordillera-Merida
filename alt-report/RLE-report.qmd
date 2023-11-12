@@ -11,6 +11,14 @@ authors:
         name: Centre for Ecosystem Science, University of New South Wales
         city: Sydney
         country: Australia
+      - id: udash
+        name: UNSW Data Science Hub, University of New South Wales
+        city: Sydney
+        country: Australia
+      - id: iucn
+        name: IUCN Commission on Ecosystem Management
+        city: Gland
+        country: Switzerland 
   - name: "Luis D. Llambí"
     orcid: 0000-0002-2031-810X
     affiliations:
@@ -30,6 +38,7 @@ authors:
     orcid: 0000-0002-7627-4150
     affiliations:
       - ref: ces
+      - ref: iucn
 
 date: "2023-10-06"
 
@@ -50,15 +59,11 @@ format:
 
 # Abstract
 
-This document uses the IUCN Red List of Ecosystems guidelines to diagnose the collapse of the **Tropical glacier ecosystem of the Cordillera de Mérida** in Venezuela.
+The _Tropical glacier ecosystem of the Cordillera de Mérida_ is a regional ecosystem subgroup (level 4 unit of the IUCN Global Ecosystem Typology) restricted to the Cordillera de Mérida in Venezuela. It included at least five occurrences of glaciers or ice patches in the Sierra Nevada de Mérida and one in the Sierra de Santo Domingo but is currently represented by a single ice mass in the former range. Alpha- Beta- and Gamma-proteobacteria, Actinobacteria and Flavobacteria from glacial and subglacial samples are abundant, morphologically diverse and active. Studies of the microbiota in other ecological zones are still underway or pending. Recently exposed areas of the glacier forefield show strong dominance of lichenized fungi and bryophytes with very few vascular plants. 
 
-Tropical glaciers are rapidly disappearing, particularly in isolated mountain peaks and lower elevations. These glaciers are fundamental substrates for unique cryogenic ecosystems in tropical environments where the ice, melting water and rocky substrate sustain microbiological communities and other meso- and macro-biota. 
+The tropical glacier ecosystem of the Cordillera de Mérida had a mapped extent of less than 6 $\mathrm{km}^2$ in 2000 and glacier ice extent was less than 0.5 $\mathrm{km}^2$ in 2019 and is threatened primarily by climate change and air pollution, with recent acceleration of ice loss due to edge and scale effects. The ecosystem is thought to have undergone continuing declines since the second half of the 19th century. Today the ecosystem covers less than 1% of the estimated historical extent. Net area loss since in the last 20 years is about 90% and observed acceleration of the rate of decline suggests it will likely disappear in the next five years. The estimated increases in equilibrium-line altitude between 1820 and 2006 correspond with a best estimate of 70% of relative severity of historical degradation in environmental conditions. Similarly, the increase in freeze level height between 1948 and 2011 indicate more than 80% of averaged relative severity in the last 50 years. Under a wide range of climate change models and shared socio-economic pathways the relative severity of the degradation in suitability of bioclimatic conditions is estimated to reach 97% between 2040 and 2070 and conservative ice mass balance models predict complete loss of ice before 2070 in 79.2% of the simulations. 
 
-The [IUCN Red List of Ecosystems](https://iucnrle.org) assessment protocol provides a valuable framework for comparative analysis of threatened ecosystems. We undertook the assessment with existing data derived from field observations and samples, literature review, cartographic reconstruction, remote sensing products and climatic models, and complemented these with additional statistical analysis and modelling to calculate and predict rates of decline and relative severity of degradation. 
-
-The evidence suggests an extreme risk of collapse (**[Critically Endangered](https://iucnrle.org/rle-categ-and-criteria)**) due to prolonged and acute declines in ice extent and changes in climatic conditions that are leading towards a complete loss of ice mass. The biotic compartments of the glacial ecosystem will consequently be lost, with ice loss also initiating a decades-long succession of forefield vegetation. Even the most optimistic climate change projections are unlikely to prevent imminent ecosystem collapse in this region. 
-
-This assessment is summarised in a **manuscript currently under review**.
+Overall, the status of the tropical glacier ecosystem of the Cordillera de Mérida is assessed as **[Critically Endangered](https://iucnrle.org/rle-categ-and-criteria)** with plausible evidence that it may already be **Collapsed**: **CR (CR-CO)**. 
 
 {{< include ../assessment/intro.qmd >}}
 {{< include ../assessment/distribution.qmd >}}

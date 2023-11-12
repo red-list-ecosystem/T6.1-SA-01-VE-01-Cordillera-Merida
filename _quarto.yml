@@ -1,19 +1,53 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Tropical glacier ecosystem of the Cordillera de Mérida"
   subtitle: "IUCN Red List of Ecosystem assessment"
   author: 
-    - "José R. Ferrer-Paris"
-    - "Luis D. Llambí"
-    - "Alejandra Melfo" 
-    - "David A. Keith"
+    - name: "J. R. Ferrer-Paris"
+      email: j.ferrer@unsw.edu.au
+      orcid: 0000-0002-9554-3395
+      corresponding: true
+      affiliations:
+        - id: ces
+          name: Centre for Ecosystem Science, University of New South Wales
+          city: Sydney
+          country: Australia
+        - id: udash
+          name: UNSW Data Science Hub, University of New South Wales
+          city: Sydney
+          country: Australia
+        - id: iucn
+          name: IUCN Commission on Ecosystem Management
+          city: Gland
+          country: Switzerland 
+    - name: "Luis D. Llambí"
+      orcid: 0000-0002-2031-810X
+      affiliations:
+        - name: Instituto de Ciencias Ambientales y Ecológicas, Universidad de Los Andes
+          city: Mérida
+          country: Venezuela 
+        - name: Consorcio para el Desarrollo Sostenible de la Ecoregión Andina (CONDESAN)
+          city: Quito
+          country: Ecuador
+    - name: " Alejandra Melfo"
+      orcid: 0000-0003-3673-4308
+      affiliations:
+        - name: Centro de Física Fundamental, Universidad de Los Andes
+          city: Mérida
+          country: Venezuela
+    - name: "David A. Keith"
+      orcid: 0000-0002-7627-4150
+      affiliations:
+        - ref: ces
+        - ref: iucn
   date: "2023-05-03"
   chapters:
     - index.qmd
     - assessment/intro.qmd
-    - assessment/distribution.qmd
+    - assessment/distribution-interactive.qmd
     - assessment/biota.qmd
     - assessment/abiotic.qmd
     - assessment/processes.qmd
@@ -24,13 +58,21 @@ book:
     - appendix/summary.qmd
     - appendix/sources.qmd
     - appendix/session-info.qmd
+  sidebar:
+    logo: "assets/logo_RLE.png"
   page-footer:
     left: "Created by: JR Ferrer-Paris"
     right:
       - icon: github
         href: https://github.com/jrfep
-      - icon: twitter
-        href: https://twitter.com/neomapas
+  search: true
+  repo-url: https://github.com/red-list-ecosystem/T6.1-SA-01-VE-01-Cordillera-Merida
+  repo-actions: [edit, issue]
+  sharing: [twitter, facebook]
+
+comments:
+  hypothesis: true
+
 bibliography: 
   - bibTeX/references.bib
   - bibTeX/glacier-assessments.bib
