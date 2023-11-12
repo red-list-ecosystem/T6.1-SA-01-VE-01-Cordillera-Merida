@@ -15,4 +15,14 @@ The evidence suggests an extreme risk of collapse ([Critically Endangered](https
 
 This assessment is summarised in a manuscript currently under review.
 
+## External links
+
+The html version of this report is available in GitHub pages:
+<https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/>
+
+A PDF version of this assessment report has been uploaded to EcoEvoRxiv, and is available under the DOI [10.32942/X2VK54](https://doi.org/10.32942/X2VK54).
+
+Reproducible code and data are available as an OSF project with DOI [10.17605/OSF.IO/Y3279](https://doi.org/10.17605/OSF.IO/Y3279)
+
+
 

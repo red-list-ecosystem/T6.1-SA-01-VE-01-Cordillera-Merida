@@ -120,3 +120,10 @@ and Install
 
 ## PDF output
 Cannot use graphviz directly, will need to transform with dot into a static PNG or SVG.
+
+## Image magick
+
+```sh
+convert alt-report/logo_RLE.png -resize 165x165 assets/logo_RLE.png
+
+```
