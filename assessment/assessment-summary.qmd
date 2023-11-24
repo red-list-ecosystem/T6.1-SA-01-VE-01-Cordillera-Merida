@@ -1,0 +1,13 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Assessment outcome
+
+The Tropical glacier ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
+
+All criteria with sufficient data indicate the highest level of threat from historical (A1, A3, C1), present (A2b, B1 and B2) and future (C2a, E) processes.
+
+All evidence suggests that the small remaining patch of glacier ice in Humboldt peak is experimenting rapid decline and unlikely to recover mass before its disappearance.

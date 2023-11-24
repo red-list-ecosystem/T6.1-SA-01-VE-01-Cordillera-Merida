@@ -543,11 +543,3 @@ ggplot(data=ycdata) +
 Focusing on the 50 year time frame between 2020 and 2070 we find that `r sprintf("%0.1f %%", ecdf(ycdata$collapse_year)(2070)*100)` of the models end in collapse. Uncertainty in mass estimates (mean absolute deviation) do not have a major effect on the estimated year of collapse. Considering each scenarios separately, the proportion of models that predict collapse by 2070 is higher than 50% (threshold for CR) in all cases, except for scenario SSP1-2.6.
 
 Criterion E is evaluated as **Critically Endangered**.
-
-# Assessment outcome
-
-The Tropical glacier ecosystem of the Cordillera de Mérida is **Critically Endangered** with strong evidence of being **Collapsed**: CR (CR-CO) based on most of the criteria assessed A1, A2b, A3, B1+2a(i)bc, C1, C2a, E.
-
-All criteria with sufficient data indicate the highest level of threat from historical (A1, A3, C1), present (A2b, B1 and B2) and future (C2a, E) processes.
-
-All evidence suggests that the small remaining patch of glacier ice in Humboldt peak is experimenting rapid decline and unlikely to recover mass before its disappearance.

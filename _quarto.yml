@@ -53,6 +53,7 @@ book:
     - assessment/processes.qmd
     - assessment/collapse.qmd
     - assessment/risk-assessment.qmd
+    - assessment/assessment-summary.qmd
     - references.qmd
   appendices:
     - appendix/summary.qmd
