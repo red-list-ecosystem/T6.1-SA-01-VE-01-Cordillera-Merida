@@ -13,7 +13,7 @@ The [IUCN Red List of Ecosystems](https://iucnrle.org) assessment protocol provi
 
 The evidence suggests an extreme risk of collapse ([Critically Endangered](https://iucnrle.org/rle-categ-and-criteria)) due to prolonged and acute declines in ice extent and changes in climatic conditions that are leading towards a complete loss of ice mass. The biotic compartments of the glacial ecosystem will consequently be lost, with ice loss also initiating a decades-long succession of forefield vegetation. Even the most optimistic climate change projections are unlikely to prevent imminent ecosystem collapse in this region. 
 
-This assessment is summarised in a manuscript currently under review.
+This assessment is summarised in a manuscript currently in press [@FerrerParis_Glacier_Merida_2023].
 
 ## External links
 
