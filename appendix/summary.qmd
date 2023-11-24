@@ -4,7 +4,7 @@ The assessment is based on three local studies [@Ramirez_2020_glacier_Venezuela;
 
 ::: {#fig-datatypes}
 
-![](../sandbox/Types-of-data.png){width=400}
+![](../assets/Types-of-data.png){width=400}
 
 Types of data used in the references included in the assessment.
 :::
@@ -13,7 +13,7 @@ The @fig-datasources shows a simple workflow of input data (grey boxes) provided
 
 ::: {#fig-datasources}
 
-![](../sandbox/Data-sources.png)
+![](../assets/Data-sources.png)
 
 Data sources for each of the criteria.
 :::
@@ -22,7 +22,7 @@ Figure @fig-overview summarises the complete workflow from data sources to final
 
 ::: {#fig-overview}
 
-![](../sandbox/Graphical-assessment-summary.png)
+![](../assets/Graphical-assessment-summary.png)
 
 Data sources, steps of analysis and results of the IUCN RLE assessment
 :::

@@ -12,7 +12,7 @@ Tropical glacier ecosystem in the Cordillera de Mérida have a dynamic of ice ac
 
 ::: {#fig-CEM}
 
-![](../sandbox/CEM-Venezuela-TGE.png)
+![](../assets/CEM-Venezuela-TGE.png)
 
 Conceptual Ecosystem Model for the Tropical glacier ecosystem of the Cordillera de Mérida. The diagram shows the most important processes, but some processes mentioned in the text are excluded for clarity of visualisation.
 :::
