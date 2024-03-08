@@ -43,7 +43,7 @@ book:
       affiliations:
         - ref: ces
         - ref: iucn
-  date: "2023-05-03"
+  date: "2023-11-03"
   chapters:
     - index.qmd
     - assessment/intro.qmd
