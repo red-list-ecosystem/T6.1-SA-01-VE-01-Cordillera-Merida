@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Tropical glacier ecosystem of the Cordillera de Mérida"
+  title: "Tropical glacier ecosystem of the Cordillera de Mérida <span style=\"padding: 2px; font-size:80%; border-radius: 22px; color: white; background-color: #ff0000; \" id=\"text\">CR</span>"
   subtitle: "IUCN Red List of Ecosystem assessment"
   author: 
     - name: "J. R. Ferrer-Paris"
