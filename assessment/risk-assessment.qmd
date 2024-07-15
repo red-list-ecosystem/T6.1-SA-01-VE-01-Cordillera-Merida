@@ -344,7 +344,7 @@ The subcriterion C1 is assessed as **Critically Endangered** with a plausible ra
 
 ### Subcriterion C2a
 
-For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical glacier ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical glacier ecosystems in all the tropics. Details of the model fitting and validation process are in preparation [@ferrer-paris_describing_nodate], brief summary follows.
+For Criterion C we analysed the potential effect of climate change on the suitability of bioclimatic conditions for the presence of Tropical glacier ecosystems. We used a Gradient Boosting Machine (GBM) model to analyse the current climatic conditions in areas occupied by Tropical glacier ecosystems in all the tropics. Details of the model fitting and validation process are in preparation [@FerrerParis_Glacier_suitability], brief summary follows.
 
 Occurrence records were selected using stratified random sampling from all the glacier outlines in tropical areas and 25 km distance buffers around glacier outlines. We applied a first partition of the data by withhold the occurrence records of the target assessment unit for final model evaluation of prediction performance of the model (target partition) and the rest of the occurrence records were used for model fitting (modeling partition). Random subsets of the modeling partition were divided in calibration (80%) and test partitions (20%) for tuning of model parameters (number of trees, interaction depth, shrinkage and minimum number of observations per node) using cross validation.
 
