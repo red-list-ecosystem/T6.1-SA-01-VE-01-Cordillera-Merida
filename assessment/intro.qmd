@@ -34,8 +34,8 @@ We use the IUCN Global Ecosystem Typology [@Keith_2020_Ecosystem_Typology] as a 
 ### IUCN Global Ecosystem Typology
 
 - Level 1: Terrestrial Realm
-  - Level 2: T6 Polar/Alpine (cryogenic) functional biome
-    - Level 3: T6.1 Ice sheets, glaciers and perennial snowfields
+  - Level 2: [T6 Polar/Alpine (cryogenic) functional biome](https://global-ecosystems.org/explore/biomes/T6){target="GET"}
+    - Level 3: [T6.1 Ice sheets, glaciers and perennial snowfields](https://global-ecosystems.org/explore/groups/T6.1)
       - Subgroup: Tropical glacier ecosystems
       - Level 4: T6.1-SA-01-VE-01 Tropical glacier ecosystem of the Cordillera de Mérida
 
