@@ -13,16 +13,16 @@ The [IUCN Red List of Ecosystems](https://iucnrle.org) assessment protocol provi
 
 The evidence suggests an extreme risk of collapse ([Critically Endangered](https://iucnrle.org/rle-categ-and-criteria),   <span style="padding: 2px; font-size:80%; border-radius: 22px; color: white; background-color: #ff0000; " id="text">CR</span>) due to prolonged and acute declines in ice extent and changes in climatic conditions that are leading towards a complete loss of ice mass. The biotic compartments of the glacial ecosystem will consequently be lost, with ice loss also initiating a decades-long succession of forefield vegetation. Even the most optimistic climate change projections are unlikely to prevent imminent ecosystem collapse in this region. 
 
-This assessment is summarised in a manuscript currently in press [@FerrerParis_Glacier_Merida_2023].
+This assessment is summarised in  @FerrerParis_Glacier_Merida_2023.
 
 ## External links
 
 The html version of this report is available in GitHub pages:
-<https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/>
+<https://red-list-ecosystem.github.io/T6.1-SA-01-VE-01-Cordillera-Merida/>{target='ext'}
 
-A PDF version of this assessment report has been uploaded to EcoEvoRxiv, and is available under the DOI [10.32942/X2VK54](https://doi.org/10.32942/X2VK54).
+A PDF version of this assessment report has been uploaded to EcoEvoRxiv, and is available under the DOI [10.32942/X2VK54](https://doi.org/10.32942/X2VK54){target='ext'}.
 
-Reproducible code and data are available as an OSF project with DOI [10.17605/OSF.IO/Y3279](https://doi.org/10.17605/OSF.IO/Y3279)
+Reproducible code and data are available as an OSF project with DOI [10.17605/OSF.IO/Y3279](https://doi.org/10.17605/OSF.IO/Y3279){target='ext'}.
 
-
+We also wrote a couple of blog entries dedicated to the [fading memories of tropical glaciers](https://jrfep.quarto.pub/ecosystems-of-the-world/posts/T6.1-tropical-glaciers/){target='ext'} and the [loss of a delicate balance](https://www.oryxthejournal.org/blog/vanishing-tropical-glaciers-in-venezuela-a-delicate-balance-has-been-lost/){target='ext'}.
 
