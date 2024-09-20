@@ -6,7 +6,7 @@ The evidence suggests an extreme risk of collapse ([Critically Endangered](https
 
 Summary of the assessment published in:
 
-> Ferrer-Paris JR, Llambí LD, Melfo A, Keith DA. First Red List of Ecosystems assessment of a tropical glacier ecosystem to diagnose the pathways towards imminent collapse. Oryx. Published online 2024:1-11. doi:10.1017/S0030605323001771
+> Ferrer-Paris JR, Llambí LD, Melfo A, Keith DA. First Red List of Ecosystems assessment of a tropical glacier ecosystem to diagnose the pathways towards imminent collapse. Oryx. Published online 2024:1-11. doi:[10.1017/S0030605323001771](https://doi.org/10.1017/S0030605323001771)
 
 Full assessment report uploaded to EcoEvoRxiv: <https://doi.org/10.32942/X2VK54>
 
