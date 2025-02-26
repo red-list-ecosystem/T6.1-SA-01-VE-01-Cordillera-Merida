@@ -23,7 +23,12 @@ All measures of extent of glacier ice come from the published work of @Ramirez_2
 
 - For spatial analysis we used interpolated surfaces of bioclimatic variables from Chelsa: https://chelsa-climate.org/exchelsa-extended-bioclim/ [@Karger_2017_CHELSA_descriptor]
 
- 
+## Projected glacier ice mass 
+
+We used the global PyGEM-OGGM Glacier Projections [@Rounce_2022_MassBalance_Global_Data] available at the [National Snow and Ice Data Center](10.5067/P8BN9VO9N5C7).
+
+This dataset was generated using the Python Glacier Evolution Model (PyGEM) and the glacier dynamics module of the Open Global Glacier Model (OGGM) for a global dataset of glacier outlines and global calibration data. 
+
 ## General GIS data for data exploration and visualisation
 
 For data exploration and visualisation we used following layers:
