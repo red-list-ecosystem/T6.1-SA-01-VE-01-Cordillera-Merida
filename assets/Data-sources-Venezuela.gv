@@ -126,5 +126,5 @@ digraph G {
     GIS -> {PUB1;PUB3;PUB4}
     FIELD -> {PUB7;PUB8}
     PUB1 -> PUB7 [style=dotted]
-  {rank="same"; A1 A2 A3 B1 B2 B3 D1 D2 D3 C1 C2 C3 E}
+  // {rank="same"; A1 A2 A3 B1 B2 B3 D1 D2 D3 C1 C2 C3 E}
 }
